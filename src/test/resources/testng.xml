@@ -1,24 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Amazon Automation Test Suite" verbose="1">
+<!--
+    Amazon Automation Test Suite
+    
+    This TestNG suite configuration organizes all 10 test cases by priority:
+    - CRITICAL (P1): Tests 1, 5 - Core smoke tests that must pass
+    - HIGH (P2): Tests 3, 4, 6 - Important functional tests
+    - MEDIUM (P3): Tests 7, 8, 10 - Extended functionality tests
+    - LOW (P4): Tests 2, 9 - Negative test cases
+    
+    Tests are executed in priority order (1-4) for optimal failure detection.
+-->
+<suite name="Amazon Automation Test Suite" verbose="1" parallel="false">
+    
+    <!-- Global Listeners -->
     <listeners>
+        <!-- Screenshot listener captures screenshots on test failure -->
         <listener class-name="utils.ScreenshotListener"/>
     </listeners>
-    <test name="Module 1: Search Functionality Tests">
+    
+    <!-- Test Group: All Search and Cart Functionality Tests -->
+    <test name="Amazon E-Commerce Test Suite" preserve-order="true">
         <classes>
+            <!-- CRITICAL Priority Tests (P1) - Smoke Tests -->
             <class name="testcase1">
                 <methods>
                     <include name="testValidProductSearch"/>
                 </methods>
             </class>
+            <class name="testcase5">
+                <methods>
+                    <include name="testAddSingleItemToCart"/>
+                </methods>
+            </class>
+            
+            <!-- HIGH Priority Tests (P2) - Core Functionality -->
+            <class name="testcase3">
+                <methods>
+                    <include name="testPriceFilter"/>
+                </methods>
+            </class>
+            <class name="testcase4">
+                <methods>
+                    <include name="testProductDetailsDisplay"/>
+                </methods>
+            </class>
+            <class name="testcase6">
+                <methods>
+                    <include name="testUpdateAndRemoveCartItem"/>
+                </methods>
+            </class>
+            
+            <!-- MEDIUM Priority Tests (P3) - Extended Functionality -->
+            <class name="testcase7">
+                <methods>
+                    <include name="testRemoveItemFromCart"/>
+                </methods>
+            </class>
+            <class name="testcase8">
+                <methods>
+                    <include name="testProceedToCheckout"/>
+                </methods>
+            </class>
+            <class name="testcase10">
+                <methods>
+                    <include name="testCartPersistence"/>
+                </methods>
+            </class>
+            
+            <!-- LOW Priority Tests (P4) - Negative Tests -->
             <class name="testcase2">
                 <methods>
                     <include name="testInvalidKeywordSearch"/>
                 </methods>
             </class>
-            <class name="testcase3">
+            <class name="testcase9">
                 <methods>
-                    <include name="testPriceFilter"/>
+                    <include name="testEmptySearch"/>
                 </methods>
             </class>
         </classes>

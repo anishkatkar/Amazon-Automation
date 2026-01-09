@@ -1,0 +1,2003 @@
+2026-01-09 15:24:29.522 [main] INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+2026-01-09 15:24:29.580 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 15:24:29.580 [main] INFO  utils.ScreenshotListener - Test Suite Started: Amazon E-Commerce Test Suite
+2026-01-09 15:24:29.580 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 15:24:29.586 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:24:29.587 [main] INFO  TestSteps -   TC_AMZ_001: Verify Valid Product Search
+2026-01-09 15:24:29.587 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:24:29.587 [main] INFO  testcase1 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 15:24:29.587 [main] INFO  testcase1 - Setting up WebDriverManager for Chrome
+2026-01-09 15:24:30.091 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:24:30.115 [main] INFO  io.github.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/143.0.7499.192/mac-arm64/chromedriver-mac-arm64.zip
+2026-01-09 15:24:31.850 [main] INFO  io.github.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-mac-arm64.zip
+2026-01-09 15:24:31.940 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:24:31.940 [main] INFO  testcase1 - WebDriverManager setup completed
+2026-01-09 15:24:31.942 [main] INFO  testcase1 - --- Test Setup Started ---
+2026-01-09 15:24:32.922 [main] INFO  testcase1 - ChromeDriver initialized successfully
+2026-01-09 15:24:32.923 [main] INFO  testcase1 - AmazonSearchFunctions initialized
+2026-01-09 15:24:32.923 [main] INFO  testcase1 - --- Test Setup Completed ---
+2026-01-09 15:24:32.924 [main] INFO  utils.ScreenshotListener - Starting test: testValidProductSearch
+2026-01-09 15:24:32.924 [main] INFO  TestExecution - 
+2026-01-09 15:24:32.924 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:24:32.924 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_001 - Verify Valid Product Search
+2026-01-09 15:24:32.924 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:24:32.924 [main] INFO  testcase1 - Search Keyword: laptop
+2026-01-09 15:24:32.924 [main] INFO  testcase1 - Expected Minimum Results: 10
+2026-01-09 15:24:32.924 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 15:24:45.313 [main] INFO  testcase1 - Navigation successful to: https://www.amazon.com
+2026-01-09 15:24:45.314 [main] INFO  TestSteps - >>> Step 2 : Locate search box
+2026-01-09 15:24:45.344 [main] INFO  testcase1 - Search box located successfully
+2026-01-09 15:24:45.344 [main] INFO  TestSteps - >>> Step 3 : Clear search box
+2026-01-09 15:24:45.355 [main] INFO  testcase1 - Search box cleared
+2026-01-09 15:24:45.355 [main] INFO  TestSteps - >>> Step 4 : Enter search keyword: laptop
+2026-01-09 15:24:45.389 [main] INFO  testcase1 - Keyword 'laptop' entered successfully
+2026-01-09 15:24:45.389 [main] INFO  TestSteps - >>> Step 5 : Locate search button
+2026-01-09 15:24:45.397 [main] INFO  testcase1 - Search button located
+2026-01-09 15:24:45.397 [main] INFO  TestSteps - >>> Step 6 : Click search button
+2026-01-09 15:24:48.807 [main] INFO  testcase1 - Search button clicked
+2026-01-09 15:24:48.808 [main] INFO  TestSteps - >>> Step 7 : Wait for search results to load
+2026-01-09 15:24:48.817 [main] INFO  testcase1 - Search results loaded successfully
+2026-01-09 15:24:48.817 [main] INFO  TestSteps - >>> Step 8 : Verify results count text
+2026-01-09 15:24:48.827 [main] WARN  testcase1 - Results count text format may have changed, but continuing test...
+2026-01-09 15:24:48.827 [main] INFO  TestSteps - >>> Step 9 : Count product cards and verify minimum
+2026-01-09 15:24:48.833 [main] INFO  testcase1 - Found 16 product cards
+2026-01-09 15:24:48.833 [main] INFO  testcase1 - Minimum product count requirement met
+2026-01-09 15:24:48.833 [main] INFO  TestSteps - >>> Step 10 : Verify first product has image
+2026-01-09 15:24:48.843 [main] INFO  testcase1 - First product image verified
+2026-01-09 15:24:48.843 [main] INFO  TestSteps - >>> Step 11 : Verify first product has title
+2026-01-09 15:24:48.854 [main] INFO  testcase1 - First product title verified
+2026-01-09 15:24:48.854 [main] INFO  TestSteps - >>> Step 12 : Verify first product has price
+2026-01-09 15:24:48.862 [main] INFO  testcase1 - First product price verified
+2026-01-09 15:24:48.862 [main] INFO  testcase1 - --- Additional Validation ---
+2026-01-09 15:24:48.862 [main] INFO  TestSteps - >>> Additional : Validate first 10 products
+2026-01-09 15:24:49.016 [main] INFO  testcase1 - All validated products have required elements
+2026-01-09 15:24:49.016 [main] INFO  testcase1 - ========================================
+2026-01-09 15:24:49.016 [main] INFO  testcase1 - TEST RESULT: PASSED ✓
+2026-01-09 15:24:49.016 [main] INFO  testcase1 - ========================================
+2026-01-09 15:24:49.016 [main] INFO  testcase1 - Summary:
+2026-01-09 15:24:49.016 [main] INFO  testcase1 -   ✓ Search results page displayed
+2026-01-09 15:24:49.016 [main] INFO  testcase1 -   ✓ Found 16 products (minimum required: 10)
+2026-01-09 15:24:49.016 [main] INFO  testcase1 -   ✓ Products have required elements: image, title, price
+2026-01-09 15:24:49.016 [main] INFO  testcase1 -   ✓ Results are relevant to keyword: 'laptop'
+2026-01-09 15:24:49.018 [main] INFO  testcase1 -   ✓ Current URL: https://www.amazon.com/s?k=laptop&ref=nb_sb_noss
+2026-01-09 15:24:49.018 [main] INFO  testcase1 - ========================================
+2026-01-09 15:24:49.018 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:24:49.018 [main] INFO  TestExecution - # TEST CASE TC_AMZ_001 - RESULT: PASSED
+2026-01-09 15:24:49.018 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:24:49.018 [main] INFO  TestExecution - 
+2026-01-09 15:24:49.019 [main] INFO  utils.ScreenshotListener - Test passed: testValidProductSearch
+2026-01-09 15:24:49.020 [main] INFO  testcase1 - --- Test Teardown Started ---
+2026-01-09 15:24:49.020 [main] INFO  testcase1 - Browser session maintained for next test
+2026-01-09 15:24:49.020 [main] INFO  testcase1 - --- Test Teardown Completed ---
+2026-01-09 15:24:49.142 [main] INFO  testcase1 - Browser closed successfully
+2026-01-09 15:24:49.142 [main] INFO  testcase1 - ========================================
+2026-01-09 15:24:49.142 [main] INFO  testcase1 - ALL TESTS COMPLETED FOR TC_AMZ_001
+2026-01-09 15:24:49.142 [main] INFO  testcase1 - ========================================
+2026-01-09 15:24:49.143 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:24:49.143 [main] INFO  TestSteps -   TC_AMZ_005: Add Single Item to Cart
+2026-01-09 15:24:49.143 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:24:49.143 [main] INFO  testcase5 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 15:24:49.146 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:24:49.148 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:24:49.148 [main] INFO  testcase5 - WebDriverManager setup completed
+2026-01-09 15:24:49.148 [main] INFO  testcase5 - --- Test Setup Started ---
+2026-01-09 15:24:49.588 [main] INFO  testcase5 - --- Test Setup Completed ---
+2026-01-09 15:24:49.588 [main] INFO  utils.ScreenshotListener - Starting test: testAddSingleItemToCart
+2026-01-09 15:24:49.588 [main] INFO  TestExecution - 
+2026-01-09 15:24:49.588 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:24:49.588 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_005 - Add Single Item to Cart
+2026-01-09 15:24:49.588 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:24:49.588 [main] INFO  testcase5 - Search Keyword: headphones
+2026-01-09 15:24:49.588 [main] INFO  TestSteps - >>> Pre-condition : Navigate to product page
+2026-01-09 15:25:00.432 [main] INFO  testcase5 - Navigated to homepage
+2026-01-09 15:25:00.503 [main] INFO  testcase5 - Entered search keyword: headphones
+2026-01-09 15:25:02.824 [main] INFO  testcase5 - Clicked search button
+2026-01-09 15:25:02.838 [main] INFO  testcase5 - Search results loaded
+2026-01-09 15:25:05.619 [main] INFO  testcase5 - Clicked first product
+2026-01-09 15:25:05.619 [main] INFO  TestSteps - >>> Step 1 : Get initial cart count
+2026-01-09 15:25:05.631 [main] INFO  testcase5 - Initial cart count: 0
+2026-01-09 15:25:05.631 [main] INFO  TestSteps - >>> Step 2 : Click 'Add to Cart' button
+2026-01-09 15:25:21.791 [main] INFO  testcase5 - Add to Cart button clicked successfully
+2026-01-09 15:25:21.792 [main] INFO  TestSteps - >>> Step 3 : Verify cart count increased
+2026-01-09 15:25:26.879 [main] INFO  testcase5 - Initial Count: 0, New Count: 0
+2026-01-09 15:25:26.883 [main] ERROR testcase5 - Test assertion failed: Cart count did not increase. Initial: 0, New: 0 expected [true] but found [false]
+2026-01-09 15:25:26.883 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:25:26.883 [main] INFO  TestExecution - # TEST CASE TC_AMZ_005 - RESULT: FAILED
+2026-01-09 15:25:26.884 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:25:26.884 [main] INFO  TestExecution - 
+2026-01-09 15:25:26.884 [main] ERROR utils.ScreenshotListener - xxxxx Method testAddSingleItemToCart failed xxxxx
+2026-01-09 15:25:26.884 [main] INFO  utils.ScreenshotListener - Initiating screenshot capture...
+2026-01-09 15:25:26.968 [main] INFO  utils.ScreenshotListener - Screenshot saved: /Users/anishk/IdeaProjects/Amazon-Automation/screenshots/testAddSingleItemToCart_20260109_152526.png
+2026-01-09 15:25:26.969 [main] INFO  utils.ScreenshotListener - Test case 'testAddSingleItemToCart' failed. Screenshot captured for analysis.
+2026-01-09 15:25:26.969 [main] INFO  utils.ScreenshotListener - Screenshot captured successfully: /Users/anishk/IdeaProjects/Amazon-Automation/screenshots/testAddSingleItemToCart_20260109_152526.png
+2026-01-09 15:25:26.970 [main] INFO  testcase5 - --- Test Teardown Started ---
+2026-01-09 15:25:27.106 [main] INFO  testcase5 - Browser closed
+2026-01-09 15:25:27.106 [main] INFO  testcase5 - --- Test Teardown Completed ---
+2026-01-09 15:25:27.106 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:25:27.106 [main] INFO  TestSteps -   TC_AMZ_003: Verify Search with Price Filter
+2026-01-09 15:25:27.106 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:25:27.106 [main] INFO  testcase3 - Priority: HIGH (P2) | Type: Functional Test | Automation: YES
+2026-01-09 15:25:27.107 [main] INFO  testcase3 - Price Range: $500.0 - $1000.0
+2026-01-09 15:25:27.110 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:25:27.111 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:25:27.111 [main] INFO  testcase3 - WebDriverManager setup completed
+2026-01-09 15:25:27.111 [main] INFO  testcase3 - --- Test Setup Started ---
+2026-01-09 15:25:27.563 [main] INFO  testcase3 - --- Test Setup Completed ---
+2026-01-09 15:25:27.563 [main] INFO  utils.ScreenshotListener - Starting test: testPriceFilter
+2026-01-09 15:25:27.563 [main] INFO  TestExecution - 
+2026-01-09 15:25:27.563 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:25:27.563 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_003 - Verify Price Filter
+2026-01-09 15:25:27.563 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:25:27.563 [main] INFO  testcase3 - Search Keyword: laptop
+2026-01-09 15:25:27.564 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon and search for 'laptop'
+2026-01-09 15:25:37.307 [main] INFO  testcase3 - Keyword entered: laptop
+2026-01-09 15:25:39.966 [main] INFO  testcase3 - Initial search results loaded
+2026-01-09 15:25:39.966 [main] INFO  TestSteps - >>> Step 2 : Apply price filter: $500.0 - $1000.0
+2026-01-09 15:25:41.817 [main] INFO  testcase3 - Price filter applied successfully
+2026-01-09 15:25:44.844 [main] INFO  testcase3 - Filtered results loaded
+2026-01-09 15:25:44.844 [main] INFO  TestSteps - >>> Step 3 : Extract all product prices
+2026-01-09 15:25:44.986 [main] INFO  testcase3 - Extracted 15 prices from products
+2026-01-09 15:25:44.987 [main] INFO  testcase3 - Price extraction successful
+2026-01-09 15:25:44.987 [main] INFO  TestSteps - >>> Step 4 : Validate all prices are within range
+2026-01-09 15:25:44.987 [main] INFO  testcase3 - All prices verified to be within range $500.0 - $1000.0
+2026-01-09 15:25:44.988 [main] INFO  testcase3 - ========================================
+2026-01-09 15:25:44.988 [main] INFO  testcase3 - TEST RESULT: PASSED ✓
+2026-01-09 15:25:44.988 [main] INFO  testcase3 - ========================================
+2026-01-09 15:25:44.988 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:25:44.988 [main] INFO  TestExecution - # TEST CASE TC_AMZ_003 - RESULT: PASSED
+2026-01-09 15:25:44.988 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:25:44.988 [main] INFO  TestExecution - 
+2026-01-09 15:25:44.988 [main] INFO  utils.ScreenshotListener - Test passed: testPriceFilter
+2026-01-09 15:25:44.988 [main] INFO  testcase3 - --- Test Teardown Started ---
+2026-01-09 15:25:44.988 [main] INFO  testcase3 - Browser session maintained
+2026-01-09 15:25:44.988 [main] INFO  testcase3 - --- Test Teardown Completed ---
+2026-01-09 15:25:45.108 [main] INFO  testcase3 - Browser closed successfully
+2026-01-09 15:25:45.108 [main] INFO  testcase3 - ALL TESTS COMPLETED FOR TC_AMZ_003
+2026-01-09 15:25:45.108 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:25:45.108 [main] INFO  TestSteps -   TC_AMZ_004: Verify Product Details Display
+2026-01-09 15:25:45.108 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:25:45.108 [main] INFO  testcase4 - Priority: HIGH (P2) | Type: Smoke Test | Automation: YES
+2026-01-09 15:25:45.111 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:25:45.112 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:25:45.112 [main] INFO  testcase4 - WebDriverManager setup completed
+2026-01-09 15:25:45.112 [main] INFO  testcase4 - --- Test Setup Started ---
+2026-01-09 15:25:45.510 [main] INFO  testcase4 - --- Test Setup Completed ---
+2026-01-09 15:25:45.511 [main] INFO  utils.ScreenshotListener - Starting test: testProductDetailsDisplay
+2026-01-09 15:25:45.511 [main] INFO  TestExecution - 
+2026-01-09 15:25:45.511 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:25:45.511 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_004 - Verify Product Details Display
+2026-01-09 15:25:45.511 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:25:45.511 [main] INFO  testcase4 - Search Keyword: laptop
+2026-01-09 15:25:45.511 [main] INFO  TestSteps - >>> Pre-condition : Search for product
+2026-01-09 15:25:55.068 [main] INFO  testcase4 - Navigated to Amazon homepage
+2026-01-09 15:25:55.136 [main] INFO  testcase4 - Entered search keyword: laptop
+2026-01-09 15:25:58.544 [main] INFO  testcase4 - Clicked search button
+2026-01-09 15:25:58.551 [main] INFO  testcase4 - Search results loaded
+2026-01-09 15:25:58.552 [main] INFO  TestSteps - >>> Step 1-2 : Get product title and click first product
+2026-01-09 15:25:58.573 [main] INFO  testcase4 - First product title: HP 15.6" Laptop with Microsoft 365-1.1TB Storage - 8GB Memory - Intel Inside | Anti-Glare Display, 128GB SSD and 1TB Cloud Storage, 4-Cores CPU, Fast Charge and 12hrs Battery, no Mouse
+2026-01-09 15:25:58.573 [main] INFO  testcase4 - Product title validation passed
+2026-01-09 15:26:01.658 [main] INFO  testcase4 - Successfully clicked first product
+2026-01-09 15:26:01.658 [main] INFO  TestSteps - >>> Step 3 : Verify product details page elements
+2026-01-09 15:26:01.685 [main] INFO  testcase4 - Product details page verified successfully
+2026-01-09 15:26:01.685 [main] INFO  testcase4 - ========================================
+2026-01-09 15:26:01.685 [main] INFO  testcase4 - TEST RESULT: PASSED ✓
+2026-01-09 15:26:01.685 [main] INFO  testcase4 - ========================================
+2026-01-09 15:26:01.685 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:26:01.685 [main] INFO  TestExecution - # TEST CASE TC_AMZ_004 - RESULT: PASSED
+2026-01-09 15:26:01.685 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:26:01.685 [main] INFO  TestExecution - 
+2026-01-09 15:26:01.685 [main] INFO  utils.ScreenshotListener - Test passed: testProductDetailsDisplay
+2026-01-09 15:26:01.685 [main] INFO  testcase4 - --- Test Teardown Started ---
+2026-01-09 15:26:01.818 [main] INFO  testcase4 - Browser closed
+2026-01-09 15:26:01.818 [main] INFO  testcase4 - --- Test Teardown Completed ---
+2026-01-09 15:26:01.819 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:26:01.819 [main] INFO  TestSteps -   TC_AMZ_006: Update Cart Quantity
+2026-01-09 15:26:01.819 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:26:01.819 [main] INFO  testcase6 - Priority: HIGH (P2) | Type: Functional Test | Automation: YES
+2026-01-09 15:26:01.821 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:26:01.822 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:26:01.822 [main] INFO  testcase6 - WebDriverManager setup completed
+2026-01-09 15:26:01.822 [main] INFO  testcase6 - --- Test Setup Started ---
+2026-01-09 15:26:02.258 [main] INFO  testcase6 - --- Test Setup Completed ---
+2026-01-09 15:26:02.258 [main] INFO  utils.ScreenshotListener - Starting test: testUpdateAndRemoveCartItem
+2026-01-09 15:26:02.258 [main] INFO  TestExecution - 
+2026-01-09 15:26:02.258 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:26:02.258 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_006 - Update Cart Quantity
+2026-01-09 15:26:02.258 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:26:02.258 [main] INFO  testcase6 - Search Keyword: usb cable
+2026-01-09 15:26:02.258 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 15:26:11.979 [main] INFO  testcase6 - Navigated to homepage
+2026-01-09 15:26:12.030 [main] INFO  testcase6 - Entered search keyword: usb cable
+2026-01-09 15:26:15.505 [main] INFO  testcase6 - Search results loaded
+2026-01-09 15:26:19.293 [main] INFO  testcase6 - Clicked first product
+2026-01-09 15:26:26.395 [main] INFO  testcase6 - Added product to cart
+2026-01-09 15:26:28.315 [main] INFO  testcase6 - Navigated to cart page
+2026-01-09 15:26:28.315 [main] INFO  TestSteps - >>> Step 1 : Update cart quantity to 2
+2026-01-09 15:26:38.584 [main] WARN  testcase6 - Quantity update skipped (maybe limited stock or different UI)
+2026-01-09 15:26:38.584 [main] INFO  TestSteps - >>> Step 2 : Remove item from cart
+2026-01-09 15:26:38.592 [main] INFO  testcase6 - Cart count before delete: 1
+2026-01-09 15:26:40.638 [main] INFO  testcase6 - Delete button clicked
+2026-01-09 15:26:40.652 [main] INFO  testcase6 - Cart count after delete: 0
+2026-01-09 15:26:40.653 [main] INFO  testcase6 - Cart count decreased successfully
+2026-01-09 15:26:40.653 [main] INFO  testcase6 - ========================================
+2026-01-09 15:26:40.653 [main] INFO  testcase6 - TEST RESULT: PASSED ✓
+2026-01-09 15:26:40.653 [main] INFO  testcase6 - ========================================
+2026-01-09 15:26:40.653 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:26:40.653 [main] INFO  TestExecution - # TEST CASE TC_AMZ_006 - RESULT: PASSED
+2026-01-09 15:26:40.653 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:26:40.653 [main] INFO  TestExecution - 
+2026-01-09 15:26:40.653 [main] INFO  utils.ScreenshotListener - Test passed: testUpdateAndRemoveCartItem
+2026-01-09 15:26:40.655 [main] INFO  testcase6 - --- Test Teardown Started ---
+2026-01-09 15:26:40.803 [main] INFO  testcase6 - Browser closed
+2026-01-09 15:26:40.803 [main] INFO  testcase6 - --- Test Teardown Completed ---
+2026-01-09 15:26:40.804 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:26:40.804 [main] INFO  TestSteps -   TC_AMZ_007: Remove Item from Cart
+2026-01-09 15:26:40.804 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:26:40.804 [main] INFO  testcase7 - Priority: MEDIUM (P3) | Type: Functional Test | Automation: YES
+2026-01-09 15:26:40.806 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:26:40.808 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:26:40.808 [main] INFO  testcase7 - WebDriverManager setup completed
+2026-01-09 15:26:40.808 [main] INFO  testcase7 - --- Test Setup Started ---
+2026-01-09 15:26:41.244 [main] INFO  testcase7 - --- Test Setup Completed ---
+2026-01-09 15:26:41.244 [main] INFO  utils.ScreenshotListener - Starting test: testRemoveItemFromCart
+2026-01-09 15:26:41.244 [main] INFO  TestExecution - 
+2026-01-09 15:26:41.244 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:26:41.244 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_007 - Remove Item from Cart
+2026-01-09 15:26:41.244 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:26:41.244 [main] INFO  testcase7 - Search Keyword: mouse
+2026-01-09 15:26:41.244 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 15:26:50.733 [main] INFO  testcase7 - Navigated to homepage
+2026-01-09 15:26:53.244 [main] INFO  testcase7 - Search results loaded
+2026-01-09 15:26:56.983 [main] INFO  testcase7 - Clicked first product
+2026-01-09 15:27:04.092 [main] INFO  testcase7 - Added product to cart
+2026-01-09 15:27:05.380 [main] INFO  testcase7 - Navigated to cart page
+2026-01-09 15:27:05.389 [main] INFO  testcase7 - Cart count before removal: 1
+2026-01-09 15:27:05.390 [main] INFO  TestSteps - >>> Step 1 : Remove item from cart
+2026-01-09 15:27:07.429 [main] INFO  testcase7 - Item deleted successfully
+2026-01-09 15:27:07.429 [main] INFO  TestSteps - >>> Step 2 : Verify cart count decreased
+2026-01-09 15:27:07.440 [main] INFO  testcase7 - Cart count after removal: 0
+2026-01-09 15:27:07.440 [main] INFO  testcase7 - Cart count verification passed
+2026-01-09 15:27:07.440 [main] INFO  TestSteps - >>> Step 3 : Verify empty cart message
+2026-01-09 15:27:07.440 [main] INFO  testcase7 - Cart is empty, verifying empty cart message
+2026-01-09 15:27:09.475 [main] WARN  testcase7 - Empty cart message not found, but count is 0. Proceeding.
+2026-01-09 15:27:09.476 [main] INFO  TestSteps - >>> Step 4 : Verify checkout button hidden
+2026-01-09 15:27:09.482 [main] INFO  testcase7 - Checkout button visible: false
+2026-01-09 15:27:09.482 [main] INFO  testcase7 - Checkout button correctly hidden
+2026-01-09 15:27:09.482 [main] INFO  testcase7 - ========================================
+2026-01-09 15:27:09.482 [main] INFO  testcase7 - TEST RESULT: PASSED ✓
+2026-01-09 15:27:09.482 [main] INFO  testcase7 - ========================================
+2026-01-09 15:27:09.482 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:27:09.482 [main] INFO  TestExecution - # TEST CASE TC_AMZ_007 - RESULT: PASSED
+2026-01-09 15:27:09.482 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:27:09.482 [main] INFO  TestExecution - 
+2026-01-09 15:27:09.482 [main] INFO  utils.ScreenshotListener - Test passed: testRemoveItemFromCart
+2026-01-09 15:27:09.483 [main] INFO  testcase7 - --- Test Teardown Started ---
+2026-01-09 15:27:09.633 [main] INFO  testcase7 - Browser closed
+2026-01-09 15:27:09.633 [main] INFO  testcase7 - --- Test Teardown Completed ---
+2026-01-09 15:27:09.633 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:27:09.633 [main] INFO  TestSteps -   TC_AMZ_008: Proceed to Checkout (Guest User)
+2026-01-09 15:27:09.633 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:27:09.633 [main] INFO  testcase8 - Priority: MEDIUM (P3) | Type: Smoke Test | Automation: YES
+2026-01-09 15:27:09.636 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:27:09.637 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:27:09.637 [main] INFO  testcase8 - WebDriverManager setup completed
+2026-01-09 15:27:09.637 [main] INFO  testcase8 - --- Test Setup Started ---
+2026-01-09 15:27:10.074 [main] INFO  testcase8 - --- Test Setup Completed ---
+2026-01-09 15:27:10.074 [main] INFO  utils.ScreenshotListener - Starting test: testProceedToCheckout
+2026-01-09 15:27:10.074 [main] INFO  TestExecution - 
+2026-01-09 15:27:10.074 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:27:10.074 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_008 - Proceed to Checkout
+2026-01-09 15:27:10.074 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:27:10.074 [main] INFO  testcase8 - Search Keyword: books
+2026-01-09 15:27:10.074 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 15:27:19.625 [main] INFO  testcase8 - Navigated to homepage
+2026-01-09 15:27:32.624 [main] INFO  testcase8 - Search results loaded
+2026-01-09 15:27:43.002 [main] WARN  testcase8 - Specific book by XPath not found. Falling back to first product.
+2026-01-09 15:27:53.306 [main] ERROR testcase8 - Test assertion failed: Failed to add item to cart expected [true] but found [false]
+2026-01-09 15:27:53.306 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:27:53.306 [main] INFO  TestExecution - # TEST CASE TC_AMZ_008 - RESULT: FAILED
+2026-01-09 15:27:53.306 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:27:53.306 [main] INFO  TestExecution - 
+2026-01-09 15:27:53.307 [main] ERROR utils.ScreenshotListener - xxxxx Method testProceedToCheckout failed xxxxx
+2026-01-09 15:27:53.307 [main] INFO  utils.ScreenshotListener - Initiating screenshot capture...
+2026-01-09 15:27:53.423 [main] INFO  utils.ScreenshotListener - Screenshot saved: /Users/anishk/IdeaProjects/Amazon-Automation/screenshots/testProceedToCheckout_20260109_152753.png
+2026-01-09 15:27:53.423 [main] INFO  utils.ScreenshotListener - Test case 'testProceedToCheckout' failed. Screenshot captured for analysis.
+2026-01-09 15:27:53.423 [main] INFO  utils.ScreenshotListener - Screenshot captured successfully: /Users/anishk/IdeaProjects/Amazon-Automation/screenshots/testProceedToCheckout_20260109_152753.png
+2026-01-09 15:27:53.424 [main] INFO  testcase8 - --- Test Teardown Started ---
+2026-01-09 15:27:53.546 [main] INFO  testcase8 - Browser closed
+2026-01-09 15:27:53.546 [main] INFO  testcase8 - --- Test Teardown Completed ---
+2026-01-09 15:27:53.546 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:27:53.546 [main] INFO  TestSteps -   TC_AMZ_010: Cart Persistence After Page Refresh
+2026-01-09 15:27:53.546 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:27:53.546 [main] INFO  testcase10 - Priority: MEDIUM (P3) | Type: Functional Test | Automation: YES
+2026-01-09 15:27:53.548 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:27:53.549 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:27:53.549 [main] INFO  testcase10 - WebDriverManager setup completed
+2026-01-09 15:27:53.549 [main] INFO  testcase10 - --- Test Setup Started ---
+2026-01-09 15:27:53.975 [main] INFO  testcase10 - --- Test Setup Completed ---
+2026-01-09 15:27:53.975 [main] INFO  utils.ScreenshotListener - Starting test: testCartPersistence
+2026-01-09 15:27:53.975 [main] INFO  TestExecution - 
+2026-01-09 15:27:53.975 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:27:53.975 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_010 - Cart Persistence After Refresh
+2026-01-09 15:27:53.975 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:27:53.975 [main] INFO  testcase10 - Search Keyword: monitor
+2026-01-09 15:27:53.975 [main] INFO  TestSteps - >>> Step 1 : Add item to cart
+2026-01-09 15:28:03.637 [main] INFO  testcase10 - Navigated to homepage
+2026-01-09 15:28:05.634 [main] INFO  testcase10 - Search results loaded
+2026-01-09 15:28:09.858 [main] INFO  testcase10 - Clicked first product
+2026-01-09 15:28:13.829 [main] INFO  testcase10 - Added product to cart
+2026-01-09 15:28:13.829 [main] INFO  TestSteps - >>> Step 2 : Get cart count before refresh
+2026-01-09 15:28:13.843 [main] INFO  testcase10 - Cart count before refresh: 1
+2026-01-09 15:28:13.844 [main] INFO  TestSteps - >>> Step 3 : Refresh the page
+2026-01-09 15:28:18.090 [main] INFO  testcase10 - Page refreshed
+2026-01-09 15:28:18.090 [main] INFO  TestSteps - >>> Step 4 : Get cart count after refresh
+2026-01-09 15:28:18.101 [main] INFO  testcase10 - Cart count after refresh: 1
+2026-01-09 15:28:18.102 [main] INFO  testcase10 - Cart count verification passed - items persisted
+2026-01-09 15:28:18.102 [main] INFO  TestSteps - >>> Step 5 : Navigate to cart page and verify
+2026-01-09 15:28:19.579 [main] INFO  testcase10 - Navigated to cart page
+2026-01-09 15:28:19.594 [main] INFO  testcase10 - Cart page count: 1
+2026-01-09 15:28:19.594 [main] INFO  testcase10 - Cart page count verification passed
+2026-01-09 15:28:19.594 [main] INFO  testcase10 - ========================================
+2026-01-09 15:28:19.594 [main] INFO  testcase10 - TEST RESULT: PASSED ✓
+2026-01-09 15:28:19.594 [main] INFO  testcase10 - ========================================
+2026-01-09 15:28:19.594 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:19.594 [main] INFO  TestExecution - # TEST CASE TC_AMZ_010 - RESULT: PASSED
+2026-01-09 15:28:19.594 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:19.594 [main] INFO  TestExecution - 
+2026-01-09 15:28:19.594 [main] INFO  utils.ScreenshotListener - Test passed: testCartPersistence
+2026-01-09 15:28:19.595 [main] INFO  testcase10 - --- Test Teardown Started ---
+2026-01-09 15:28:19.738 [main] INFO  testcase10 - Browser closed
+2026-01-09 15:28:19.738 [main] INFO  testcase10 - --- Test Teardown Completed ---
+2026-01-09 15:28:19.738 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:28:19.738 [main] INFO  TestSteps -   TC_AMZ_002: Verify Search with Invalid Keyword
+2026-01-09 15:28:19.738 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:28:19.738 [main] INFO  testcase2 - Priority: LOW (P4) | Type: Negative Test | Automation: YES
+2026-01-09 15:28:19.741 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:28:19.742 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:28:19.742 [main] INFO  testcase2 - WebDriverManager setup completed
+2026-01-09 15:28:19.742 [main] INFO  testcase2 - --- Test Setup Started ---
+2026-01-09 15:28:20.190 [main] INFO  testcase2 - --- Test Setup Completed ---
+2026-01-09 15:28:20.191 [main] INFO  utils.ScreenshotListener - Starting test: testInvalidKeywordSearch
+2026-01-09 15:28:20.191 [main] INFO  TestExecution - 
+2026-01-09 15:28:20.191 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:20.191 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_002 - Verify Invalid Search
+2026-01-09 15:28:20.191 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:20.191 [main] INFO  testcase2 - Invalid Keyword: xyzabc123!@#$%
+2026-01-09 15:28:20.191 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 15:28:29.756 [main] INFO  testcase2 - Navigation successful
+2026-01-09 15:28:29.757 [main] INFO  TestSteps - >>> Step 2-3 : Locate search box and enter invalid keyword
+2026-01-09 15:28:29.836 [main] INFO  testcase2 - Invalid keyword 'xyzabc123!@#$%' entered
+2026-01-09 15:28:29.836 [main] INFO  TestSteps - >>> Step 4 : Click search button
+2026-01-09 15:28:41.749 [main] INFO  testcase2 - Search results page loaded
+2026-01-09 15:28:41.749 [main] INFO  TestSteps - >>> Step 5-6 : Verify 'No results' message or suggestions
+2026-01-09 15:28:41.784 [main] INFO  testcase2 - No Results Message Found: true
+2026-01-09 15:28:41.784 [main] INFO  testcase2 - Suggestions Found: true
+2026-01-09 15:28:41.784 [main] INFO  testcase2 - Verification passed: No results or suggestions displayed
+2026-01-09 15:28:41.784 [main] INFO  TestSteps - >>> Step 7 : Verify zero product cards displayed
+2026-01-09 15:28:41.789 [main] INFO  testcase2 - Product count: 0
+2026-01-09 15:28:41.789 [main] INFO  testcase2 - Verification passed: Zero products displayed
+2026-01-09 15:28:41.789 [main] INFO  testcase2 - ========================================
+2026-01-09 15:28:41.789 [main] INFO  testcase2 - TEST RESULT: PASSED ✓
+2026-01-09 15:28:41.789 [main] INFO  testcase2 - ========================================
+2026-01-09 15:28:41.789 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:41.789 [main] INFO  TestExecution - # TEST CASE TC_AMZ_002 - RESULT: PASSED
+2026-01-09 15:28:41.789 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:41.789 [main] INFO  TestExecution - 
+2026-01-09 15:28:41.789 [main] INFO  utils.ScreenshotListener - Test passed: testInvalidKeywordSearch
+2026-01-09 15:28:41.789 [main] INFO  testcase2 - --- Test Teardown Started ---
+2026-01-09 15:28:41.790 [main] INFO  testcase2 - Browser session maintained
+2026-01-09 15:28:41.790 [main] INFO  testcase2 - --- Test Teardown Completed ---
+2026-01-09 15:28:41.906 [main] INFO  testcase2 - Browser closed successfully
+2026-01-09 15:28:41.906 [main] INFO  testcase2 - ALL TESTS COMPLETED FOR TC_AMZ_002
+2026-01-09 15:28:41.907 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:28:41.907 [main] INFO  TestSteps -   TC_AMZ_009: Empty Search Validation
+2026-01-09 15:28:41.907 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:28:41.907 [main] INFO  testcase9 - Priority: LOW (P4) | Type: Negative Test | Automation: YES
+2026-01-09 15:28:41.908 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:28:41.909 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:28:41.909 [main] INFO  testcase9 - WebDriverManager setup completed
+2026-01-09 15:28:41.909 [main] INFO  testcase9 - --- Test Setup Started ---
+2026-01-09 15:28:42.356 [main] INFO  testcase9 - --- Test Setup Completed ---
+2026-01-09 15:28:42.357 [main] INFO  utils.ScreenshotListener - Starting test: testEmptySearch
+2026-01-09 15:28:42.357 [main] INFO  TestExecution - 
+2026-01-09 15:28:42.357 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:42.357 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_009 - Empty Search Validation
+2026-01-09 15:28:42.357 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:42.357 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 15:28:53.016 [main] INFO  testcase9 - Navigated to homepage
+2026-01-09 15:28:53.017 [main] INFO  TestSteps - >>> Step 2 : Clear search box to ensure it's empty
+2026-01-09 15:28:53.056 [main] INFO  testcase9 - Search box cleared
+2026-01-09 15:28:53.056 [main] INFO  TestSteps - >>> Step 3 : Click search button with empty search box
+2026-01-09 15:28:55.530 [main] INFO  testcase9 - Search button clicked with empty input
+2026-01-09 15:28:57.534 [main] INFO  TestSteps - >>> Step 4 : Verify no errors and proper handling
+2026-01-09 15:28:57.539 [main] INFO  testcase9 - URL after empty search: https://www.amazon.com/
+2026-01-09 15:28:57.539 [main] INFO  testcase9 - Domain verification passed
+2026-01-09 15:28:57.542 [main] INFO  testcase9 - Error page check passed
+2026-01-09 15:28:57.542 [main] INFO  testcase9 - ========================================
+2026-01-09 15:28:57.542 [main] INFO  testcase9 - TEST RESULT: PASSED ✓
+2026-01-09 15:28:57.542 [main] INFO  testcase9 - ========================================
+2026-01-09 15:28:57.542 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:57.542 [main] INFO  TestExecution - # TEST CASE TC_AMZ_009 - RESULT: PASSED
+2026-01-09 15:28:57.542 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:28:57.542 [main] INFO  TestExecution - 
+2026-01-09 15:28:57.542 [main] INFO  utils.ScreenshotListener - Test passed: testEmptySearch
+2026-01-09 15:28:57.543 [main] INFO  testcase9 - --- Test Teardown Started ---
+2026-01-09 15:28:57.659 [main] INFO  testcase9 - Browser closed
+2026-01-09 15:28:57.659 [main] INFO  testcase9 - --- Test Teardown Completed ---
+2026-01-09 15:28:57.659 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 15:28:57.659 [main] INFO  utils.ScreenshotListener - Test Suite Finished: Amazon E-Commerce Test Suite
+2026-01-09 15:28:57.659 [main] INFO  utils.ScreenshotListener - Total Tests: 10
+2026-01-09 15:28:57.659 [main] INFO  utils.ScreenshotListener - Passed: 8
+2026-01-09 15:28:57.659 [main] INFO  utils.ScreenshotListener - Failed: 2
+2026-01-09 15:28:57.659 [main] INFO  utils.ScreenshotListener - Skipped: 0
+2026-01-09 15:28:57.659 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 15:52:34.685 [main] INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+2026-01-09 15:52:34.745 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 15:52:34.745 [main] INFO  utils.ScreenshotListener - Test Suite Started: Amazon E-Commerce Test Suite
+2026-01-09 15:52:34.745 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 15:52:34.752 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:52:34.752 [main] INFO  TestSteps -   TC_AMZ_001: Verify Valid Product Search
+2026-01-09 15:52:34.752 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:52:34.752 [main] INFO  testcase1 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 15:52:34.752 [main] INFO  testcase1 - Setting up WebDriverManager for Chrome
+2026-01-09 15:52:34.878 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:52:34.883 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:52:34.883 [main] INFO  testcase1 - WebDriverManager setup completed
+2026-01-09 15:52:34.885 [main] INFO  testcase1 - --- Test Setup Started ---
+2026-01-09 15:52:35.585 [main] INFO  testcase1 - ChromeDriver initialized successfully
+2026-01-09 15:52:35.586 [main] INFO  testcase1 - AmazonSearchFunctions initialized
+2026-01-09 15:52:35.586 [main] INFO  testcase1 - --- Test Setup Completed ---
+2026-01-09 15:52:35.587 [main] INFO  utils.ScreenshotListener - Starting test: testValidProductSearch
+2026-01-09 15:52:35.587 [main] INFO  TestExecution - 
+2026-01-09 15:52:35.587 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:52:35.587 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_001 - Verify Valid Product Search
+2026-01-09 15:52:35.587 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:52:35.587 [main] INFO  testcase1 - Search Keyword: laptop
+2026-01-09 15:52:35.588 [main] INFO  testcase1 - Expected Minimum Results: 10
+2026-01-09 15:52:35.588 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 15:52:45.896 [main] INFO  testcase1 - Navigation successful to: https://www.amazon.com
+2026-01-09 15:52:45.897 [main] INFO  TestSteps - >>> Step 2 : Locate search box
+2026-01-09 15:52:45.925 [main] INFO  testcase1 - Search box located successfully
+2026-01-09 15:52:45.925 [main] INFO  TestSteps - >>> Step 3 : Clear search box
+2026-01-09 15:52:45.935 [main] INFO  testcase1 - Search box cleared
+2026-01-09 15:52:45.935 [main] INFO  TestSteps - >>> Step 4 : Enter search keyword: laptop
+2026-01-09 15:52:45.969 [main] INFO  testcase1 - Keyword 'laptop' entered successfully
+2026-01-09 15:52:45.970 [main] INFO  TestSteps - >>> Step 5 : Locate search button
+2026-01-09 15:52:45.979 [main] INFO  testcase1 - Search button located
+2026-01-09 15:52:45.979 [main] INFO  TestSteps - >>> Step 6 : Click search button
+2026-01-09 15:52:49.712 [main] INFO  testcase1 - Search button clicked
+2026-01-09 15:52:49.713 [main] INFO  TestSteps - >>> Step 7 : Wait for search results to load
+2026-01-09 15:52:49.722 [main] INFO  testcase1 - Search results loaded successfully
+2026-01-09 15:52:49.723 [main] INFO  TestSteps - >>> Step 8 : Verify results count text
+2026-01-09 15:52:49.734 [main] WARN  testcase1 - Results count text format may have changed, but continuing test...
+2026-01-09 15:52:49.734 [main] INFO  TestSteps - >>> Step 9 : Count product cards and verify minimum
+2026-01-09 15:52:49.739 [main] INFO  testcase1 - Found 16 product cards
+2026-01-09 15:52:49.740 [main] INFO  testcase1 - Minimum product count requirement met
+2026-01-09 15:52:49.740 [main] INFO  TestSteps - >>> Step 10 : Verify first product has image
+2026-01-09 15:52:49.750 [main] INFO  testcase1 - First product image verified
+2026-01-09 15:52:49.750 [main] INFO  TestSteps - >>> Step 11 : Verify first product has title
+2026-01-09 15:52:49.760 [main] INFO  testcase1 - First product title verified
+2026-01-09 15:52:49.761 [main] INFO  TestSteps - >>> Step 12 : Verify first product has price
+2026-01-09 15:52:49.770 [main] INFO  testcase1 - First product price verified
+2026-01-09 15:52:49.770 [main] INFO  testcase1 - --- Additional Validation ---
+2026-01-09 15:52:49.770 [main] INFO  TestSteps - >>> Additional : Validate first 10 products
+2026-01-09 15:52:49.923 [main] INFO  testcase1 - All validated products have required elements
+2026-01-09 15:52:49.923 [main] INFO  testcase1 - ========================================
+2026-01-09 15:52:49.923 [main] INFO  testcase1 - TEST RESULT: PASSED ✓
+2026-01-09 15:52:49.923 [main] INFO  testcase1 - ========================================
+2026-01-09 15:52:49.923 [main] INFO  testcase1 - Summary:
+2026-01-09 15:52:49.923 [main] INFO  testcase1 -   ✓ Search results page displayed
+2026-01-09 15:52:49.923 [main] INFO  testcase1 -   ✓ Found 16 products (minimum required: 10)
+2026-01-09 15:52:49.923 [main] INFO  testcase1 -   ✓ Products have required elements: image, title, price
+2026-01-09 15:52:49.923 [main] INFO  testcase1 -   ✓ Results are relevant to keyword: 'laptop'
+2026-01-09 15:52:49.925 [main] INFO  testcase1 -   ✓ Current URL: https://www.amazon.com/s?k=laptop&ref=nb_sb_noss
+2026-01-09 15:52:49.925 [main] INFO  testcase1 - ========================================
+2026-01-09 15:52:49.925 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:52:49.925 [main] INFO  TestExecution - # TEST CASE TC_AMZ_001 - RESULT: PASSED
+2026-01-09 15:52:49.925 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:52:49.925 [main] INFO  TestExecution - 
+2026-01-09 15:52:49.926 [main] INFO  utils.ScreenshotListener - Test passed: testValidProductSearch
+2026-01-09 15:52:49.927 [main] INFO  testcase1 - --- Test Teardown Started ---
+2026-01-09 15:52:49.927 [main] INFO  testcase1 - Browser session maintained for next test
+2026-01-09 15:52:49.927 [main] INFO  testcase1 - --- Test Teardown Completed ---
+2026-01-09 15:52:50.082 [main] INFO  testcase1 - Browser closed successfully
+2026-01-09 15:52:50.082 [main] INFO  testcase1 - ========================================
+2026-01-09 15:52:50.083 [main] INFO  testcase1 - ALL TESTS COMPLETED FOR TC_AMZ_001
+2026-01-09 15:52:50.083 [main] INFO  testcase1 - ========================================
+2026-01-09 15:52:50.083 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:52:50.083 [main] INFO  TestSteps -   TC_AMZ_005: Add Single Item to Cart
+2026-01-09 15:52:50.083 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:52:50.083 [main] INFO  testcase5 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 15:52:50.088 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:52:50.090 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:52:50.090 [main] INFO  testcase5 - WebDriverManager setup completed
+2026-01-09 15:52:50.090 [main] INFO  testcase5 - --- Test Setup Started ---
+2026-01-09 15:52:50.515 [main] INFO  testcase5 - --- Test Setup Completed ---
+2026-01-09 15:52:50.515 [main] INFO  utils.ScreenshotListener - Starting test: testAddSingleItemToCart
+2026-01-09 15:52:50.515 [main] INFO  TestExecution - 
+2026-01-09 15:52:50.515 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:52:50.515 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_005 - Add Single Item to Cart
+2026-01-09 15:52:50.515 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:52:50.515 [main] INFO  testcase5 - Search Keyword: headphones
+2026-01-09 15:52:50.515 [main] INFO  TestSteps - >>> Pre-condition : Navigate to product page
+2026-01-09 15:53:00.211 [main] INFO  testcase5 - Navigated to homepage
+2026-01-09 15:53:00.278 [main] INFO  testcase5 - Entered search keyword: headphones
+2026-01-09 15:53:02.518 [main] INFO  testcase5 - Clicked search button
+2026-01-09 15:53:02.525 [main] INFO  testcase5 - Search results loaded
+2026-01-09 15:53:05.846 [main] INFO  testcase5 - Clicked first product
+2026-01-09 15:53:05.847 [main] INFO  TestSteps - >>> Step 1 : Get initial cart count
+2026-01-09 15:53:05.856 [main] INFO  testcase5 - Initial cart count: 0
+2026-01-09 15:53:05.856 [main] INFO  TestSteps - >>> Step 2 : Click 'Add to Cart' button
+2026-01-09 15:53:12.228 [main] INFO  testcase5 - Add to Cart button clicked successfully
+2026-01-09 15:53:12.229 [main] INFO  TestSteps - >>> Step 3 : Verify cart count increased
+2026-01-09 15:53:12.244 [main] INFO  testcase5 - Cart count increased on attempt 1
+2026-01-09 15:53:12.244 [main] INFO  testcase5 - Initial Count: 0, New Count: 1
+2026-01-09 15:53:12.245 [main] INFO  testcase5 - Cart count verification passed
+2026-01-09 15:53:12.245 [main] INFO  TestSteps - >>> Step 4 : Navigate to cart page
+2026-01-09 15:53:13.981 [main] INFO  testcase5 - Navigated to cart page
+2026-01-09 15:53:13.989 [main] INFO  testcase5 - Current URL: https://www.amazon.com/gp/cart/view.html?ref_=nav_cart
+2026-01-09 15:53:13.989 [main] INFO  testcase5 - Cart page verification passed
+2026-01-09 15:53:13.989 [main] INFO  testcase5 - ========================================
+2026-01-09 15:53:13.989 [main] INFO  testcase5 - TEST RESULT: PASSED ✓
+2026-01-09 15:53:13.989 [main] INFO  testcase5 - ========================================
+2026-01-09 15:53:13.989 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:13.989 [main] INFO  TestExecution - # TEST CASE TC_AMZ_005 - RESULT: PASSED
+2026-01-09 15:53:13.989 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:13.989 [main] INFO  TestExecution - 
+2026-01-09 15:53:13.990 [main] INFO  utils.ScreenshotListener - Test passed: testAddSingleItemToCart
+2026-01-09 15:53:13.990 [main] INFO  testcase5 - --- Test Teardown Started ---
+2026-01-09 15:53:14.142 [main] INFO  testcase5 - Browser closed
+2026-01-09 15:53:14.143 [main] INFO  testcase5 - --- Test Teardown Completed ---
+2026-01-09 15:53:14.143 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:53:14.143 [main] INFO  TestSteps -   TC_AMZ_003: Verify Search with Price Filter
+2026-01-09 15:53:14.143 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:53:14.143 [main] INFO  testcase3 - Priority: HIGH (P2) | Type: Functional Test | Automation: YES
+2026-01-09 15:53:14.143 [main] INFO  testcase3 - Price Range: $500.0 - $1000.0
+2026-01-09 15:53:14.147 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:53:14.149 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:53:14.149 [main] INFO  testcase3 - WebDriverManager setup completed
+2026-01-09 15:53:14.149 [main] INFO  testcase3 - --- Test Setup Started ---
+2026-01-09 15:53:14.607 [main] INFO  testcase3 - --- Test Setup Completed ---
+2026-01-09 15:53:14.607 [main] INFO  utils.ScreenshotListener - Starting test: testPriceFilter
+2026-01-09 15:53:14.607 [main] INFO  TestExecution - 
+2026-01-09 15:53:14.607 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:14.607 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_003 - Verify Price Filter
+2026-01-09 15:53:14.607 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:14.608 [main] INFO  testcase3 - Search Keyword: laptop
+2026-01-09 15:53:14.608 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon and search for 'laptop'
+2026-01-09 15:53:24.396 [main] INFO  testcase3 - Keyword entered: laptop
+2026-01-09 15:53:28.106 [main] INFO  testcase3 - Initial search results loaded
+2026-01-09 15:53:28.106 [main] INFO  TestSteps - >>> Step 2 : Apply price filter: $500.0 - $1000.0
+2026-01-09 15:53:30.333 [main] INFO  testcase3 - Price filter applied successfully
+2026-01-09 15:53:33.350 [main] INFO  testcase3 - Filtered results loaded
+2026-01-09 15:53:33.350 [main] INFO  TestSteps - >>> Step 3 : Extract all product prices
+2026-01-09 15:53:33.484 [main] INFO  testcase3 - Extracted 15 prices from products
+2026-01-09 15:53:33.484 [main] INFO  testcase3 - Price extraction successful
+2026-01-09 15:53:33.484 [main] INFO  TestSteps - >>> Step 4 : Validate all prices are within range
+2026-01-09 15:53:33.485 [main] INFO  testcase3 - All prices verified to be within range $500.0 - $1000.0
+2026-01-09 15:53:33.485 [main] INFO  testcase3 - ========================================
+2026-01-09 15:53:33.485 [main] INFO  testcase3 - TEST RESULT: PASSED ✓
+2026-01-09 15:53:33.485 [main] INFO  testcase3 - ========================================
+2026-01-09 15:53:33.485 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:33.485 [main] INFO  TestExecution - # TEST CASE TC_AMZ_003 - RESULT: PASSED
+2026-01-09 15:53:33.485 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:33.485 [main] INFO  TestExecution - 
+2026-01-09 15:53:33.485 [main] INFO  utils.ScreenshotListener - Test passed: testPriceFilter
+2026-01-09 15:53:33.486 [main] INFO  testcase3 - --- Test Teardown Started ---
+2026-01-09 15:53:33.486 [main] INFO  testcase3 - Browser session maintained
+2026-01-09 15:53:33.486 [main] INFO  testcase3 - --- Test Teardown Completed ---
+2026-01-09 15:53:33.630 [main] INFO  testcase3 - Browser closed successfully
+2026-01-09 15:53:33.630 [main] INFO  testcase3 - ALL TESTS COMPLETED FOR TC_AMZ_003
+2026-01-09 15:53:33.630 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:53:33.630 [main] INFO  TestSteps -   TC_AMZ_004: Verify Product Details Display
+2026-01-09 15:53:33.630 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:53:33.630 [main] INFO  testcase4 - Priority: HIGH (P2) | Type: Smoke Test | Automation: YES
+2026-01-09 15:53:33.632 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:53:33.633 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:53:33.633 [main] INFO  testcase4 - WebDriverManager setup completed
+2026-01-09 15:53:33.634 [main] INFO  testcase4 - --- Test Setup Started ---
+2026-01-09 15:53:34.066 [main] INFO  testcase4 - --- Test Setup Completed ---
+2026-01-09 15:53:34.066 [main] INFO  utils.ScreenshotListener - Starting test: testProductDetailsDisplay
+2026-01-09 15:53:34.066 [main] INFO  TestExecution - 
+2026-01-09 15:53:34.066 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:34.066 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_004 - Verify Product Details Display
+2026-01-09 15:53:34.066 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:34.066 [main] INFO  testcase4 - Search Keyword: laptop
+2026-01-09 15:53:34.066 [main] INFO  TestSteps - >>> Pre-condition : Search for product
+2026-01-09 15:53:44.387 [main] INFO  testcase4 - Navigated to Amazon homepage
+2026-01-09 15:53:44.459 [main] INFO  testcase4 - Entered search keyword: laptop
+2026-01-09 15:53:47.734 [main] INFO  testcase4 - Clicked search button
+2026-01-09 15:53:47.757 [main] INFO  testcase4 - Search results loaded
+2026-01-09 15:53:47.757 [main] INFO  TestSteps - >>> Step 1-2 : Get product title and click first product
+2026-01-09 15:53:47.767 [main] INFO  testcase4 - First product title: HP 15.6" Laptop with Microsoft 365-1.1TB Storage - 8GB Memory - Intel Inside | Anti-Glare Display, 128GB SSD and 1TB Cloud Storage, 4-Cores CPU, Fast Charge and 12hrs Battery, no Mouse
+2026-01-09 15:53:47.767 [main] INFO  testcase4 - Product title validation passed
+2026-01-09 15:53:50.585 [main] INFO  testcase4 - Successfully clicked first product
+2026-01-09 15:53:50.585 [main] INFO  TestSteps - >>> Step 3 : Verify product details page elements
+2026-01-09 15:53:50.611 [main] INFO  testcase4 - Product details page verified successfully
+2026-01-09 15:53:50.611 [main] INFO  testcase4 - ========================================
+2026-01-09 15:53:50.611 [main] INFO  testcase4 - TEST RESULT: PASSED ✓
+2026-01-09 15:53:50.611 [main] INFO  testcase4 - ========================================
+2026-01-09 15:53:50.611 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:50.611 [main] INFO  TestExecution - # TEST CASE TC_AMZ_004 - RESULT: PASSED
+2026-01-09 15:53:50.611 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:50.611 [main] INFO  TestExecution - 
+2026-01-09 15:53:50.611 [main] INFO  utils.ScreenshotListener - Test passed: testProductDetailsDisplay
+2026-01-09 15:53:50.611 [main] INFO  testcase4 - --- Test Teardown Started ---
+2026-01-09 15:53:50.750 [main] INFO  testcase4 - Browser closed
+2026-01-09 15:53:50.750 [main] INFO  testcase4 - --- Test Teardown Completed ---
+2026-01-09 15:53:50.751 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:53:50.751 [main] INFO  TestSteps -   TC_AMZ_006: Update Cart Quantity
+2026-01-09 15:53:50.751 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:53:50.751 [main] INFO  testcase6 - Priority: HIGH (P2) | Type: Functional Test | Automation: YES
+2026-01-09 15:53:50.753 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:53:50.754 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:53:50.754 [main] INFO  testcase6 - WebDriverManager setup completed
+2026-01-09 15:53:50.754 [main] INFO  testcase6 - --- Test Setup Started ---
+2026-01-09 15:53:51.214 [main] INFO  testcase6 - --- Test Setup Completed ---
+2026-01-09 15:53:51.215 [main] INFO  utils.ScreenshotListener - Starting test: testUpdateAndRemoveCartItem
+2026-01-09 15:53:51.215 [main] INFO  TestExecution - 
+2026-01-09 15:53:51.215 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:51.215 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_006 - Update Cart Quantity
+2026-01-09 15:53:51.215 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:53:51.215 [main] INFO  testcase6 - Search Keyword: usb cable
+2026-01-09 15:53:51.215 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 15:54:02.346 [main] INFO  testcase6 - Navigated to homepage
+2026-01-09 15:54:02.418 [main] INFO  testcase6 - Entered search keyword: usb cable
+2026-01-09 15:54:05.551 [main] INFO  testcase6 - Search results loaded
+2026-01-09 15:54:09.065 [main] INFO  testcase6 - Clicked first product
+2026-01-09 15:54:20.898 [main] INFO  testcase6 - Added product to cart
+2026-01-09 15:54:22.835 [main] INFO  testcase6 - Navigated to cart page
+2026-01-09 15:54:22.835 [main] INFO  TestSteps - >>> Step 1 : Update cart quantity to 2
+2026-01-09 15:54:33.139 [main] WARN  testcase6 - Quantity update skipped (maybe limited stock or different UI)
+2026-01-09 15:54:33.140 [main] INFO  TestSteps - >>> Step 2 : Remove item from cart
+2026-01-09 15:54:33.150 [main] INFO  testcase6 - Cart count before delete: 1
+2026-01-09 15:54:35.202 [main] INFO  testcase6 - Delete button clicked
+2026-01-09 15:54:35.217 [main] INFO  testcase6 - Cart count after delete: 0
+2026-01-09 15:54:35.217 [main] INFO  testcase6 - Cart count decreased successfully
+2026-01-09 15:54:35.217 [main] INFO  testcase6 - ========================================
+2026-01-09 15:54:35.217 [main] INFO  testcase6 - TEST RESULT: PASSED ✓
+2026-01-09 15:54:35.217 [main] INFO  testcase6 - ========================================
+2026-01-09 15:54:35.217 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:54:35.217 [main] INFO  TestExecution - # TEST CASE TC_AMZ_006 - RESULT: PASSED
+2026-01-09 15:54:35.217 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:54:35.217 [main] INFO  TestExecution - 
+2026-01-09 15:54:35.217 [main] INFO  utils.ScreenshotListener - Test passed: testUpdateAndRemoveCartItem
+2026-01-09 15:54:35.218 [main] INFO  testcase6 - --- Test Teardown Started ---
+2026-01-09 15:54:35.376 [main] INFO  testcase6 - Browser closed
+2026-01-09 15:54:35.376 [main] INFO  testcase6 - --- Test Teardown Completed ---
+2026-01-09 15:54:35.377 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:54:35.377 [main] INFO  TestSteps -   TC_AMZ_007: Remove Item from Cart
+2026-01-09 15:54:35.377 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:54:35.377 [main] INFO  testcase7 - Priority: MEDIUM (P3) | Type: Functional Test | Automation: YES
+2026-01-09 15:54:35.379 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:54:35.380 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:54:35.380 [main] INFO  testcase7 - WebDriverManager setup completed
+2026-01-09 15:54:35.381 [main] INFO  testcase7 - --- Test Setup Started ---
+2026-01-09 15:54:35.819 [main] INFO  testcase7 - --- Test Setup Completed ---
+2026-01-09 15:54:35.820 [main] INFO  utils.ScreenshotListener - Starting test: testRemoveItemFromCart
+2026-01-09 15:54:35.820 [main] INFO  TestExecution - 
+2026-01-09 15:54:35.820 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:54:35.820 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_007 - Remove Item from Cart
+2026-01-09 15:54:35.820 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:54:35.820 [main] INFO  testcase7 - Search Keyword: mouse
+2026-01-09 15:54:35.820 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 15:54:45.646 [main] INFO  testcase7 - Navigated to homepage
+2026-01-09 15:54:48.345 [main] INFO  testcase7 - Search results loaded
+2026-01-09 15:54:51.715 [main] INFO  testcase7 - Clicked first product
+2026-01-09 15:55:02.481 [main] INFO  testcase7 - Added product to cart
+2026-01-09 15:55:04.357 [main] INFO  testcase7 - Navigated to cart page
+2026-01-09 15:55:04.364 [main] INFO  testcase7 - Cart count before removal: 1
+2026-01-09 15:55:04.364 [main] INFO  TestSteps - >>> Step 1 : Remove item from cart
+2026-01-09 15:55:06.407 [main] INFO  testcase7 - Item deleted successfully
+2026-01-09 15:55:06.407 [main] INFO  TestSteps - >>> Step 2 : Verify cart count decreased
+2026-01-09 15:55:06.418 [main] INFO  testcase7 - Cart count after removal: 0
+2026-01-09 15:55:06.418 [main] INFO  testcase7 - Cart count verification passed
+2026-01-09 15:55:06.418 [main] INFO  TestSteps - >>> Step 3 : Verify empty cart message
+2026-01-09 15:55:06.418 [main] INFO  testcase7 - Cart is empty, verifying empty cart message
+2026-01-09 15:55:08.443 [main] WARN  testcase7 - Empty cart message not found, but count is 0. Proceeding.
+2026-01-09 15:55:08.443 [main] INFO  TestSteps - >>> Step 4 : Verify checkout button hidden
+2026-01-09 15:55:08.448 [main] INFO  testcase7 - Checkout button visible: false
+2026-01-09 15:55:08.448 [main] INFO  testcase7 - Checkout button correctly hidden
+2026-01-09 15:55:08.448 [main] INFO  testcase7 - ========================================
+2026-01-09 15:55:08.448 [main] INFO  testcase7 - TEST RESULT: PASSED ✓
+2026-01-09 15:55:08.448 [main] INFO  testcase7 - ========================================
+2026-01-09 15:55:08.448 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:55:08.448 [main] INFO  TestExecution - # TEST CASE TC_AMZ_007 - RESULT: PASSED
+2026-01-09 15:55:08.448 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:55:08.448 [main] INFO  TestExecution - 
+2026-01-09 15:55:08.448 [main] INFO  utils.ScreenshotListener - Test passed: testRemoveItemFromCart
+2026-01-09 15:55:08.448 [main] INFO  testcase7 - --- Test Teardown Started ---
+2026-01-09 15:55:08.620 [main] INFO  testcase7 - Browser closed
+2026-01-09 15:55:08.620 [main] INFO  testcase7 - --- Test Teardown Completed ---
+2026-01-09 15:55:08.620 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:55:08.620 [main] INFO  TestSteps -   TC_AMZ_008: Proceed to Checkout (Guest User)
+2026-01-09 15:55:08.620 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:55:08.620 [main] INFO  testcase8 - Priority: MEDIUM (P3) | Type: Smoke Test | Automation: YES
+2026-01-09 15:55:08.622 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:55:08.623 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:55:08.623 [main] INFO  testcase8 - WebDriverManager setup completed
+2026-01-09 15:55:08.623 [main] INFO  testcase8 - --- Test Setup Started ---
+2026-01-09 15:55:09.011 [main] INFO  testcase8 - --- Test Setup Completed ---
+2026-01-09 15:55:09.011 [main] INFO  utils.ScreenshotListener - Starting test: testProceedToCheckout
+2026-01-09 15:55:09.011 [main] INFO  TestExecution - 
+2026-01-09 15:55:09.011 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:55:09.011 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_008 - Proceed to Checkout
+2026-01-09 15:55:09.011 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:55:09.011 [main] INFO  testcase8 - Search Keyword: The Great Gatsby
+2026-01-09 15:55:09.011 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 15:55:18.732 [main] INFO  testcase8 - Navigated to homepage
+2026-01-09 15:55:21.065 [main] INFO  testcase8 - Search results loaded
+2026-01-09 15:55:31.348 [main] WARN  testcase8 - Specific book by XPath not found. Falling back to first product.
+2026-01-09 15:55:48.472 [main] INFO  testcase8 - Item added to cart
+2026-01-09 15:55:48.487 [main] INFO  testcase8 - DEBUG: Cart count after add: 1
+2026-01-09 15:55:48.488 [main] INFO  testcase8 - Cart count verification passed
+2026-01-09 15:55:48.488 [main] INFO  TestSteps - >>> Step 1 : Navigate to cart
+2026-01-09 15:55:50.199 [main] INFO  testcase8 - Navigated to cart page
+2026-01-09 15:55:50.200 [main] INFO  TestSteps - >>> Step 2 : Click 'Proceed to Checkout'
+2026-01-09 15:55:51.792 [main] INFO  testcase8 - Proceed to Checkout clicked
+2026-01-09 15:55:51.792 [main] INFO  TestSteps - >>> Step 3 : Verify sign-in page displayed
+2026-01-09 15:55:51.803 [main] INFO  testcase8 - Sign-in page verified
+2026-01-09 15:55:51.804 [main] INFO  TestSteps - >>> Step 4 : Enter test email
+2026-01-09 15:55:51.808 [main] ERROR testcase8 - Unexpected error: no such element: Unable to locate element: {"method":"css selector","selector":"#ap_email"}
+  (Session info: chrome=143.0.7499.193)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e25b9760c0bf916a9e7f711b83fa04f6, findElement {using=id, value=ap_email}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /var/folders/02/wm0vdbtx0_j...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54321}, goog:processID: 5939, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:54321/devtoo..., se:cdpVersion: 143.0.7499.193, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e25b9760c0bf916a9e7f711b83fa04f6
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#ap_email"}
+  (Session info: chrome=143.0.7499.193)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e25b9760c0bf916a9e7f711b83fa04f6, findElement {using=id, value=ap_email}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /var/folders/02/wm0vdbtx0_j...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54321}, goog:processID: 5939, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:54321/devtoo..., se:cdpVersion: 143.0.7499.193, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e25b9760c0bf916a9e7f711b83fa04f6
+	at jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:483) ~[?:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:354) ~[selenium-remote-driver-4.16.1.jar:?]
+	at testcase8.testProceedToCheckout(testcase8.java:139) [test-classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128) [testng-7.8.0.jar:7.8.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:848) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestRunner.run(TestRunner.java:621) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1114) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestNG.run(TestNG.java:1082) [testng-7.8.0.jar:7.8.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.2.5.jar:3.2.5]
+2026-01-09 15:55:51.812 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:55:51.812 [main] INFO  TestExecution - # TEST CASE TC_AMZ_008 - RESULT: FAILED
+2026-01-09 15:55:51.812 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:55:51.812 [main] INFO  TestExecution - 
+2026-01-09 15:55:51.812 [main] ERROR utils.ScreenshotListener - xxxxx Method testProceedToCheckout failed xxxxx
+2026-01-09 15:55:51.812 [main] INFO  utils.ScreenshotListener - Initiating screenshot capture...
+2026-01-09 15:55:51.851 [main] INFO  utils.ScreenshotListener - Screenshot saved: /Users/anishk/IdeaProjects/Amazon-Automation/screenshots/testProceedToCheckout_20260109_155551.png
+2026-01-09 15:55:51.851 [main] INFO  utils.ScreenshotListener - Test case 'testProceedToCheckout' failed. Screenshot captured for analysis.
+2026-01-09 15:55:51.851 [main] INFO  utils.ScreenshotListener - Screenshot captured successfully: /Users/anishk/IdeaProjects/Amazon-Automation/screenshots/testProceedToCheckout_20260109_155551.png
+2026-01-09 15:55:51.853 [main] INFO  testcase8 - --- Test Teardown Started ---
+2026-01-09 15:55:52.029 [main] INFO  testcase8 - Browser closed
+2026-01-09 15:55:52.029 [main] INFO  testcase8 - --- Test Teardown Completed ---
+2026-01-09 15:55:52.029 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:55:52.029 [main] INFO  TestSteps -   TC_AMZ_010: Cart Persistence After Page Refresh
+2026-01-09 15:55:52.029 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:55:52.029 [main] INFO  testcase10 - Priority: MEDIUM (P3) | Type: Functional Test | Automation: YES
+2026-01-09 15:55:52.031 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:55:52.032 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:55:52.032 [main] INFO  testcase10 - WebDriverManager setup completed
+2026-01-09 15:55:52.033 [main] INFO  testcase10 - --- Test Setup Started ---
+2026-01-09 15:55:52.469 [main] INFO  testcase10 - --- Test Setup Completed ---
+2026-01-09 15:55:52.470 [main] INFO  utils.ScreenshotListener - Starting test: testCartPersistence
+2026-01-09 15:55:52.470 [main] INFO  TestExecution - 
+2026-01-09 15:55:52.470 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:55:52.470 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_010 - Cart Persistence After Refresh
+2026-01-09 15:55:52.470 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:55:52.470 [main] INFO  testcase10 - Search Keyword: monitor
+2026-01-09 15:55:52.470 [main] INFO  TestSteps - >>> Step 1 : Add item to cart
+2026-01-09 15:56:02.247 [main] INFO  testcase10 - Navigated to homepage
+2026-01-09 15:56:04.144 [main] INFO  testcase10 - Search results loaded
+2026-01-09 15:56:07.632 [main] INFO  testcase10 - Clicked first product
+2026-01-09 15:56:14.460 [main] INFO  testcase10 - Added product to cart
+2026-01-09 15:56:14.461 [main] INFO  TestSteps - >>> Step 2 : Get cart count before refresh
+2026-01-09 15:56:14.475 [main] INFO  testcase10 - Cart count before refresh: 1
+2026-01-09 15:56:14.476 [main] INFO  TestSteps - >>> Step 3 : Refresh the page
+2026-01-09 15:56:18.730 [main] INFO  testcase10 - Page refreshed
+2026-01-09 15:56:18.731 [main] INFO  TestSteps - >>> Step 4 : Get cart count after refresh
+2026-01-09 15:56:18.743 [main] INFO  testcase10 - Cart count after refresh: 1
+2026-01-09 15:56:18.744 [main] INFO  testcase10 - Cart count verification passed - items persisted
+2026-01-09 15:56:18.744 [main] INFO  TestSteps - >>> Step 5 : Navigate to cart page and verify
+2026-01-09 15:56:20.813 [main] INFO  testcase10 - Navigated to cart page
+2026-01-09 15:56:20.820 [main] INFO  testcase10 - Cart page count: 1
+2026-01-09 15:56:20.820 [main] INFO  testcase10 - Cart page count verification passed
+2026-01-09 15:56:20.820 [main] INFO  testcase10 - ========================================
+2026-01-09 15:56:20.820 [main] INFO  testcase10 - TEST RESULT: PASSED ✓
+2026-01-09 15:56:20.820 [main] INFO  testcase10 - ========================================
+2026-01-09 15:56:20.820 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:20.820 [main] INFO  TestExecution - # TEST CASE TC_AMZ_010 - RESULT: PASSED
+2026-01-09 15:56:20.820 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:20.820 [main] INFO  TestExecution - 
+2026-01-09 15:56:20.820 [main] INFO  utils.ScreenshotListener - Test passed: testCartPersistence
+2026-01-09 15:56:20.820 [main] INFO  testcase10 - --- Test Teardown Started ---
+2026-01-09 15:56:20.972 [main] INFO  testcase10 - Browser closed
+2026-01-09 15:56:20.972 [main] INFO  testcase10 - --- Test Teardown Completed ---
+2026-01-09 15:56:20.972 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:56:20.972 [main] INFO  TestSteps -   TC_AMZ_002: Verify Search with Invalid Keyword
+2026-01-09 15:56:20.972 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:56:20.972 [main] INFO  testcase2 - Priority: LOW (P4) | Type: Negative Test | Automation: YES
+2026-01-09 15:56:20.974 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:56:20.975 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:56:20.975 [main] INFO  testcase2 - WebDriverManager setup completed
+2026-01-09 15:56:20.975 [main] INFO  testcase2 - --- Test Setup Started ---
+2026-01-09 15:56:21.383 [main] INFO  testcase2 - --- Test Setup Completed ---
+2026-01-09 15:56:21.383 [main] INFO  utils.ScreenshotListener - Starting test: testInvalidKeywordSearch
+2026-01-09 15:56:21.383 [main] INFO  TestExecution - 
+2026-01-09 15:56:21.383 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:21.383 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_002 - Verify Invalid Search
+2026-01-09 15:56:21.383 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:21.383 [main] INFO  testcase2 - Invalid Keyword: xyzabc123!@#$%
+2026-01-09 15:56:21.383 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 15:56:31.667 [main] INFO  testcase2 - Navigation successful
+2026-01-09 15:56:31.667 [main] INFO  TestSteps - >>> Step 2-3 : Locate search box and enter invalid keyword
+2026-01-09 15:56:31.745 [main] INFO  testcase2 - Invalid keyword 'xyzabc123!@#$%' entered
+2026-01-09 15:56:31.745 [main] INFO  TestSteps - >>> Step 4 : Click search button
+2026-01-09 15:56:44.058 [main] INFO  testcase2 - Search results page loaded
+2026-01-09 15:56:44.058 [main] INFO  TestSteps - >>> Step 5-6 : Verify 'No results' message or suggestions
+2026-01-09 15:56:44.096 [main] INFO  testcase2 - No Results Message Found: true
+2026-01-09 15:56:44.096 [main] INFO  testcase2 - Suggestions Found: true
+2026-01-09 15:56:44.096 [main] INFO  testcase2 - Verification passed: No results or suggestions displayed
+2026-01-09 15:56:44.096 [main] INFO  TestSteps - >>> Step 7 : Verify zero product cards displayed
+2026-01-09 15:56:44.100 [main] INFO  testcase2 - Product count: 0
+2026-01-09 15:56:44.100 [main] INFO  testcase2 - Verification passed: Zero products displayed
+2026-01-09 15:56:44.100 [main] INFO  testcase2 - ========================================
+2026-01-09 15:56:44.100 [main] INFO  testcase2 - TEST RESULT: PASSED ✓
+2026-01-09 15:56:44.100 [main] INFO  testcase2 - ========================================
+2026-01-09 15:56:44.101 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:44.101 [main] INFO  TestExecution - # TEST CASE TC_AMZ_002 - RESULT: PASSED
+2026-01-09 15:56:44.101 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:44.101 [main] INFO  TestExecution - 
+2026-01-09 15:56:44.101 [main] INFO  utils.ScreenshotListener - Test passed: testInvalidKeywordSearch
+2026-01-09 15:56:44.101 [main] INFO  testcase2 - --- Test Teardown Started ---
+2026-01-09 15:56:44.101 [main] INFO  testcase2 - Browser session maintained
+2026-01-09 15:56:44.101 [main] INFO  testcase2 - --- Test Teardown Completed ---
+2026-01-09 15:56:44.235 [main] INFO  testcase2 - Browser closed successfully
+2026-01-09 15:56:44.235 [main] INFO  testcase2 - ALL TESTS COMPLETED FOR TC_AMZ_002
+2026-01-09 15:56:44.235 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:56:44.235 [main] INFO  TestSteps -   TC_AMZ_009: Empty Search Validation
+2026-01-09 15:56:44.235 [main] INFO  TestSteps - ================================================================================
+2026-01-09 15:56:44.235 [main] INFO  testcase9 - Priority: LOW (P4) | Type: Negative Test | Automation: YES
+2026-01-09 15:56:44.237 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 15:56:44.238 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 15:56:44.238 [main] INFO  testcase9 - WebDriverManager setup completed
+2026-01-09 15:56:44.239 [main] INFO  testcase9 - --- Test Setup Started ---
+2026-01-09 15:56:44.698 [main] INFO  testcase9 - --- Test Setup Completed ---
+2026-01-09 15:56:44.698 [main] INFO  utils.ScreenshotListener - Starting test: testEmptySearch
+2026-01-09 15:56:44.699 [main] INFO  TestExecution - 
+2026-01-09 15:56:44.699 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:44.699 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_009 - Empty Search Validation
+2026-01-09 15:56:44.699 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:44.699 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 15:56:56.072 [main] INFO  testcase9 - Navigated to homepage
+2026-01-09 15:56:56.072 [main] INFO  TestSteps - >>> Step 2 : Clear search box to ensure it's empty
+2026-01-09 15:56:56.118 [main] INFO  testcase9 - Search box cleared
+2026-01-09 15:56:56.118 [main] INFO  TestSteps - >>> Step 3 : Click search button with empty search box
+2026-01-09 15:56:57.527 [main] INFO  testcase9 - Search button clicked with empty input
+2026-01-09 15:56:59.531 [main] INFO  TestSteps - >>> Step 4 : Verify no errors and proper handling
+2026-01-09 15:56:59.542 [main] INFO  testcase9 - URL after empty search: https://www.amazon.com/
+2026-01-09 15:56:59.543 [main] INFO  testcase9 - Domain verification passed
+2026-01-09 15:56:59.549 [main] INFO  testcase9 - Error page check passed
+2026-01-09 15:56:59.549 [main] INFO  testcase9 - ========================================
+2026-01-09 15:56:59.549 [main] INFO  testcase9 - TEST RESULT: PASSED ✓
+2026-01-09 15:56:59.549 [main] INFO  testcase9 - ========================================
+2026-01-09 15:56:59.549 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:59.549 [main] INFO  TestExecution - # TEST CASE TC_AMZ_009 - RESULT: PASSED
+2026-01-09 15:56:59.549 [main] INFO  TestExecution - ################################################################################
+2026-01-09 15:56:59.549 [main] INFO  TestExecution - 
+2026-01-09 15:56:59.550 [main] INFO  utils.ScreenshotListener - Test passed: testEmptySearch
+2026-01-09 15:56:59.550 [main] INFO  testcase9 - --- Test Teardown Started ---
+2026-01-09 15:56:59.702 [main] INFO  testcase9 - Browser closed
+2026-01-09 15:56:59.702 [main] INFO  testcase9 - --- Test Teardown Completed ---
+2026-01-09 15:56:59.702 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 15:56:59.702 [main] INFO  utils.ScreenshotListener - Test Suite Finished: Amazon E-Commerce Test Suite
+2026-01-09 15:56:59.702 [main] INFO  utils.ScreenshotListener - Total Tests: 10
+2026-01-09 15:56:59.702 [main] INFO  utils.ScreenshotListener - Passed: 9
+2026-01-09 15:56:59.702 [main] INFO  utils.ScreenshotListener - Failed: 1
+2026-01-09 15:56:59.702 [main] INFO  utils.ScreenshotListener - Skipped: 0
+2026-01-09 15:56:59.702 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 16:03:06.821 [main] INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+2026-01-09 16:03:06.882 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 16:03:06.883 [main] INFO  utils.ScreenshotListener - Test Suite Started: Amazon E-Commerce Test Suite
+2026-01-09 16:03:06.883 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 16:03:06.892 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:03:06.892 [main] INFO  TestSteps -   TC_AMZ_001: Verify Valid Product Search
+2026-01-09 16:03:06.893 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:03:06.893 [main] INFO  testcase1 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 16:03:06.893 [main] INFO  testcase1 - Setting up WebDriverManager for Chrome
+2026-01-09 16:03:07.015 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:03:07.020 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:03:07.020 [main] INFO  testcase1 - WebDriverManager setup completed
+2026-01-09 16:03:07.023 [main] INFO  testcase1 - --- Test Setup Started ---
+2026-01-09 16:03:07.714 [main] INFO  testcase1 - ChromeDriver initialized successfully
+2026-01-09 16:03:07.715 [main] INFO  testcase1 - AmazonSearchFunctions initialized
+2026-01-09 16:03:07.715 [main] INFO  testcase1 - --- Test Setup Completed ---
+2026-01-09 16:03:07.715 [main] INFO  utils.ScreenshotListener - Starting test: testValidProductSearch
+2026-01-09 16:03:07.716 [main] INFO  TestExecution - 
+2026-01-09 16:03:07.716 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:03:07.716 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_001 - Verify Valid Product Search
+2026-01-09 16:03:07.716 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:03:07.716 [main] INFO  testcase1 - Search Keyword: laptop
+2026-01-09 16:03:07.716 [main] INFO  testcase1 - Expected Minimum Results: 10
+2026-01-09 16:03:07.716 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 16:03:19.142 [main] INFO  testcase1 - Navigation successful to: https://www.amazon.com
+2026-01-09 16:03:19.143 [main] INFO  TestSteps - >>> Step 2 : Locate search box
+2026-01-09 16:03:19.174 [main] INFO  testcase1 - Search box located successfully
+2026-01-09 16:03:19.174 [main] INFO  TestSteps - >>> Step 3 : Clear search box
+2026-01-09 16:03:19.189 [main] INFO  testcase1 - Search box cleared
+2026-01-09 16:03:19.189 [main] INFO  TestSteps - >>> Step 4 : Enter search keyword: laptop
+2026-01-09 16:03:19.266 [main] INFO  testcase1 - Keyword 'laptop' entered successfully
+2026-01-09 16:03:19.266 [main] INFO  TestSteps - >>> Step 5 : Locate search button
+2026-01-09 16:03:19.273 [main] INFO  testcase1 - Search button located
+2026-01-09 16:03:19.273 [main] INFO  TestSteps - >>> Step 6 : Click search button
+2026-01-09 16:03:19.616 [main] INFO  testcase1 - Search button clicked
+2026-01-09 16:03:19.616 [main] INFO  TestSteps - >>> Step 7 : Wait for search results to load
+2026-01-09 16:03:21.525 [main] INFO  testcase1 - Search results loaded successfully
+2026-01-09 16:03:21.525 [main] INFO  TestSteps - >>> Step 8 : Verify results count text
+2026-01-09 16:03:21.538 [main] WARN  testcase1 - Results count text format may have changed, but continuing test...
+2026-01-09 16:03:21.538 [main] INFO  TestSteps - >>> Step 9 : Count product cards and verify minimum
+2026-01-09 16:03:21.543 [main] INFO  testcase1 - Found 16 product cards
+2026-01-09 16:03:21.544 [main] INFO  testcase1 - Minimum product count requirement met
+2026-01-09 16:03:21.544 [main] INFO  TestSteps - >>> Step 10 : Verify first product has image
+2026-01-09 16:03:21.557 [main] INFO  testcase1 - First product image verified
+2026-01-09 16:03:21.557 [main] INFO  TestSteps - >>> Step 11 : Verify first product has title
+2026-01-09 16:03:21.566 [main] INFO  testcase1 - First product title verified
+2026-01-09 16:03:21.566 [main] INFO  TestSteps - >>> Step 12 : Verify first product has price
+2026-01-09 16:03:21.592 [main] WARN  testcase1 - First product may be sponsored content without visible price
+2026-01-09 16:03:21.592 [main] INFO  testcase1 - --- Additional Validation ---
+2026-01-09 16:03:21.593 [main] INFO  TestSteps - >>> Additional : Validate first 10 products
+2026-01-09 16:03:21.800 [main] WARN  testcase1 - Some products may not have all elements (price display varies on Amazon)
+2026-01-09 16:03:21.800 [main] INFO  testcase1 - ========================================
+2026-01-09 16:03:21.800 [main] INFO  testcase1 - TEST RESULT: PASSED ✓
+2026-01-09 16:03:21.800 [main] INFO  testcase1 - ========================================
+2026-01-09 16:03:21.801 [main] INFO  testcase1 - Summary:
+2026-01-09 16:03:21.801 [main] INFO  testcase1 -   ✓ Search results page displayed
+2026-01-09 16:03:21.801 [main] INFO  testcase1 -   ✓ Found 16 products (minimum required: 10)
+2026-01-09 16:03:21.801 [main] INFO  testcase1 -   ✓ Products have required elements: image, title, price
+2026-01-09 16:03:21.801 [main] INFO  testcase1 -   ✓ Results are relevant to keyword: 'laptop'
+2026-01-09 16:03:21.803 [main] INFO  testcase1 -   ✓ Current URL: https://www.amazon.com/s?k=laptop&ref=nb_sb_noss
+2026-01-09 16:03:21.803 [main] INFO  testcase1 - ========================================
+2026-01-09 16:03:21.803 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:03:21.803 [main] INFO  TestExecution - # TEST CASE TC_AMZ_001 - RESULT: PASSED
+2026-01-09 16:03:21.803 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:03:21.803 [main] INFO  TestExecution - 
+2026-01-09 16:03:21.804 [main] INFO  utils.ScreenshotListener - Test passed: testValidProductSearch
+2026-01-09 16:03:21.804 [main] INFO  testcase1 - --- Test Teardown Started ---
+2026-01-09 16:03:21.804 [main] INFO  testcase1 - Browser session maintained for next test
+2026-01-09 16:03:21.804 [main] INFO  testcase1 - --- Test Teardown Completed ---
+2026-01-09 16:03:21.913 [main] INFO  testcase1 - Browser closed successfully
+2026-01-09 16:03:21.913 [main] INFO  testcase1 - ========================================
+2026-01-09 16:03:21.913 [main] INFO  testcase1 - ALL TESTS COMPLETED FOR TC_AMZ_001
+2026-01-09 16:03:21.913 [main] INFO  testcase1 - ========================================
+2026-01-09 16:03:21.914 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:03:21.914 [main] INFO  TestSteps -   TC_AMZ_005: Add Single Item to Cart
+2026-01-09 16:03:21.914 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:03:21.914 [main] INFO  testcase5 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 16:03:21.918 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:03:21.920 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:03:21.920 [main] INFO  testcase5 - WebDriverManager setup completed
+2026-01-09 16:03:21.920 [main] INFO  testcase5 - --- Test Setup Started ---
+2026-01-09 16:03:22.370 [main] INFO  testcase5 - --- Test Setup Completed ---
+2026-01-09 16:03:22.370 [main] INFO  utils.ScreenshotListener - Starting test: testAddSingleItemToCart
+2026-01-09 16:03:22.370 [main] INFO  TestExecution - 
+2026-01-09 16:03:22.370 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:03:22.370 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_005 - Add Single Item to Cart
+2026-01-09 16:03:22.370 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:03:22.370 [main] INFO  testcase5 - Search Keyword: headphones
+2026-01-09 16:03:22.371 [main] INFO  TestSteps - >>> Pre-condition : Navigate to product page
+2026-01-09 16:03:34.444 [main] INFO  testcase5 - Navigated to homepage
+2026-01-09 16:03:34.549 [main] INFO  testcase5 - Entered search keyword: headphones
+2026-01-09 16:03:34.972 [main] INFO  testcase5 - Clicked search button
+2026-01-09 16:03:36.492 [main] INFO  testcase5 - Search results loaded
+2026-01-09 16:04:05.404 [main] INFO  testcase5 - Clicked first product
+2026-01-09 16:04:05.405 [main] INFO  TestSteps - >>> Step 1 : Get initial cart count
+2026-01-09 16:04:05.407 [main] INFO  testcase5 - Initial cart count: 0
+2026-01-09 16:04:05.407 [main] INFO  TestSteps - >>> Step 2 : Click 'Add to Cart' button
+2026-01-09 16:04:15.547 [main] ERROR testcase5 - Test assertion failed: Failed to click Add to Cart expected [true] but found [false]
+2026-01-09 16:04:15.548 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:15.548 [main] INFO  TestExecution - # TEST CASE TC_AMZ_005 - RESULT: FAILED
+2026-01-09 16:04:15.548 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:15.548 [main] INFO  TestExecution - 
+2026-01-09 16:04:15.548 [main] ERROR utils.ScreenshotListener - xxxxx Method testAddSingleItemToCart failed xxxxx
+2026-01-09 16:04:15.549 [main] INFO  utils.ScreenshotListener - Initiating screenshot capture...
+2026-01-09 16:04:15.550 [main] ERROR utils.ScreenshotListener - Unexpected error during screenshot capture: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.193)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [27ea14992c4b529b2fe06c4bd6a69913, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /var/folders/02/wm0vdbtx0_j...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56826}, goog:processID: 6422, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56826/devtoo..., se:cdpVersion: 143.0.7499.193, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 27ea14992c4b529b2fe06c4bd6a69913
+2026-01-09 16:04:15.553 [main] INFO  testcase5 - --- Test Teardown Started ---
+2026-01-09 16:04:15.718 [main] INFO  testcase5 - Browser closed
+2026-01-09 16:04:15.718 [main] INFO  testcase5 - --- Test Teardown Completed ---
+2026-01-09 16:04:15.719 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:04:15.719 [main] INFO  TestSteps -   TC_AMZ_003: Verify Search with Price Filter
+2026-01-09 16:04:15.719 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:04:15.719 [main] INFO  testcase3 - Priority: HIGH (P2) | Type: Functional Test | Automation: YES
+2026-01-09 16:04:15.719 [main] INFO  testcase3 - Price Range: $500.0 - $1000.0
+2026-01-09 16:04:15.722 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:04:15.724 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:04:15.724 [main] INFO  testcase3 - WebDriverManager setup completed
+2026-01-09 16:04:15.724 [main] INFO  testcase3 - --- Test Setup Started ---
+2026-01-09 16:04:16.284 [main] INFO  testcase3 - --- Test Setup Completed ---
+2026-01-09 16:04:16.285 [main] INFO  utils.ScreenshotListener - Starting test: testPriceFilter
+2026-01-09 16:04:16.285 [main] INFO  TestExecution - 
+2026-01-09 16:04:16.285 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:16.285 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_003 - Verify Price Filter
+2026-01-09 16:04:16.285 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:16.285 [main] INFO  testcase3 - Search Keyword: laptop
+2026-01-09 16:04:16.285 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon and search for 'laptop'
+2026-01-09 16:04:28.111 [main] INFO  testcase3 - Keyword entered: laptop
+2026-01-09 16:04:32.213 [main] INFO  testcase3 - Initial search results loaded
+2026-01-09 16:04:32.213 [main] INFO  TestSteps - >>> Step 2 : Apply price filter: $500.0 - $1000.0
+2026-01-09 16:04:34.470 [main] INFO  testcase3 - Price filter applied successfully
+2026-01-09 16:04:37.497 [main] INFO  testcase3 - Filtered results loaded
+2026-01-09 16:04:37.498 [main] INFO  TestSteps - >>> Step 3 : Extract all product prices
+2026-01-09 16:04:37.660 [main] INFO  testcase3 - Extracted 15 prices from products
+2026-01-09 16:04:37.660 [main] INFO  testcase3 - Price extraction successful
+2026-01-09 16:04:37.660 [main] INFO  TestSteps - >>> Step 4 : Validate all prices are within range
+2026-01-09 16:04:37.661 [main] INFO  testcase3 - All prices verified to be within range $500.0 - $1000.0
+2026-01-09 16:04:37.661 [main] INFO  testcase3 - ========================================
+2026-01-09 16:04:37.661 [main] INFO  testcase3 - TEST RESULT: PASSED ✓
+2026-01-09 16:04:37.661 [main] INFO  testcase3 - ========================================
+2026-01-09 16:04:37.661 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:37.661 [main] INFO  TestExecution - # TEST CASE TC_AMZ_003 - RESULT: PASSED
+2026-01-09 16:04:37.661 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:37.661 [main] INFO  TestExecution - 
+2026-01-09 16:04:37.661 [main] INFO  utils.ScreenshotListener - Test passed: testPriceFilter
+2026-01-09 16:04:37.661 [main] INFO  testcase3 - --- Test Teardown Started ---
+2026-01-09 16:04:37.661 [main] INFO  testcase3 - Browser session maintained
+2026-01-09 16:04:37.661 [main] INFO  testcase3 - --- Test Teardown Completed ---
+2026-01-09 16:04:37.777 [main] INFO  testcase3 - Browser closed successfully
+2026-01-09 16:04:37.777 [main] INFO  testcase3 - ALL TESTS COMPLETED FOR TC_AMZ_003
+2026-01-09 16:04:37.777 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:04:37.777 [main] INFO  TestSteps -   TC_AMZ_004: Verify Product Details Display
+2026-01-09 16:04:37.777 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:04:37.777 [main] INFO  testcase4 - Priority: HIGH (P2) | Type: Smoke Test | Automation: YES
+2026-01-09 16:04:37.781 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:04:37.782 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:04:37.782 [main] INFO  testcase4 - WebDriverManager setup completed
+2026-01-09 16:04:37.783 [main] INFO  testcase4 - --- Test Setup Started ---
+2026-01-09 16:04:38.286 [main] INFO  testcase4 - --- Test Setup Completed ---
+2026-01-09 16:04:38.286 [main] INFO  utils.ScreenshotListener - Starting test: testProductDetailsDisplay
+2026-01-09 16:04:38.286 [main] INFO  TestExecution - 
+2026-01-09 16:04:38.286 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:38.286 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_004 - Verify Product Details Display
+2026-01-09 16:04:38.286 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:38.286 [main] INFO  testcase4 - Search Keyword: laptop
+2026-01-09 16:04:38.286 [main] INFO  TestSteps - >>> Pre-condition : Search for product
+2026-01-09 16:04:48.822 [main] INFO  testcase4 - Navigated to Amazon homepage
+2026-01-09 16:04:48.891 [main] INFO  testcase4 - Entered search keyword: laptop
+2026-01-09 16:04:51.681 [main] INFO  testcase4 - Clicked search button
+2026-01-09 16:04:51.688 [main] INFO  testcase4 - Search results loaded
+2026-01-09 16:04:51.689 [main] INFO  TestSteps - >>> Step 1-2 : Get product title and click first product
+2026-01-09 16:04:51.696 [main] INFO  testcase4 - First product title: HP 15.6" Laptop with Microsoft 365-1.1TB Storage - 8GB Memory - Intel Inside | Anti-Glare Display, 128GB SSD and 1TB Cloud Storage, 4-Cores CPU, Fast Charge and 12hrs Battery, no Mouse
+2026-01-09 16:04:51.696 [main] INFO  testcase4 - Product title validation passed
+2026-01-09 16:04:54.583 [main] INFO  testcase4 - Successfully clicked first product
+2026-01-09 16:04:54.584 [main] INFO  TestSteps - >>> Step 3 : Verify product details page elements
+2026-01-09 16:04:54.610 [main] INFO  testcase4 - Product details page verified successfully
+2026-01-09 16:04:54.610 [main] INFO  testcase4 - ========================================
+2026-01-09 16:04:54.610 [main] INFO  testcase4 - TEST RESULT: PASSED ✓
+2026-01-09 16:04:54.610 [main] INFO  testcase4 - ========================================
+2026-01-09 16:04:54.610 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:54.610 [main] INFO  TestExecution - # TEST CASE TC_AMZ_004 - RESULT: PASSED
+2026-01-09 16:04:54.610 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:54.610 [main] INFO  TestExecution - 
+2026-01-09 16:04:54.610 [main] INFO  utils.ScreenshotListener - Test passed: testProductDetailsDisplay
+2026-01-09 16:04:54.611 [main] INFO  testcase4 - --- Test Teardown Started ---
+2026-01-09 16:04:54.740 [main] INFO  testcase4 - Browser closed
+2026-01-09 16:04:54.740 [main] INFO  testcase4 - --- Test Teardown Completed ---
+2026-01-09 16:04:54.740 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:04:54.740 [main] INFO  TestSteps -   TC_AMZ_006: Update Cart Quantity
+2026-01-09 16:04:54.740 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:04:54.740 [main] INFO  testcase6 - Priority: HIGH (P2) | Type: Functional Test | Automation: YES
+2026-01-09 16:04:54.742 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:04:54.744 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:04:54.744 [main] INFO  testcase6 - WebDriverManager setup completed
+2026-01-09 16:04:54.744 [main] INFO  testcase6 - --- Test Setup Started ---
+2026-01-09 16:04:55.202 [main] INFO  testcase6 - --- Test Setup Completed ---
+2026-01-09 16:04:55.203 [main] INFO  utils.ScreenshotListener - Starting test: testUpdateAndRemoveCartItem
+2026-01-09 16:04:55.203 [main] INFO  TestExecution - 
+2026-01-09 16:04:55.203 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:55.203 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_006 - Update Cart Quantity
+2026-01-09 16:04:55.203 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:04:55.203 [main] INFO  testcase6 - Search Keyword: usb cable
+2026-01-09 16:04:55.203 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 16:05:04.919 [main] INFO  testcase6 - Navigated to homepage
+2026-01-09 16:05:04.988 [main] INFO  testcase6 - Entered search keyword: usb cable
+2026-01-09 16:05:09.786 [main] INFO  testcase6 - Search results loaded
+2026-01-09 16:05:14.319 [main] INFO  testcase6 - Clicked first product
+2026-01-09 16:05:25.124 [main] INFO  testcase6 - Added product to cart
+2026-01-09 16:05:27.481 [main] INFO  testcase6 - Navigated to cart page
+2026-01-09 16:05:27.481 [main] INFO  TestSteps - >>> Step 1 : Update cart quantity to 2
+2026-01-09 16:05:37.792 [main] WARN  testcase6 - Quantity update skipped (maybe limited stock or different UI)
+2026-01-09 16:05:37.793 [main] INFO  TestSteps - >>> Step 2 : Remove item from cart
+2026-01-09 16:05:37.804 [main] INFO  testcase6 - Cart count before delete: 1
+2026-01-09 16:05:39.856 [main] INFO  testcase6 - Delete button clicked
+2026-01-09 16:05:39.870 [main] INFO  testcase6 - Cart count after delete: 0
+2026-01-09 16:05:39.871 [main] INFO  testcase6 - Cart count decreased successfully
+2026-01-09 16:05:39.871 [main] INFO  testcase6 - ========================================
+2026-01-09 16:05:39.871 [main] INFO  testcase6 - TEST RESULT: PASSED ✓
+2026-01-09 16:05:39.871 [main] INFO  testcase6 - ========================================
+2026-01-09 16:05:39.871 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:05:39.871 [main] INFO  TestExecution - # TEST CASE TC_AMZ_006 - RESULT: PASSED
+2026-01-09 16:05:39.871 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:05:39.871 [main] INFO  TestExecution - 
+2026-01-09 16:05:39.871 [main] INFO  utils.ScreenshotListener - Test passed: testUpdateAndRemoveCartItem
+2026-01-09 16:05:39.872 [main] INFO  testcase6 - --- Test Teardown Started ---
+2026-01-09 16:05:40.026 [main] INFO  testcase6 - Browser closed
+2026-01-09 16:05:40.026 [main] INFO  testcase6 - --- Test Teardown Completed ---
+2026-01-09 16:05:40.027 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:05:40.027 [main] INFO  TestSteps -   TC_AMZ_007: Remove Item from Cart
+2026-01-09 16:05:40.027 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:05:40.027 [main] INFO  testcase7 - Priority: MEDIUM (P3) | Type: Functional Test | Automation: YES
+2026-01-09 16:05:40.030 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:05:40.031 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:05:40.031 [main] INFO  testcase7 - WebDriverManager setup completed
+2026-01-09 16:05:40.031 [main] INFO  testcase7 - --- Test Setup Started ---
+2026-01-09 16:05:40.482 [main] INFO  testcase7 - --- Test Setup Completed ---
+2026-01-09 16:05:40.482 [main] INFO  utils.ScreenshotListener - Starting test: testRemoveItemFromCart
+2026-01-09 16:05:40.483 [main] INFO  TestExecution - 
+2026-01-09 16:05:40.483 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:05:40.483 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_007 - Remove Item from Cart
+2026-01-09 16:05:40.483 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:05:40.483 [main] INFO  testcase7 - Search Keyword: mouse
+2026-01-09 16:05:40.483 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 16:05:50.633 [main] INFO  testcase7 - Navigated to homepage
+2026-01-09 16:05:53.285 [main] INFO  testcase7 - Search results loaded
+2026-01-09 16:05:56.594 [main] INFO  testcase7 - Clicked first product
+2026-01-09 16:06:07.646 [main] INFO  testcase7 - Added product to cart
+2026-01-09 16:06:09.197 [main] INFO  testcase7 - Navigated to cart page
+2026-01-09 16:06:09.208 [main] INFO  testcase7 - Cart count before removal: 1
+2026-01-09 16:06:09.209 [main] INFO  TestSteps - >>> Step 1 : Remove item from cart
+2026-01-09 16:06:11.254 [main] INFO  testcase7 - Item deleted successfully
+2026-01-09 16:06:11.255 [main] INFO  TestSteps - >>> Step 2 : Verify cart count decreased
+2026-01-09 16:06:11.273 [main] INFO  testcase7 - Cart count after removal: 0
+2026-01-09 16:06:11.273 [main] INFO  testcase7 - Cart count verification passed
+2026-01-09 16:06:11.274 [main] INFO  TestSteps - >>> Step 3 : Verify empty cart message
+2026-01-09 16:06:11.274 [main] INFO  testcase7 - Cart is empty, verifying empty cart message
+2026-01-09 16:06:13.309 [main] WARN  testcase7 - Empty cart message not found, but count is 0. Proceeding.
+2026-01-09 16:06:13.309 [main] INFO  TestSteps - >>> Step 4 : Verify checkout button hidden
+2026-01-09 16:06:13.315 [main] INFO  testcase7 - Checkout button visible: false
+2026-01-09 16:06:13.315 [main] INFO  testcase7 - Checkout button correctly hidden
+2026-01-09 16:06:13.315 [main] INFO  testcase7 - ========================================
+2026-01-09 16:06:13.315 [main] INFO  testcase7 - TEST RESULT: PASSED ✓
+2026-01-09 16:06:13.315 [main] INFO  testcase7 - ========================================
+2026-01-09 16:06:13.316 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:06:13.316 [main] INFO  TestExecution - # TEST CASE TC_AMZ_007 - RESULT: PASSED
+2026-01-09 16:06:13.316 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:06:13.316 [main] INFO  TestExecution - 
+2026-01-09 16:06:13.316 [main] INFO  utils.ScreenshotListener - Test passed: testRemoveItemFromCart
+2026-01-09 16:06:13.316 [main] INFO  testcase7 - --- Test Teardown Started ---
+2026-01-09 16:06:13.463 [main] INFO  testcase7 - Browser closed
+2026-01-09 16:06:13.463 [main] INFO  testcase7 - --- Test Teardown Completed ---
+2026-01-09 16:06:13.464 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:06:13.464 [main] INFO  TestSteps -   TC_AMZ_008: Proceed to Checkout (Guest User)
+2026-01-09 16:06:13.464 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:06:13.464 [main] INFO  testcase8 - Priority: MEDIUM (P3) | Type: Smoke Test | Automation: YES
+2026-01-09 16:06:13.465 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:06:13.466 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:06:13.466 [main] INFO  testcase8 - WebDriverManager setup completed
+2026-01-09 16:06:13.467 [main] INFO  testcase8 - --- Test Setup Started ---
+2026-01-09 16:06:13.872 [main] INFO  testcase8 - --- Test Setup Completed ---
+2026-01-09 16:06:13.872 [main] INFO  utils.ScreenshotListener - Starting test: testProceedToCheckout
+2026-01-09 16:06:13.873 [main] INFO  TestExecution - 
+2026-01-09 16:06:13.873 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:06:13.873 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_008 - Proceed to Checkout
+2026-01-09 16:06:13.873 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:06:13.873 [main] INFO  testcase8 - Search Keyword: The Great Gatsby
+2026-01-09 16:06:13.873 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 16:06:23.658 [main] INFO  testcase8 - Navigated to homepage
+2026-01-09 16:06:25.644 [main] INFO  testcase8 - Search results loaded
+2026-01-09 16:06:35.952 [main] WARN  testcase8 - Specific book by XPath not found. Falling back to first product.
+2026-01-09 16:06:49.950 [main] INFO  testcase8 - Item added to cart
+2026-01-09 16:06:49.965 [main] INFO  testcase8 - DEBUG: Cart count after add: 1
+2026-01-09 16:06:49.966 [main] INFO  testcase8 - Cart count verification passed
+2026-01-09 16:06:49.966 [main] INFO  TestSteps - >>> Step 1 : Navigate to cart
+2026-01-09 16:06:51.381 [main] INFO  testcase8 - Navigated to cart page
+2026-01-09 16:06:51.382 [main] INFO  TestSteps - >>> Step 2 : Click 'Proceed to Checkout'
+2026-01-09 16:06:52.795 [main] INFO  testcase8 - Proceed to Checkout clicked
+2026-01-09 16:06:52.795 [main] INFO  TestSteps - >>> Step 3 : Verify sign-in page displayed
+2026-01-09 16:06:52.806 [main] INFO  testcase8 - Sign-in page verified
+2026-01-09 16:06:52.806 [main] INFO  TestSteps - >>> Step 4 : Enter test email
+2026-01-09 16:06:52.810 [main] ERROR testcase8 - Unexpected error: no such element: Unable to locate element: {"method":"css selector","selector":"#ap_email"}
+  (Session info: chrome=143.0.7499.193)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [adb71e9d01762b9f0eb3dcda48121ebc, findElement {using=id, value=ap_email}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /var/folders/02/wm0vdbtx0_j...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58013}, goog:processID: 6675, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:58013/devtoo..., se:cdpVersion: 143.0.7499.193, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: adb71e9d01762b9f0eb3dcda48121ebc
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#ap_email"}
+  (Session info: chrome=143.0.7499.193)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [adb71e9d01762b9f0eb3dcda48121ebc, findElement {using=id, value=ap_email}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /var/folders/02/wm0vdbtx0_j...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58013}, goog:processID: 6675, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:58013/devtoo..., se:cdpVersion: 143.0.7499.193, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: adb71e9d01762b9f0eb3dcda48121ebc
+	at jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:483) ~[?:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360) ~[selenium-remote-driver-4.16.1.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:354) ~[selenium-remote-driver-4.16.1.jar:?]
+	at testcase8.testProceedToCheckout(testcase8.java:139) [test-classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148) [testng-7.8.0.jar:7.8.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128) [testng-7.8.0.jar:7.8.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:848) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestRunner.run(TestRunner.java:621) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.8.0.jar:7.8.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1114) [testng-7.8.0.jar:7.8.0]
+	at org.testng.TestNG.run(TestNG.java:1082) [testng-7.8.0.jar:7.8.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.2.5.jar:3.2.5]
+2026-01-09 16:06:52.813 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:06:52.813 [main] INFO  TestExecution - # TEST CASE TC_AMZ_008 - RESULT: FAILED
+2026-01-09 16:06:52.813 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:06:52.813 [main] INFO  TestExecution - 
+2026-01-09 16:06:52.813 [main] ERROR utils.ScreenshotListener - xxxxx Method testProceedToCheckout failed xxxxx
+2026-01-09 16:06:52.813 [main] INFO  utils.ScreenshotListener - Initiating screenshot capture...
+2026-01-09 16:06:52.855 [main] INFO  utils.ScreenshotListener - Screenshot saved: /Users/anishk/IdeaProjects/Amazon-Automation/screenshots/testProceedToCheckout_20260109_160652.png
+2026-01-09 16:06:52.855 [main] INFO  utils.ScreenshotListener - Test case 'testProceedToCheckout' failed. Screenshot captured for analysis.
+2026-01-09 16:06:52.855 [main] INFO  utils.ScreenshotListener - Screenshot captured successfully: /Users/anishk/IdeaProjects/Amazon-Automation/screenshots/testProceedToCheckout_20260109_160652.png
+2026-01-09 16:06:52.856 [main] INFO  testcase8 - --- Test Teardown Started ---
+2026-01-09 16:06:53.010 [main] INFO  testcase8 - Browser closed
+2026-01-09 16:06:53.010 [main] INFO  testcase8 - --- Test Teardown Completed ---
+2026-01-09 16:06:53.010 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:06:53.010 [main] INFO  TestSteps -   TC_AMZ_010: Cart Persistence After Page Refresh
+2026-01-09 16:06:53.010 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:06:53.010 [main] INFO  testcase10 - Priority: MEDIUM (P3) | Type: Functional Test | Automation: YES
+2026-01-09 16:06:53.013 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:06:53.014 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:06:53.014 [main] INFO  testcase10 - WebDriverManager setup completed
+2026-01-09 16:06:53.015 [main] INFO  testcase10 - --- Test Setup Started ---
+2026-01-09 16:06:53.469 [main] INFO  testcase10 - --- Test Setup Completed ---
+2026-01-09 16:06:53.469 [main] INFO  utils.ScreenshotListener - Starting test: testCartPersistence
+2026-01-09 16:06:53.469 [main] INFO  TestExecution - 
+2026-01-09 16:06:53.469 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:06:53.470 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_010 - Cart Persistence After Refresh
+2026-01-09 16:06:53.470 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:06:53.470 [main] INFO  testcase10 - Search Keyword: monitor
+2026-01-09 16:06:53.470 [main] INFO  TestSteps - >>> Step 1 : Add item to cart
+2026-01-09 16:07:03.762 [main] INFO  testcase10 - Navigated to homepage
+2026-01-09 16:07:05.596 [main] INFO  testcase10 - Search results loaded
+2026-01-09 16:07:09.814 [main] INFO  testcase10 - Clicked first product
+2026-01-09 16:07:15.588 [main] INFO  testcase10 - Added product to cart
+2026-01-09 16:07:15.589 [main] INFO  TestSteps - >>> Step 2 : Get cart count before refresh
+2026-01-09 16:07:15.602 [main] INFO  testcase10 - Cart count before refresh: 1
+2026-01-09 16:07:15.602 [main] INFO  TestSteps - >>> Step 3 : Refresh the page
+2026-01-09 16:07:20.174 [main] INFO  testcase10 - Page refreshed
+2026-01-09 16:07:20.174 [main] INFO  TestSteps - >>> Step 4 : Get cart count after refresh
+2026-01-09 16:07:20.186 [main] INFO  testcase10 - Cart count after refresh: 1
+2026-01-09 16:07:20.186 [main] INFO  testcase10 - Cart count verification passed - items persisted
+2026-01-09 16:07:20.186 [main] INFO  TestSteps - >>> Step 5 : Navigate to cart page and verify
+2026-01-09 16:07:22.008 [main] INFO  testcase10 - Navigated to cart page
+2026-01-09 16:07:22.018 [main] INFO  testcase10 - Cart page count: 1
+2026-01-09 16:07:22.018 [main] INFO  testcase10 - Cart page count verification passed
+2026-01-09 16:07:22.018 [main] INFO  testcase10 - ========================================
+2026-01-09 16:07:22.018 [main] INFO  testcase10 - TEST RESULT: PASSED ✓
+2026-01-09 16:07:22.018 [main] INFO  testcase10 - ========================================
+2026-01-09 16:07:22.018 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:22.018 [main] INFO  TestExecution - # TEST CASE TC_AMZ_010 - RESULT: PASSED
+2026-01-09 16:07:22.018 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:22.018 [main] INFO  TestExecution - 
+2026-01-09 16:07:22.018 [main] INFO  utils.ScreenshotListener - Test passed: testCartPersistence
+2026-01-09 16:07:22.019 [main] INFO  testcase10 - --- Test Teardown Started ---
+2026-01-09 16:07:22.167 [main] INFO  testcase10 - Browser closed
+2026-01-09 16:07:22.167 [main] INFO  testcase10 - --- Test Teardown Completed ---
+2026-01-09 16:07:22.167 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:07:22.167 [main] INFO  TestSteps -   TC_AMZ_002: Verify Search with Invalid Keyword
+2026-01-09 16:07:22.167 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:07:22.167 [main] INFO  testcase2 - Priority: LOW (P4) | Type: Negative Test | Automation: YES
+2026-01-09 16:07:22.170 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:07:22.171 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:07:22.171 [main] INFO  testcase2 - WebDriverManager setup completed
+2026-01-09 16:07:22.171 [main] INFO  testcase2 - --- Test Setup Started ---
+2026-01-09 16:07:22.615 [main] INFO  testcase2 - --- Test Setup Completed ---
+2026-01-09 16:07:22.616 [main] INFO  utils.ScreenshotListener - Starting test: testInvalidKeywordSearch
+2026-01-09 16:07:22.616 [main] INFO  TestExecution - 
+2026-01-09 16:07:22.616 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:22.616 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_002 - Verify Invalid Search
+2026-01-09 16:07:22.616 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:22.616 [main] INFO  testcase2 - Invalid Keyword: xyzabc123!@#$%
+2026-01-09 16:07:22.616 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 16:07:32.347 [main] INFO  testcase2 - Navigation successful
+2026-01-09 16:07:32.348 [main] INFO  TestSteps - >>> Step 2-3 : Locate search box and enter invalid keyword
+2026-01-09 16:07:32.415 [main] INFO  testcase2 - Invalid keyword 'xyzabc123!@#$%' entered
+2026-01-09 16:07:32.415 [main] INFO  TestSteps - >>> Step 4 : Click search button
+2026-01-09 16:07:43.844 [main] INFO  testcase2 - Search results page loaded
+2026-01-09 16:07:43.844 [main] INFO  TestSteps - >>> Step 5-6 : Verify 'No results' message or suggestions
+2026-01-09 16:07:43.876 [main] INFO  testcase2 - No Results Message Found: true
+2026-01-09 16:07:43.876 [main] INFO  testcase2 - Suggestions Found: true
+2026-01-09 16:07:43.876 [main] INFO  testcase2 - Verification passed: No results or suggestions displayed
+2026-01-09 16:07:43.877 [main] INFO  TestSteps - >>> Step 7 : Verify zero product cards displayed
+2026-01-09 16:07:43.881 [main] INFO  testcase2 - Product count: 0
+2026-01-09 16:07:43.881 [main] INFO  testcase2 - Verification passed: Zero products displayed
+2026-01-09 16:07:43.881 [main] INFO  testcase2 - ========================================
+2026-01-09 16:07:43.881 [main] INFO  testcase2 - TEST RESULT: PASSED ✓
+2026-01-09 16:07:43.881 [main] INFO  testcase2 - ========================================
+2026-01-09 16:07:43.881 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:43.881 [main] INFO  TestExecution - # TEST CASE TC_AMZ_002 - RESULT: PASSED
+2026-01-09 16:07:43.881 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:43.881 [main] INFO  TestExecution - 
+2026-01-09 16:07:43.881 [main] INFO  utils.ScreenshotListener - Test passed: testInvalidKeywordSearch
+2026-01-09 16:07:43.881 [main] INFO  testcase2 - --- Test Teardown Started ---
+2026-01-09 16:07:43.881 [main] INFO  testcase2 - Browser session maintained
+2026-01-09 16:07:43.881 [main] INFO  testcase2 - --- Test Teardown Completed ---
+2026-01-09 16:07:44.003 [main] INFO  testcase2 - Browser closed successfully
+2026-01-09 16:07:44.003 [main] INFO  testcase2 - ALL TESTS COMPLETED FOR TC_AMZ_002
+2026-01-09 16:07:44.003 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:07:44.003 [main] INFO  TestSteps -   TC_AMZ_009: Empty Search Validation
+2026-01-09 16:07:44.003 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:07:44.003 [main] INFO  testcase9 - Priority: LOW (P4) | Type: Negative Test | Automation: YES
+2026-01-09 16:07:44.005 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:07:44.006 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:07:44.006 [main] INFO  testcase9 - WebDriverManager setup completed
+2026-01-09 16:07:44.006 [main] INFO  testcase9 - --- Test Setup Started ---
+2026-01-09 16:07:44.449 [main] INFO  testcase9 - --- Test Setup Completed ---
+2026-01-09 16:07:44.449 [main] INFO  utils.ScreenshotListener - Starting test: testEmptySearch
+2026-01-09 16:07:44.449 [main] INFO  TestExecution - 
+2026-01-09 16:07:44.449 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:44.449 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_009 - Empty Search Validation
+2026-01-09 16:07:44.449 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:44.449 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 16:07:55.486 [main] INFO  testcase9 - Navigated to homepage
+2026-01-09 16:07:55.486 [main] INFO  TestSteps - >>> Step 2 : Clear search box to ensure it's empty
+2026-01-09 16:07:55.512 [main] INFO  testcase9 - Search box cleared
+2026-01-09 16:07:55.512 [main] INFO  TestSteps - >>> Step 3 : Click search button with empty search box
+2026-01-09 16:07:57.284 [main] INFO  testcase9 - Search button clicked with empty input
+2026-01-09 16:07:59.287 [main] INFO  TestSteps - >>> Step 4 : Verify no errors and proper handling
+2026-01-09 16:07:59.292 [main] INFO  testcase9 - URL after empty search: https://www.amazon.com/
+2026-01-09 16:07:59.292 [main] INFO  testcase9 - Domain verification passed
+2026-01-09 16:07:59.296 [main] INFO  testcase9 - Error page check passed
+2026-01-09 16:07:59.296 [main] INFO  testcase9 - ========================================
+2026-01-09 16:07:59.296 [main] INFO  testcase9 - TEST RESULT: PASSED ✓
+2026-01-09 16:07:59.296 [main] INFO  testcase9 - ========================================
+2026-01-09 16:07:59.296 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:59.296 [main] INFO  TestExecution - # TEST CASE TC_AMZ_009 - RESULT: PASSED
+2026-01-09 16:07:59.296 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:07:59.296 [main] INFO  TestExecution - 
+2026-01-09 16:07:59.296 [main] INFO  utils.ScreenshotListener - Test passed: testEmptySearch
+2026-01-09 16:07:59.296 [main] INFO  testcase9 - --- Test Teardown Started ---
+2026-01-09 16:07:59.402 [main] INFO  testcase9 - Browser closed
+2026-01-09 16:07:59.403 [main] INFO  testcase9 - --- Test Teardown Completed ---
+2026-01-09 16:07:59.403 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 16:07:59.403 [main] INFO  utils.ScreenshotListener - Test Suite Finished: Amazon E-Commerce Test Suite
+2026-01-09 16:07:59.403 [main] INFO  utils.ScreenshotListener - Total Tests: 10
+2026-01-09 16:07:59.403 [main] INFO  utils.ScreenshotListener - Passed: 8
+2026-01-09 16:07:59.403 [main] INFO  utils.ScreenshotListener - Failed: 2
+2026-01-09 16:07:59.403 [main] INFO  utils.ScreenshotListener - Skipped: 0
+2026-01-09 16:07:59.403 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 16:08:53.103 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:08:53.106 [main] INFO  TestSteps -   TC_AMZ_005: Add Single Item to Cart
+2026-01-09 16:08:53.106 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:08:53.106 [main] INFO  testcase5 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 16:08:53.230 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:08:53.235 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:08:53.236 [main] INFO  testcase5 - WebDriverManager setup completed
+2026-01-09 16:08:53.238 [main] INFO  testcase5 - --- Test Setup Started ---
+2026-01-09 16:08:53.895 [main] INFO  testcase5 - --- Test Setup Completed ---
+2026-01-09 16:08:53.896 [main] INFO  TestExecution - 
+2026-01-09 16:08:53.896 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:08:53.896 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_005 - Add Single Item to Cart
+2026-01-09 16:08:53.896 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:08:53.897 [main] INFO  testcase5 - Search Keyword: headphones
+2026-01-09 16:08:53.897 [main] INFO  TestSteps - >>> Pre-condition : Navigate to product page
+2026-01-09 16:09:07.375 [main] INFO  testcase5 - Navigated to homepage
+2026-01-09 16:09:07.495 [main] INFO  testcase5 - Entered search keyword: headphones
+2026-01-09 16:09:07.868 [main] INFO  testcase5 - Clicked search button
+2026-01-09 16:09:10.237 [main] INFO  testcase5 - Search results loaded
+2026-01-09 16:09:12.761 [main] INFO  testcase5 - Clicked first product
+2026-01-09 16:09:12.761 [main] INFO  TestSteps - >>> Step 1 : Get initial cart count
+2026-01-09 16:09:12.772 [main] INFO  testcase5 - Initial cart count: 0
+2026-01-09 16:09:12.772 [main] INFO  TestSteps - >>> Step 2 : Click 'Add to Cart' button
+2026-01-09 16:09:23.108 [main] ERROR testcase5 - Test assertion failed: Failed to click Add to Cart expected [true] but found [false]
+2026-01-09 16:09:23.109 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:09:23.109 [main] INFO  TestExecution - # TEST CASE TC_AMZ_005 - RESULT: FAILED
+2026-01-09 16:09:23.109 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:09:23.109 [main] INFO  TestExecution - 
+2026-01-09 16:09:23.114 [main] INFO  testcase5 - --- Test Teardown Started ---
+2026-01-09 16:09:23.258 [main] INFO  testcase5 - Browser closed
+2026-01-09 16:09:23.258 [main] INFO  testcase5 - --- Test Teardown Completed ---
+2026-01-09 16:09:23.259 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:09:23.259 [main] INFO  TestSteps -   TC_AMZ_008: Proceed to Checkout (Guest User)
+2026-01-09 16:09:23.259 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:09:23.259 [main] INFO  testcase8 - Priority: MEDIUM (P3) | Type: Smoke Test | Automation: YES
+2026-01-09 16:09:23.262 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:09:23.264 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:09:23.264 [main] INFO  testcase8 - WebDriverManager setup completed
+2026-01-09 16:09:23.264 [main] INFO  testcase8 - --- Test Setup Started ---
+2026-01-09 16:09:23.687 [main] INFO  testcase8 - --- Test Setup Completed ---
+2026-01-09 16:09:23.688 [main] INFO  TestExecution - 
+2026-01-09 16:09:23.688 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:09:23.688 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_008 - Proceed to Checkout
+2026-01-09 16:09:23.688 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:09:23.688 [main] INFO  testcase8 - Search Keyword: The Great Gatsby
+2026-01-09 16:09:23.688 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 16:09:35.161 [main] INFO  testcase8 - Navigated to homepage
+2026-01-09 16:09:37.883 [main] INFO  testcase8 - Search results loaded
+2026-01-09 16:09:48.209 [main] WARN  testcase8 - Specific book by XPath not found. Falling back to first product.
+2026-01-09 16:10:07.990 [main] INFO  testcase8 - Item added to cart
+2026-01-09 16:10:08.009 [main] INFO  testcase8 - DEBUG: Cart count after add: 1
+2026-01-09 16:10:08.009 [main] INFO  testcase8 - Cart count verification passed
+2026-01-09 16:10:08.010 [main] INFO  TestSteps - >>> Step 1 : Navigate to cart
+2026-01-09 16:10:09.662 [main] INFO  testcase8 - Navigated to cart page
+2026-01-09 16:10:09.663 [main] INFO  TestSteps - >>> Step 2 : Click 'Proceed to Checkout'
+2026-01-09 16:10:11.374 [main] INFO  testcase8 - Proceed to Checkout clicked
+2026-01-09 16:10:11.375 [main] INFO  TestSteps - >>> Step 3 : Verify redirected to checkout or sign-in page
+2026-01-09 16:10:14.384 [main] INFO  testcase8 - Current URL after checkout: https://www.amazon.com/ap/signin?openid.pape.max_auth_age=900&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fcheckout%2Fentry%2Fcart%3FisEligibilityLogicDisabled%3D1%26referrer%3Dcart%26proceedToCheckout%3D1%26proceedToCheckout%3D1%26ref_%3Dox_sc_proceed%26oldCustomerId%3D0%26tangoWeblabStatus%3Dtango_enable_unrec_customer%26sessionID%3D134-1884517-7421212%26pipelineType%3DChewbacca%26isToBeGiftWrappedBefore%3D0%26useDefaultCart%3D1%26isUnrec%3D1&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amazon_checkout_us&openid.mode=checkid_setup&language=en_US&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+2026-01-09 16:10:14.384 [main] INFO  testcase8 - Successfully redirected to checkout flow
+2026-01-09 16:10:14.384 [main] INFO  testcase8 - ========================================
+2026-01-09 16:10:14.384 [main] INFO  testcase8 - TEST RESULT: PASSED ✓
+2026-01-09 16:10:14.384 [main] INFO  testcase8 - ========================================
+2026-01-09 16:10:14.385 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:10:14.385 [main] INFO  TestExecution - # TEST CASE TC_AMZ_008 - RESULT: PASSED
+2026-01-09 16:10:14.385 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:10:14.385 [main] INFO  TestExecution - 
+2026-01-09 16:10:14.386 [main] INFO  testcase8 - --- Test Teardown Started ---
+2026-01-09 16:10:14.537 [main] INFO  testcase8 - Browser closed
+2026-01-09 16:10:14.537 [main] INFO  testcase8 - --- Test Teardown Completed ---
+2026-01-09 16:13:38.924 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  Command line suite
+
+2026-01-09 16:13:38.933 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:13:38.933 [main] INFO  TestSteps -   TC_AMZ_005: Add Single Item to Cart
+2026-01-09 16:13:38.933 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:13:38.933 [main] INFO  testcase5 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 16:13:39.061 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:13:39.067 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:13:39.067 [main] INFO  testcase5 - WebDriverManager setup completed
+2026-01-09 16:13:39.071 [main] INFO  testcase5 - --- Test Setup Started ---
+2026-01-09 16:13:39.726 [main] INFO  testcase5 - --- Test Setup Completed ---
+2026-01-09 16:13:39.736 [main] INFO  TestExecution - 
+2026-01-09 16:13:39.736 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:13:39.736 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_005 - Add Single Item to Cart
+2026-01-09 16:13:39.736 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:13:39.736 [main] INFO  testcase5 - Search Keyword: usb cable
+2026-01-09 16:13:39.737 [main] INFO  TestSteps - >>> Pre-condition : Navigate to product page
+2026-01-09 16:13:50.150 [main] INFO  testcase5 - Navigated to homepage
+2026-01-09 16:13:50.213 [main] INFO  testcase5 - Entered search keyword: usb cable
+2026-01-09 16:13:52.447 [main] INFO  testcase5 - Clicked search button
+2026-01-09 16:13:52.457 [main] INFO  testcase5 - Search results loaded
+2026-01-09 16:13:55.559 [main] INFO  testcase5 - Clicked first product
+2026-01-09 16:13:55.559 [main] INFO  TestSteps - >>> Step 1 : Get initial cart count
+2026-01-09 16:13:55.568 [main] INFO  testcase5 - Initial cart count: 0
+2026-01-09 16:13:55.568 [main] INFO  TestSteps - >>> Step 2 : Click 'Add to Cart' button
+2026-01-09 16:14:07.081 [main] INFO  testcase5 - Add to Cart button clicked successfully
+2026-01-09 16:14:07.082 [main] INFO  TestSteps - >>> Step 3 : Verify cart count increased
+2026-01-09 16:14:07.095 [main] INFO  testcase5 - Cart count increased on attempt 1
+2026-01-09 16:14:07.095 [main] INFO  testcase5 - Initial Count: 0, New Count: 1
+2026-01-09 16:14:07.097 [main] INFO  testcase5 - Cart count verification passed
+2026-01-09 16:14:07.097 [main] INFO  TestSteps - >>> Step 4 : Navigate to cart page
+2026-01-09 16:14:08.587 [main] INFO  testcase5 - Navigated to cart page
+2026-01-09 16:14:08.600 [main] INFO  testcase5 - Current URL: https://www.amazon.com/gp/cart/view.html?ref_=nav_cart
+2026-01-09 16:14:08.600 [main] INFO  testcase5 - Cart page verification passed
+2026-01-09 16:14:08.600 [main] INFO  testcase5 - ========================================
+2026-01-09 16:14:08.600 [main] INFO  testcase5 - TEST RESULT: PASSED ✓
+2026-01-09 16:14:08.600 [main] INFO  testcase5 - ========================================
+2026-01-09 16:14:08.600 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:14:08.600 [main] INFO  TestExecution - # TEST CASE TC_AMZ_005 - RESULT: PASSED
+2026-01-09 16:14:08.600 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:14:08.600 [main] INFO  TestExecution - 
+2026-01-09 16:14:08.602 [main] INFO  testcase5 - --- Test Teardown Started ---
+2026-01-09 16:14:08.742 [main] INFO  testcase5 - Browser closed
+2026-01-09 16:14:08.742 [main] INFO  testcase5 - --- Test Teardown Completed ---
+2026-01-09 16:14:59.714 [main] INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+2026-01-09 16:14:59.777 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 16:14:59.777 [main] INFO  utils.ScreenshotListener - Test Suite Started: Amazon E-Commerce Test Suite
+2026-01-09 16:14:59.777 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 16:14:59.784 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:14:59.784 [main] INFO  TestSteps -   TC_AMZ_001: Verify Valid Product Search
+2026-01-09 16:14:59.784 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:14:59.784 [main] INFO  testcase1 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 16:14:59.784 [main] INFO  testcase1 - Setting up WebDriverManager for Chrome
+2026-01-09 16:14:59.900 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:14:59.905 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:14:59.905 [main] INFO  testcase1 - WebDriverManager setup completed
+2026-01-09 16:14:59.907 [main] INFO  testcase1 - --- Test Setup Started ---
+2026-01-09 16:15:00.575 [main] INFO  testcase1 - ChromeDriver initialized successfully
+2026-01-09 16:15:00.576 [main] INFO  testcase1 - AmazonSearchFunctions initialized
+2026-01-09 16:15:00.576 [main] INFO  testcase1 - --- Test Setup Completed ---
+2026-01-09 16:15:00.577 [main] INFO  utils.ScreenshotListener - Starting test: testValidProductSearch
+2026-01-09 16:15:00.577 [main] INFO  TestExecution - 
+2026-01-09 16:15:00.577 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:00.577 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_001 - Verify Valid Product Search
+2026-01-09 16:15:00.577 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:00.577 [main] INFO  testcase1 - Search Keyword: laptop
+2026-01-09 16:15:00.577 [main] INFO  testcase1 - Expected Minimum Results: 10
+2026-01-09 16:15:00.577 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 16:15:10.398 [main] INFO  testcase1 - Navigation successful to: https://www.amazon.com
+2026-01-09 16:15:10.398 [main] INFO  TestSteps - >>> Step 2 : Locate search box
+2026-01-09 16:15:10.415 [main] INFO  testcase1 - Search box located successfully
+2026-01-09 16:15:10.415 [main] INFO  TestSteps - >>> Step 3 : Clear search box
+2026-01-09 16:15:10.424 [main] INFO  testcase1 - Search box cleared
+2026-01-09 16:15:10.424 [main] INFO  TestSteps - >>> Step 4 : Enter search keyword: laptop
+2026-01-09 16:15:10.453 [main] INFO  testcase1 - Keyword 'laptop' entered successfully
+2026-01-09 16:15:10.454 [main] INFO  TestSteps - >>> Step 5 : Locate search button
+2026-01-09 16:15:10.462 [main] INFO  testcase1 - Search button located
+2026-01-09 16:15:10.462 [main] INFO  TestSteps - >>> Step 6 : Click search button
+2026-01-09 16:15:14.736 [main] INFO  testcase1 - Search button clicked
+2026-01-09 16:15:14.737 [main] INFO  TestSteps - >>> Step 7 : Wait for search results to load
+2026-01-09 16:15:14.745 [main] INFO  testcase1 - Search results loaded successfully
+2026-01-09 16:15:14.745 [main] INFO  TestSteps - >>> Step 8 : Verify results count text
+2026-01-09 16:15:14.756 [main] WARN  testcase1 - Results count text format may have changed, but continuing test...
+2026-01-09 16:15:14.756 [main] INFO  TestSteps - >>> Step 9 : Count product cards and verify minimum
+2026-01-09 16:15:14.762 [main] INFO  testcase1 - Found 16 product cards
+2026-01-09 16:15:14.762 [main] INFO  testcase1 - Minimum product count requirement met
+2026-01-09 16:15:14.762 [main] INFO  TestSteps - >>> Step 10 : Verify first product has image
+2026-01-09 16:15:14.772 [main] INFO  testcase1 - First product image verified
+2026-01-09 16:15:14.772 [main] INFO  TestSteps - >>> Step 11 : Verify first product has title
+2026-01-09 16:15:14.782 [main] INFO  testcase1 - First product title verified
+2026-01-09 16:15:14.782 [main] INFO  TestSteps - >>> Step 12 : Verify first product has price
+2026-01-09 16:15:14.793 [main] INFO  testcase1 - First product price verified
+2026-01-09 16:15:14.793 [main] INFO  testcase1 - --- Additional Validation ---
+2026-01-09 16:15:14.793 [main] INFO  TestSteps - >>> Additional : Validate first 10 products
+2026-01-09 16:15:14.937 [main] INFO  testcase1 - All validated products have required elements
+2026-01-09 16:15:14.937 [main] INFO  testcase1 - ========================================
+2026-01-09 16:15:14.937 [main] INFO  testcase1 - TEST RESULT: PASSED ✓
+2026-01-09 16:15:14.937 [main] INFO  testcase1 - ========================================
+2026-01-09 16:15:14.937 [main] INFO  testcase1 - Summary:
+2026-01-09 16:15:14.937 [main] INFO  testcase1 -   ✓ Search results page displayed
+2026-01-09 16:15:14.937 [main] INFO  testcase1 -   ✓ Found 16 products (minimum required: 10)
+2026-01-09 16:15:14.937 [main] INFO  testcase1 -   ✓ Products have required elements: image, title, price
+2026-01-09 16:15:14.937 [main] INFO  testcase1 -   ✓ Results are relevant to keyword: 'laptop'
+2026-01-09 16:15:14.939 [main] INFO  testcase1 -   ✓ Current URL: https://www.amazon.com/s?k=laptop&ref=nb_sb_noss
+2026-01-09 16:15:14.939 [main] INFO  testcase1 - ========================================
+2026-01-09 16:15:14.939 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:14.939 [main] INFO  TestExecution - # TEST CASE TC_AMZ_001 - RESULT: PASSED
+2026-01-09 16:15:14.939 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:14.939 [main] INFO  TestExecution - 
+2026-01-09 16:15:14.940 [main] INFO  utils.ScreenshotListener - Test passed: testValidProductSearch
+2026-01-09 16:15:14.940 [main] INFO  testcase1 - --- Test Teardown Started ---
+2026-01-09 16:15:14.940 [main] INFO  testcase1 - Browser session maintained for next test
+2026-01-09 16:15:14.940 [main] INFO  testcase1 - --- Test Teardown Completed ---
+2026-01-09 16:15:15.059 [main] INFO  testcase1 - Browser closed successfully
+2026-01-09 16:15:15.059 [main] INFO  testcase1 - ========================================
+2026-01-09 16:15:15.059 [main] INFO  testcase1 - ALL TESTS COMPLETED FOR TC_AMZ_001
+2026-01-09 16:15:15.059 [main] INFO  testcase1 - ========================================
+2026-01-09 16:15:15.060 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:15:15.060 [main] INFO  TestSteps -   TC_AMZ_005: Add Single Item to Cart
+2026-01-09 16:15:15.060 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:15:15.060 [main] INFO  testcase5 - Priority: CRITICAL (P1) | Type: Smoke Test | Automation: YES
+2026-01-09 16:15:15.064 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:15:15.066 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:15:15.066 [main] INFO  testcase5 - WebDriverManager setup completed
+2026-01-09 16:15:15.066 [main] INFO  testcase5 - --- Test Setup Started ---
+2026-01-09 16:15:15.464 [main] INFO  testcase5 - --- Test Setup Completed ---
+2026-01-09 16:15:15.464 [main] INFO  utils.ScreenshotListener - Starting test: testAddSingleItemToCart
+2026-01-09 16:15:15.464 [main] INFO  TestExecution - 
+2026-01-09 16:15:15.464 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:15.464 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_005 - Add Single Item to Cart
+2026-01-09 16:15:15.464 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:15.465 [main] INFO  testcase5 - Search Keyword: usb cable
+2026-01-09 16:15:15.465 [main] INFO  TestSteps - >>> Pre-condition : Navigate to product page
+2026-01-09 16:15:26.258 [main] INFO  testcase5 - Navigated to homepage
+2026-01-09 16:15:26.326 [main] INFO  testcase5 - Entered search keyword: usb cable
+2026-01-09 16:15:28.068 [main] INFO  testcase5 - Clicked search button
+2026-01-09 16:15:28.079 [main] INFO  testcase5 - Search results loaded
+2026-01-09 16:15:32.160 [main] INFO  testcase5 - Clicked first product
+2026-01-09 16:15:32.160 [main] INFO  TestSteps - >>> Step 1 : Get initial cart count
+2026-01-09 16:15:32.171 [main] INFO  testcase5 - Initial cart count: 0
+2026-01-09 16:15:32.171 [main] INFO  TestSteps - >>> Step 2 : Click 'Add to Cart' button
+2026-01-09 16:15:42.513 [main] INFO  testcase5 - Add to Cart button clicked successfully
+2026-01-09 16:15:42.514 [main] INFO  TestSteps - >>> Step 3 : Verify cart count increased
+2026-01-09 16:15:42.529 [main] INFO  testcase5 - Cart count increased on attempt 1
+2026-01-09 16:15:42.529 [main] INFO  testcase5 - Initial Count: 0, New Count: 1
+2026-01-09 16:15:42.530 [main] INFO  testcase5 - Cart count verification passed
+2026-01-09 16:15:42.530 [main] INFO  TestSteps - >>> Step 4 : Navigate to cart page
+2026-01-09 16:15:44.033 [main] INFO  testcase5 - Navigated to cart page
+2026-01-09 16:15:44.036 [main] INFO  testcase5 - Current URL: https://www.amazon.com/gp/cart/view.html?ref_=nav_cart
+2026-01-09 16:15:44.036 [main] INFO  testcase5 - Cart page verification passed
+2026-01-09 16:15:44.037 [main] INFO  testcase5 - ========================================
+2026-01-09 16:15:44.037 [main] INFO  testcase5 - TEST RESULT: PASSED ✓
+2026-01-09 16:15:44.037 [main] INFO  testcase5 - ========================================
+2026-01-09 16:15:44.037 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:44.037 [main] INFO  TestExecution - # TEST CASE TC_AMZ_005 - RESULT: PASSED
+2026-01-09 16:15:44.037 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:44.037 [main] INFO  TestExecution - 
+2026-01-09 16:15:44.037 [main] INFO  utils.ScreenshotListener - Test passed: testAddSingleItemToCart
+2026-01-09 16:15:44.037 [main] INFO  testcase5 - --- Test Teardown Started ---
+2026-01-09 16:15:44.177 [main] INFO  testcase5 - Browser closed
+2026-01-09 16:15:44.177 [main] INFO  testcase5 - --- Test Teardown Completed ---
+2026-01-09 16:15:44.178 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:15:44.178 [main] INFO  TestSteps -   TC_AMZ_003: Verify Search with Price Filter
+2026-01-09 16:15:44.178 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:15:44.178 [main] INFO  testcase3 - Priority: HIGH (P2) | Type: Functional Test | Automation: YES
+2026-01-09 16:15:44.178 [main] INFO  testcase3 - Price Range: $500.0 - $1000.0
+2026-01-09 16:15:44.181 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:15:44.183 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:15:44.183 [main] INFO  testcase3 - WebDriverManager setup completed
+2026-01-09 16:15:44.183 [main] INFO  testcase3 - --- Test Setup Started ---
+2026-01-09 16:15:44.662 [main] INFO  testcase3 - --- Test Setup Completed ---
+2026-01-09 16:15:44.662 [main] INFO  utils.ScreenshotListener - Starting test: testPriceFilter
+2026-01-09 16:15:44.663 [main] INFO  TestExecution - 
+2026-01-09 16:15:44.663 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:44.663 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_003 - Verify Price Filter
+2026-01-09 16:15:44.663 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:15:44.663 [main] INFO  testcase3 - Search Keyword: laptop
+2026-01-09 16:15:44.663 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon and search for 'laptop'
+2026-01-09 16:15:56.558 [main] INFO  testcase3 - Keyword entered: laptop
+2026-01-09 16:16:00.691 [main] INFO  testcase3 - Initial search results loaded
+2026-01-09 16:16:00.691 [main] INFO  TestSteps - >>> Step 2 : Apply price filter: $500.0 - $1000.0
+2026-01-09 16:16:03.482 [main] INFO  testcase3 - Price filter applied successfully
+2026-01-09 16:16:06.510 [main] INFO  testcase3 - Filtered results loaded
+2026-01-09 16:16:06.510 [main] INFO  TestSteps - >>> Step 3 : Extract all product prices
+2026-01-09 16:16:06.675 [main] INFO  testcase3 - Extracted 15 prices from products
+2026-01-09 16:16:06.675 [main] INFO  testcase3 - Price extraction successful
+2026-01-09 16:16:06.675 [main] INFO  TestSteps - >>> Step 4 : Validate all prices are within range
+2026-01-09 16:16:06.676 [main] INFO  testcase3 - All prices verified to be within range $500.0 - $1000.0
+2026-01-09 16:16:06.676 [main] INFO  testcase3 - ========================================
+2026-01-09 16:16:06.676 [main] INFO  testcase3 - TEST RESULT: PASSED ✓
+2026-01-09 16:16:06.676 [main] INFO  testcase3 - ========================================
+2026-01-09 16:16:06.676 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:16:06.676 [main] INFO  TestExecution - # TEST CASE TC_AMZ_003 - RESULT: PASSED
+2026-01-09 16:16:06.676 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:16:06.676 [main] INFO  TestExecution - 
+2026-01-09 16:16:06.676 [main] INFO  utils.ScreenshotListener - Test passed: testPriceFilter
+2026-01-09 16:16:06.676 [main] INFO  testcase3 - --- Test Teardown Started ---
+2026-01-09 16:16:06.676 [main] INFO  testcase3 - Browser session maintained
+2026-01-09 16:16:06.676 [main] INFO  testcase3 - --- Test Teardown Completed ---
+2026-01-09 16:16:06.799 [main] INFO  testcase3 - Browser closed successfully
+2026-01-09 16:16:06.799 [main] INFO  testcase3 - ALL TESTS COMPLETED FOR TC_AMZ_003
+2026-01-09 16:16:06.799 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:16:06.799 [main] INFO  TestSteps -   TC_AMZ_004: Verify Product Details Display
+2026-01-09 16:16:06.799 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:16:06.799 [main] INFO  testcase4 - Priority: HIGH (P2) | Type: Smoke Test | Automation: YES
+2026-01-09 16:16:06.802 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:16:06.803 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:16:06.803 [main] INFO  testcase4 - WebDriverManager setup completed
+2026-01-09 16:16:06.803 [main] INFO  testcase4 - --- Test Setup Started ---
+2026-01-09 16:16:07.204 [main] INFO  testcase4 - --- Test Setup Completed ---
+2026-01-09 16:16:07.205 [main] INFO  utils.ScreenshotListener - Starting test: testProductDetailsDisplay
+2026-01-09 16:16:07.205 [main] INFO  TestExecution - 
+2026-01-09 16:16:07.205 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:16:07.205 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_004 - Verify Product Details Display
+2026-01-09 16:16:07.205 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:16:07.205 [main] INFO  testcase4 - Search Keyword: laptop
+2026-01-09 16:16:07.205 [main] INFO  TestSteps - >>> Pre-condition : Search for product
+2026-01-09 16:16:17.587 [main] INFO  testcase4 - Navigated to Amazon homepage
+2026-01-09 16:16:17.655 [main] INFO  testcase4 - Entered search keyword: laptop
+2026-01-09 16:16:21.668 [main] INFO  testcase4 - Clicked search button
+2026-01-09 16:16:21.678 [main] INFO  testcase4 - Search results loaded
+2026-01-09 16:16:21.678 [main] INFO  TestSteps - >>> Step 1-2 : Get product title and click first product
+2026-01-09 16:16:21.690 [main] INFO  testcase4 - First product title: HP 15.6" Laptop with Microsoft 365-1.1TB Storage - 8GB Memory - Intel Inside | Anti-Glare Display, 128GB SSD and 1TB Cloud Storage, 4-Cores CPU, Fast Charge and 12hrs Battery, no Mouse
+2026-01-09 16:16:21.690 [main] INFO  testcase4 - Product title validation passed
+2026-01-09 16:16:27.611 [main] INFO  testcase4 - Successfully clicked first product
+2026-01-09 16:16:27.611 [main] INFO  TestSteps - >>> Step 3 : Verify product details page elements
+2026-01-09 16:16:27.637 [main] INFO  testcase4 - Product details page verified successfully
+2026-01-09 16:16:27.637 [main] INFO  testcase4 - ========================================
+2026-01-09 16:16:27.637 [main] INFO  testcase4 - TEST RESULT: PASSED ✓
+2026-01-09 16:16:27.637 [main] INFO  testcase4 - ========================================
+2026-01-09 16:16:27.637 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:16:27.637 [main] INFO  TestExecution - # TEST CASE TC_AMZ_004 - RESULT: PASSED
+2026-01-09 16:16:27.637 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:16:27.637 [main] INFO  TestExecution - 
+2026-01-09 16:16:27.637 [main] INFO  utils.ScreenshotListener - Test passed: testProductDetailsDisplay
+2026-01-09 16:16:27.637 [main] INFO  testcase4 - --- Test Teardown Started ---
+2026-01-09 16:16:27.767 [main] INFO  testcase4 - Browser closed
+2026-01-09 16:16:27.767 [main] INFO  testcase4 - --- Test Teardown Completed ---
+2026-01-09 16:16:27.767 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:16:27.767 [main] INFO  TestSteps -   TC_AMZ_006: Update Cart Quantity
+2026-01-09 16:16:27.767 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:16:27.767 [main] INFO  testcase6 - Priority: HIGH (P2) | Type: Functional Test | Automation: YES
+2026-01-09 16:16:27.769 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:16:27.770 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:16:27.770 [main] INFO  testcase6 - WebDriverManager setup completed
+2026-01-09 16:16:27.771 [main] INFO  testcase6 - --- Test Setup Started ---
+2026-01-09 16:16:28.220 [main] INFO  testcase6 - --- Test Setup Completed ---
+2026-01-09 16:16:28.220 [main] INFO  utils.ScreenshotListener - Starting test: testUpdateAndRemoveCartItem
+2026-01-09 16:16:28.220 [main] INFO  TestExecution - 
+2026-01-09 16:16:28.220 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:16:28.220 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_006 - Update Cart Quantity
+2026-01-09 16:16:28.220 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:16:28.220 [main] INFO  testcase6 - Search Keyword: usb cable
+2026-01-09 16:16:28.220 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 16:16:38.686 [main] INFO  testcase6 - Navigated to homepage
+2026-01-09 16:16:38.736 [main] INFO  testcase6 - Entered search keyword: usb cable
+2026-01-09 16:16:42.722 [main] INFO  testcase6 - Search results loaded
+2026-01-09 16:16:45.897 [main] INFO  testcase6 - Clicked first product
+2026-01-09 16:16:57.437 [main] INFO  testcase6 - Added product to cart
+2026-01-09 16:16:58.759 [main] INFO  testcase6 - Navigated to cart page
+2026-01-09 16:16:58.759 [main] INFO  TestSteps - >>> Step 1 : Update cart quantity to 2
+2026-01-09 16:17:09.096 [main] WARN  testcase6 - Quantity update skipped (maybe limited stock or different UI)
+2026-01-09 16:17:09.096 [main] INFO  TestSteps - >>> Step 2 : Remove item from cart
+2026-01-09 16:17:09.107 [main] INFO  testcase6 - Cart count before delete: 1
+2026-01-09 16:17:11.168 [main] INFO  testcase6 - Delete button clicked
+2026-01-09 16:17:11.183 [main] INFO  testcase6 - Cart count after delete: 0
+2026-01-09 16:17:11.184 [main] INFO  testcase6 - Cart count decreased successfully
+2026-01-09 16:17:11.184 [main] INFO  testcase6 - ========================================
+2026-01-09 16:17:11.184 [main] INFO  testcase6 - TEST RESULT: PASSED ✓
+2026-01-09 16:17:11.184 [main] INFO  testcase6 - ========================================
+2026-01-09 16:17:11.184 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:17:11.184 [main] INFO  TestExecution - # TEST CASE TC_AMZ_006 - RESULT: PASSED
+2026-01-09 16:17:11.184 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:17:11.184 [main] INFO  TestExecution - 
+2026-01-09 16:17:11.184 [main] INFO  utils.ScreenshotListener - Test passed: testUpdateAndRemoveCartItem
+2026-01-09 16:17:11.185 [main] INFO  testcase6 - --- Test Teardown Started ---
+2026-01-09 16:17:11.327 [main] INFO  testcase6 - Browser closed
+2026-01-09 16:17:11.327 [main] INFO  testcase6 - --- Test Teardown Completed ---
+2026-01-09 16:17:11.327 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:17:11.327 [main] INFO  TestSteps -   TC_AMZ_007: Remove Item from Cart
+2026-01-09 16:17:11.327 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:17:11.327 [main] INFO  testcase7 - Priority: MEDIUM (P3) | Type: Functional Test | Automation: YES
+2026-01-09 16:17:11.330 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:17:11.331 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:17:11.331 [main] INFO  testcase7 - WebDriverManager setup completed
+2026-01-09 16:17:11.331 [main] INFO  testcase7 - --- Test Setup Started ---
+2026-01-09 16:17:11.763 [main] INFO  testcase7 - --- Test Setup Completed ---
+2026-01-09 16:17:11.763 [main] INFO  utils.ScreenshotListener - Starting test: testRemoveItemFromCart
+2026-01-09 16:17:11.763 [main] INFO  TestExecution - 
+2026-01-09 16:17:11.763 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:17:11.763 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_007 - Remove Item from Cart
+2026-01-09 16:17:11.763 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:17:11.763 [main] INFO  testcase7 - Search Keyword: mouse
+2026-01-09 16:17:11.763 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 16:17:22.371 [main] INFO  testcase7 - Navigated to homepage
+2026-01-09 16:17:26.438 [main] INFO  testcase7 - Search results loaded
+2026-01-09 16:17:29.713 [main] INFO  testcase7 - Clicked first product
+2026-01-09 16:17:40.472 [main] INFO  testcase7 - Added product to cart
+2026-01-09 16:17:42.685 [main] INFO  testcase7 - Navigated to cart page
+2026-01-09 16:17:42.695 [main] INFO  testcase7 - Cart count before removal: 1
+2026-01-09 16:17:42.696 [main] INFO  TestSteps - >>> Step 1 : Remove item from cart
+2026-01-09 16:17:44.747 [main] INFO  testcase7 - Item deleted successfully
+2026-01-09 16:17:44.749 [main] INFO  TestSteps - >>> Step 2 : Verify cart count decreased
+2026-01-09 16:17:44.774 [main] INFO  testcase7 - Cart count after removal: 0
+2026-01-09 16:17:44.774 [main] INFO  testcase7 - Cart count verification passed
+2026-01-09 16:17:44.774 [main] INFO  TestSteps - >>> Step 3 : Verify empty cart message
+2026-01-09 16:17:44.774 [main] INFO  testcase7 - Cart is empty, verifying empty cart message
+2026-01-09 16:17:46.809 [main] WARN  testcase7 - Empty cart message not found, but count is 0. Proceeding.
+2026-01-09 16:17:46.810 [main] INFO  TestSteps - >>> Step 4 : Verify checkout button hidden
+2026-01-09 16:17:46.816 [main] INFO  testcase7 - Checkout button visible: false
+2026-01-09 16:17:46.816 [main] INFO  testcase7 - Checkout button correctly hidden
+2026-01-09 16:17:46.816 [main] INFO  testcase7 - ========================================
+2026-01-09 16:17:46.816 [main] INFO  testcase7 - TEST RESULT: PASSED ✓
+2026-01-09 16:17:46.816 [main] INFO  testcase7 - ========================================
+2026-01-09 16:17:46.816 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:17:46.816 [main] INFO  TestExecution - # TEST CASE TC_AMZ_007 - RESULT: PASSED
+2026-01-09 16:17:46.816 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:17:46.816 [main] INFO  TestExecution - 
+2026-01-09 16:17:46.817 [main] INFO  utils.ScreenshotListener - Test passed: testRemoveItemFromCart
+2026-01-09 16:17:46.817 [main] INFO  testcase7 - --- Test Teardown Started ---
+2026-01-09 16:17:46.965 [main] INFO  testcase7 - Browser closed
+2026-01-09 16:17:46.965 [main] INFO  testcase7 - --- Test Teardown Completed ---
+2026-01-09 16:17:46.965 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:17:46.965 [main] INFO  TestSteps -   TC_AMZ_008: Proceed to Checkout (Guest User)
+2026-01-09 16:17:46.965 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:17:46.965 [main] INFO  testcase8 - Priority: MEDIUM (P3) | Type: Smoke Test | Automation: YES
+2026-01-09 16:17:46.968 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:17:46.969 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:17:46.969 [main] INFO  testcase8 - WebDriverManager setup completed
+2026-01-09 16:17:46.969 [main] INFO  testcase8 - --- Test Setup Started ---
+2026-01-09 16:17:47.395 [main] INFO  testcase8 - --- Test Setup Completed ---
+2026-01-09 16:17:47.395 [main] INFO  utils.ScreenshotListener - Starting test: testProceedToCheckout
+2026-01-09 16:17:47.396 [main] INFO  TestExecution - 
+2026-01-09 16:17:47.396 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:17:47.396 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_008 - Proceed to Checkout
+2026-01-09 16:17:47.396 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:17:47.396 [main] INFO  testcase8 - Search Keyword: The Great Gatsby
+2026-01-09 16:17:47.396 [main] INFO  TestSteps - >>> Pre-condition : Add item to cart
+2026-01-09 16:17:58.070 [main] INFO  testcase8 - Navigated to homepage
+2026-01-09 16:18:01.366 [main] INFO  testcase8 - Search results loaded
+2026-01-09 16:18:11.693 [main] WARN  testcase8 - Specific book by XPath not found. Falling back to first product.
+2026-01-09 16:18:28.086 [main] INFO  testcase8 - Item added to cart
+2026-01-09 16:18:28.101 [main] INFO  testcase8 - DEBUG: Cart count after add: 1
+2026-01-09 16:18:28.101 [main] INFO  testcase8 - Cart count verification passed
+2026-01-09 16:18:28.101 [main] INFO  TestSteps - >>> Step 1 : Navigate to cart
+2026-01-09 16:18:29.640 [main] INFO  testcase8 - Navigated to cart page
+2026-01-09 16:18:29.641 [main] INFO  TestSteps - >>> Step 2 : Click 'Proceed to Checkout'
+2026-01-09 16:18:31.901 [main] INFO  testcase8 - Proceed to Checkout clicked
+2026-01-09 16:18:31.901 [main] INFO  TestSteps - >>> Step 3 : Verify redirected to checkout or sign-in page
+2026-01-09 16:18:34.910 [main] INFO  testcase8 - Current URL after checkout: https://www.amazon.com/ap/signin?openid.pape.max_auth_age=900&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fcheckout%2Fentry%2Fcart%3FisEligibilityLogicDisabled%3D1%26referrer%3Dcart%26proceedToCheckout%3D1%26proceedToCheckout%3D1%26ref_%3Dox_sc_proceed%26oldCustomerId%3D0%26tangoWeblabStatus%3Dtango_enable_unrec_customer%26sessionID%3D138-8409594-8732942%26pipelineType%3DChewbacca%26isToBeGiftWrappedBefore%3D0%26useDefaultCart%3D1%26isUnrec%3D1&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amazon_checkout_us&openid.mode=checkid_setup&language=en_US&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+2026-01-09 16:18:34.910 [main] INFO  testcase8 - Successfully redirected to checkout flow
+2026-01-09 16:18:34.910 [main] INFO  testcase8 - ========================================
+2026-01-09 16:18:34.910 [main] INFO  testcase8 - TEST RESULT: PASSED ✓
+2026-01-09 16:18:34.910 [main] INFO  testcase8 - ========================================
+2026-01-09 16:18:34.910 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:18:34.910 [main] INFO  TestExecution - # TEST CASE TC_AMZ_008 - RESULT: PASSED
+2026-01-09 16:18:34.910 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:18:34.910 [main] INFO  TestExecution - 
+2026-01-09 16:18:34.910 [main] INFO  utils.ScreenshotListener - Test passed: testProceedToCheckout
+2026-01-09 16:18:34.911 [main] INFO  testcase8 - --- Test Teardown Started ---
+2026-01-09 16:18:35.061 [main] INFO  testcase8 - Browser closed
+2026-01-09 16:18:35.061 [main] INFO  testcase8 - --- Test Teardown Completed ---
+2026-01-09 16:18:35.062 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:18:35.062 [main] INFO  TestSteps -   TC_AMZ_010: Cart Persistence After Page Refresh
+2026-01-09 16:18:35.062 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:18:35.062 [main] INFO  testcase10 - Priority: MEDIUM (P3) | Type: Functional Test | Automation: YES
+2026-01-09 16:18:35.064 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:18:35.066 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:18:35.066 [main] INFO  testcase10 - WebDriverManager setup completed
+2026-01-09 16:18:35.066 [main] INFO  testcase10 - --- Test Setup Started ---
+2026-01-09 16:18:35.463 [main] INFO  testcase10 - --- Test Setup Completed ---
+2026-01-09 16:18:35.463 [main] INFO  utils.ScreenshotListener - Starting test: testCartPersistence
+2026-01-09 16:18:35.463 [main] INFO  TestExecution - 
+2026-01-09 16:18:35.463 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:18:35.463 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_010 - Cart Persistence After Refresh
+2026-01-09 16:18:35.463 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:18:35.463 [main] INFO  testcase10 - Search Keyword: monitor
+2026-01-09 16:18:35.463 [main] INFO  TestSteps - >>> Step 1 : Add item to cart
+2026-01-09 16:18:45.213 [main] INFO  testcase10 - Navigated to homepage
+2026-01-09 16:18:47.276 [main] INFO  testcase10 - Search results loaded
+2026-01-09 16:18:50.668 [main] INFO  testcase10 - Clicked first product
+2026-01-09 16:18:56.363 [main] INFO  testcase10 - Added product to cart
+2026-01-09 16:18:56.363 [main] INFO  TestSteps - >>> Step 2 : Get cart count before refresh
+2026-01-09 16:18:56.377 [main] INFO  testcase10 - Cart count before refresh: 1
+2026-01-09 16:18:56.377 [main] INFO  TestSteps - >>> Step 3 : Refresh the page
+2026-01-09 16:19:00.552 [main] INFO  testcase10 - Page refreshed
+2026-01-09 16:19:00.553 [main] INFO  TestSteps - >>> Step 4 : Get cart count after refresh
+2026-01-09 16:19:00.564 [main] INFO  testcase10 - Cart count after refresh: 1
+2026-01-09 16:19:00.565 [main] INFO  testcase10 - Cart count verification passed - items persisted
+2026-01-09 16:19:00.565 [main] INFO  TestSteps - >>> Step 5 : Navigate to cart page and verify
+2026-01-09 16:19:02.125 [main] INFO  testcase10 - Navigated to cart page
+2026-01-09 16:19:02.131 [main] INFO  testcase10 - Cart page count: 1
+2026-01-09 16:19:02.131 [main] INFO  testcase10 - Cart page count verification passed
+2026-01-09 16:19:02.131 [main] INFO  testcase10 - ========================================
+2026-01-09 16:19:02.131 [main] INFO  testcase10 - TEST RESULT: PASSED ✓
+2026-01-09 16:19:02.131 [main] INFO  testcase10 - ========================================
+2026-01-09 16:19:02.131 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:02.131 [main] INFO  TestExecution - # TEST CASE TC_AMZ_010 - RESULT: PASSED
+2026-01-09 16:19:02.131 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:02.131 [main] INFO  TestExecution - 
+2026-01-09 16:19:02.131 [main] INFO  utils.ScreenshotListener - Test passed: testCartPersistence
+2026-01-09 16:19:02.131 [main] INFO  testcase10 - --- Test Teardown Started ---
+2026-01-09 16:19:02.277 [main] INFO  testcase10 - Browser closed
+2026-01-09 16:19:02.278 [main] INFO  testcase10 - --- Test Teardown Completed ---
+2026-01-09 16:19:02.278 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:19:02.278 [main] INFO  TestSteps -   TC_AMZ_002: Verify Search with Invalid Keyword
+2026-01-09 16:19:02.278 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:19:02.278 [main] INFO  testcase2 - Priority: LOW (P4) | Type: Negative Test | Automation: YES
+2026-01-09 16:19:02.281 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:19:02.281 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:19:02.281 [main] INFO  testcase2 - WebDriverManager setup completed
+2026-01-09 16:19:02.282 [main] INFO  testcase2 - --- Test Setup Started ---
+2026-01-09 16:19:02.712 [main] INFO  testcase2 - --- Test Setup Completed ---
+2026-01-09 16:19:02.713 [main] INFO  utils.ScreenshotListener - Starting test: testInvalidKeywordSearch
+2026-01-09 16:19:02.713 [main] INFO  TestExecution - 
+2026-01-09 16:19:02.713 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:02.713 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_002 - Verify Invalid Search
+2026-01-09 16:19:02.713 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:02.713 [main] INFO  testcase2 - Invalid Keyword: xyzabc123!@#$%
+2026-01-09 16:19:02.713 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 16:19:12.583 [main] INFO  testcase2 - Navigation successful
+2026-01-09 16:19:12.584 [main] INFO  TestSteps - >>> Step 2-3 : Locate search box and enter invalid keyword
+2026-01-09 16:19:12.664 [main] INFO  testcase2 - Invalid keyword 'xyzabc123!@#$%' entered
+2026-01-09 16:19:12.664 [main] INFO  TestSteps - >>> Step 4 : Click search button
+2026-01-09 16:19:24.262 [main] INFO  testcase2 - Search results page loaded
+2026-01-09 16:19:24.262 [main] INFO  TestSteps - >>> Step 5-6 : Verify 'No results' message or suggestions
+2026-01-09 16:19:24.295 [main] INFO  testcase2 - No Results Message Found: true
+2026-01-09 16:19:24.295 [main] INFO  testcase2 - Suggestions Found: true
+2026-01-09 16:19:24.296 [main] INFO  testcase2 - Verification passed: No results or suggestions displayed
+2026-01-09 16:19:24.296 [main] INFO  TestSteps - >>> Step 7 : Verify zero product cards displayed
+2026-01-09 16:19:24.300 [main] INFO  testcase2 - Product count: 0
+2026-01-09 16:19:24.300 [main] INFO  testcase2 - Verification passed: Zero products displayed
+2026-01-09 16:19:24.300 [main] INFO  testcase2 - ========================================
+2026-01-09 16:19:24.300 [main] INFO  testcase2 - TEST RESULT: PASSED ✓
+2026-01-09 16:19:24.300 [main] INFO  testcase2 - ========================================
+2026-01-09 16:19:24.300 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:24.300 [main] INFO  TestExecution - # TEST CASE TC_AMZ_002 - RESULT: PASSED
+2026-01-09 16:19:24.300 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:24.300 [main] INFO  TestExecution - 
+2026-01-09 16:19:24.300 [main] INFO  utils.ScreenshotListener - Test passed: testInvalidKeywordSearch
+2026-01-09 16:19:24.300 [main] INFO  testcase2 - --- Test Teardown Started ---
+2026-01-09 16:19:24.300 [main] INFO  testcase2 - Browser session maintained
+2026-01-09 16:19:24.300 [main] INFO  testcase2 - --- Test Teardown Completed ---
+2026-01-09 16:19:24.416 [main] INFO  testcase2 - Browser closed successfully
+2026-01-09 16:19:24.416 [main] INFO  testcase2 - ALL TESTS COMPLETED FOR TC_AMZ_002
+2026-01-09 16:19:24.416 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:19:24.416 [main] INFO  TestSteps -   TC_AMZ_009: Empty Search Validation
+2026-01-09 16:19:24.416 [main] INFO  TestSteps - ================================================================================
+2026-01-09 16:19:24.416 [main] INFO  testcase9 - Priority: LOW (P4) | Type: Negative Test | Automation: YES
+2026-01-09 16:19:24.418 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-09 16:19:24.419 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/anishk/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver
+2026-01-09 16:19:24.419 [main] INFO  testcase9 - WebDriverManager setup completed
+2026-01-09 16:19:24.419 [main] INFO  testcase9 - --- Test Setup Started ---
+2026-01-09 16:19:24.844 [main] INFO  testcase9 - --- Test Setup Completed ---
+2026-01-09 16:19:24.844 [main] INFO  utils.ScreenshotListener - Starting test: testEmptySearch
+2026-01-09 16:19:24.844 [main] INFO  TestExecution - 
+2026-01-09 16:19:24.844 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:24.844 [main] INFO  TestExecution - # TEST CASE: TC_AMZ_009 - Empty Search Validation
+2026-01-09 16:19:24.844 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:24.844 [main] INFO  TestSteps - >>> Step 1 : Navigate to Amazon homepage
+2026-01-09 16:19:35.821 [main] INFO  testcase9 - Navigated to homepage
+2026-01-09 16:19:35.821 [main] INFO  TestSteps - >>> Step 2 : Clear search box to ensure it's empty
+2026-01-09 16:19:35.842 [main] INFO  testcase9 - Search box cleared
+2026-01-09 16:19:35.842 [main] INFO  TestSteps - >>> Step 3 : Click search button with empty search box
+2026-01-09 16:19:37.634 [main] INFO  testcase9 - Search button clicked with empty input
+2026-01-09 16:19:39.636 [main] INFO  TestSteps - >>> Step 4 : Verify no errors and proper handling
+2026-01-09 16:19:39.640 [main] INFO  testcase9 - URL after empty search: https://www.amazon.com/
+2026-01-09 16:19:39.640 [main] INFO  testcase9 - Domain verification passed
+2026-01-09 16:19:39.643 [main] INFO  testcase9 - Error page check passed
+2026-01-09 16:19:39.643 [main] INFO  testcase9 - ========================================
+2026-01-09 16:19:39.643 [main] INFO  testcase9 - TEST RESULT: PASSED ✓
+2026-01-09 16:19:39.643 [main] INFO  testcase9 - ========================================
+2026-01-09 16:19:39.643 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:39.643 [main] INFO  TestExecution - # TEST CASE TC_AMZ_009 - RESULT: PASSED
+2026-01-09 16:19:39.643 [main] INFO  TestExecution - ################################################################################
+2026-01-09 16:19:39.643 [main] INFO  TestExecution - 
+2026-01-09 16:19:39.644 [main] INFO  utils.ScreenshotListener - Test passed: testEmptySearch
+2026-01-09 16:19:39.644 [main] INFO  testcase9 - --- Test Teardown Started ---
+2026-01-09 16:19:39.759 [main] INFO  testcase9 - Browser closed
+2026-01-09 16:19:39.759 [main] INFO  testcase9 - --- Test Teardown Completed ---
+2026-01-09 16:19:39.759 [main] INFO  utils.ScreenshotListener - ========================================
+2026-01-09 16:19:39.759 [main] INFO  utils.ScreenshotListener - Test Suite Finished: Amazon E-Commerce Test Suite
+2026-01-09 16:19:39.759 [main] INFO  utils.ScreenshotListener - Total Tests: 10
+2026-01-09 16:19:39.759 [main] INFO  utils.ScreenshotListener - Passed: 10
+2026-01-09 16:19:39.759 [main] INFO  utils.ScreenshotListener - Failed: 0
+2026-01-09 16:19:39.759 [main] INFO  utils.ScreenshotListener - Skipped: 0
+2026-01-09 16:19:39.759 [main] INFO  utils.ScreenshotListener - ========================================

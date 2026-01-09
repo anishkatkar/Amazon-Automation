@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <!-- 
+        Log4j2 Configuration for Amazon Automation Test Suite
+        This configuration sets up both console and file logging with appropriate formats
+    -->
+    
+    <Properties>
+        <!-- Define log file location - logs will be stored in project's logs folder -->
+        <Property name="LOG_DIR">logs</Property>
+        <Property name="LOG_FILE">automation</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- Console Appender - Displays logs in console with colored output -->
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- File Appender - Stores logs in file with daily rollover -->
+        <RollingFile name="FileAppender" 
+                     fileName="${LOG_DIR}/${LOG_FILE}.log"
+                     filePattern="${LOG_DIR}/${LOG_FILE}-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- Rollover daily -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <!-- Rollover when file size reaches 10MB -->
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <!-- Keep maximum 10 log files -->
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- Root logger - catches all logs -->
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+        
+        <!-- Selenium WebDriver logs - set to WARN to reduce noise -->
+        <Logger name="org.openqa.selenium" level="warn" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+        
+        <!-- TestNG logs -->
+        <Logger name="org.testng" level="info" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>

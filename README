@@ -1,0 +1,633 @@
+# 🧪 Amazon.com - Manual Test Scripts for Automation
+## Detailed Test Cases for Selenium Automation
+
+**Prepared by:** Manual QA Team  
+**For:** Automation Engineering Team  
+**Application:** Amazon.com (E-commerce Platform)  
+**Date:** December 22, 2024  
+**Environment:** Production (amazon.com)
+
+---
+
+## 📋 **Test Script Format**
+
+Each test script includes:
+- **Test Case ID** - Unique identifier
+- **Test Objective** - What we're validating
+- **Pre-conditions** - Setup required before test
+- **Test Data** - Specific data to use
+- **Detailed Steps** - Step-by-step actions with element locators
+- **Expected Results** - What should happen at each step
+- **Post-conditions** - Cleanup required
+- **Automation Notes** - Tips for automation engineer
+
+---
+
+## 🔍 **MODULE 1: SEARCH FUNCTIONALITY**
+---
+
+### **TC_AMZ_001: Verify Valid Product Search**
+
+**Priority:** HIGH | **Type:** Smoke Test | **Automation:** YES
+
+**Test Objective:**  
+Validate that searching with a valid keyword returns relevant product results
+
+**Pre-conditions:**
+- Browser is open
+- Navigate to https://www.amazon.com
+- No items in cart (start fresh)
+
+**Test Data:**
+```
+Search Keyword: "laptop"
+Expected Min Results: 50
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Navigate to Amazon homepage | URL: https://www.amazon.com | Homepage loads successfully | `driver.get("https://www.amazon.com")` |
+| 2 | Locate search box | ID: `twotabsearchtextbox`<br>Type: input text field | Search box is visible and enabled | `WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"))` |
+| 3 | Clear existing text (if any) | Same as Step 2 | Search box is empty | `searchBox.clear()` |
+| 4 | Enter search keyword "laptop" | Same as Step 2 | Text "laptop" appears in search box | `searchBox.sendKeys("laptop")` |
+| 5 | Locate search button | ID: `nav-search-submit-button`<br>Type: button | Search button is visible | `WebElement searchBtn = driver.findElement(By.id("nav-search-submit-button"))` |
+| 6 | Click search button | Same as Step 5 | Search results page loads | `searchBtn.click()` |
+| 7 | Wait for results to load | CSS: `[data-component-type="s-search-result"]`<br>Wait: 10 seconds | Results appear on page | `wait.until(visibilityOfElementLocated(By.cssSelector("[data-component-type='s-search-result']")))` |
+| 8 | Verify results count text | XPATH: `//span[contains(text(),'results for')]`<br>or<br>CSS: `.sg-col-inner` | Text shows "X results for 'laptop'" | Extract text and validate |
+| 9 | Count number of product cards | CSS: `[data-component-type="s-search-result"]` | Count ≥ 50 products | `List<WebElement> results = driver.findElements(By.cssSelector("[data-component-type='s-search-result']"))` |
+| 10 | Verify first product has image | CSS: `.s-image` (within first result) | Image is displayed | Check `isDisplayed()` |
+| 11 | Verify first product has title | CSS: `.a-size-medium.a-color-base.a-text-normal` | Title text is present | Check text is not empty |
+| 12 | Verify first product has price | CSS: `.a-price-whole` | Price is displayed | Check element exists |
+
+**Expected Final Result:**
+- Search results page displays
+- Minimum 50 products shown
+- Each product has: image, title, price
+- Results are relevant to "laptop"
+
+**Post-conditions:**
+- Stay on search results page
+- Browser remains open for next test
+
+**Automation Notes:**
+```java
+// Use explicit wait for dynamic elements
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+// Store results count for validation
+int resultsCount = driver.findElements(By.cssSelector("[data-component-type='s-search-result']")).size();
+Assert.assertTrue(resultsCount >= 50, "Expected at least 50 results");
+
+// Validate first product
+WebElement firstProduct = driver.findElement(By.cssSelector("[data-component-type='s-search-result']"));
+Assert.assertTrue(firstProduct.findElement(By.cssSelector(".s-image")).isDisplayed());
+```
+
+---
+
+### **TC_AMZ_002: Verify Search with Invalid Keyword (Negative Test)**
+
+**Priority:** MEDIUM | **Type:** Negative Test | **Automation:** YES
+
+**Test Objective:**  
+Validate system behavior when searching with invalid/random characters
+
+**Pre-conditions:**
+- Browser is open
+- Navigate to https://www.amazon.com
+
+**Test Data:**
+```
+Search Keyword: "xyzabc123!@#$%"
+Expected: No results or suggestions
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Navigate to Amazon homepage | URL: https://www.amazon.com | Homepage loads | - |
+| 2 | Locate search box | ID: `twotabsearchtextbox` | Search box visible | - |
+| 3 | Enter invalid keyword | Same as above | Text appears in box | `searchBox.sendKeys("xyzabc123!@#$%")` |
+| 4 | Click search button | ID: `nav-search-submit-button` | Search executes | - |
+| 5 | Wait for page load | Wait: 5 seconds | Results page loads | - |
+| 6 | Check for "no results" message | XPATH: `//*[contains(text(),'No results')]` or `//*[contains(text(),'did not match')]` | Message appears | Validate text contains "No results" |
+| 7 | Verify suggestions section | CSS: `.s-suggestion` | Related suggestions may appear | Optional check |
+| 8 | Verify no product cards | CSS: `[data-component-type="s-search-result"]` | Count = 0 | `Assert.assertEquals(0, resultsCount)` |
+
+**Expected Final Result:**
+- "No results found" message displays
+- OR "Did you mean..." suggestions appear
+- No product cards displayed
+
+**Automation Notes:**
+```java
+// Handle both scenarios (no results or suggestions)
+boolean noResults = driver.findElements(By.xpath("//*[contains(text(),'No results')]")).size() > 0;
+boolean hasSuggestions = driver.findElements(By.cssSelector(".s-suggestion")).size() > 0;
+
+Assert.assertTrue(noResults || hasSuggestions, "Expected no results message or suggestions");
+```
+
+---
+
+### **TC_AMZ_003: Verify Search with Price Filter**
+
+**Priority:** HIGH | **Type:** Functional Test | **Automation:** YES
+
+**Test Objective:**  
+Validate that price filter correctly filters search results
+
+**Pre-conditions:**
+- Execute TC_AMZ_001 first (be on search results page for "laptop")
+
+**Test Data:**
+```
+Search Keyword: "laptop" (already searched)
+Price Range: $500 to $1000
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Ensure on search results page | Current URL contains `/s?k=` | Already on results page | Can reuse from previous test |
+| 2 | Scroll to filters sidebar | Left sidebar | Filters visible | `JavascriptExecutor scroll` |
+| 3 | Locate "Price" filter section | XPATH: `//span[text()='Price']/ancestor::div[@class='a-section']` | Price section visible | - |
+| 4 | Locate "$500 to $1000" checkbox | XPATH: `//span[contains(text(),'$500 to $1,000')]` or check for price range links | Checkbox/link visible | - |
+| 5 | Click the price range filter | Same as Step 4 | Filter applies | `element.click()` |
+| 6 | Wait for page refresh | Wait for URL change or loading indicator disappears | Page reloads with filtered results | `wait.until(urlContains("rh="))` |
+| 7 | Collect all product prices | CSS: `.a-price-whole` | Prices are displayed | Loop through all results |
+| 8 | Extract price values | Parse text (remove $ and ,) | Get numeric values | `Integer.parseInt(priceText.replace("$","").replace(",",""))` |
+| 9 | Validate price range | For each price | All prices between 500 and 1000 | Assert each price in range |
+
+**Expected Final Result:**
+- Page reloads with filtered results
+- All displayed products priced between $500-$1000
+- Filter is highlighted/checked in sidebar
+
+**Automation Notes:**
+```java
+// Extract and validate prices
+List<WebElement> priceElements = driver.findElements(By.cssSelector(".a-price-whole"));
+for(WebElement priceElem : priceElements) {
+    String priceText = priceElem.getText().replace("$","").replace(",","");
+    int price = Integer.parseInt(priceText);
+    Assert.assertTrue(price >= 500 && price <= 1000, 
+        "Price " + price + " is out of range");
+}
+```
+
+**Known Issues:**
+- Some prices may show as ranges (e.g., "$500 - $800")
+- Handle fractional prices (e.g., "$599.99")
+- Some products may have "Used" prices - verify filter logic
+
+---
+
+## 🛒 **MODULE 2: PRODUCT DETAILS PAGE**
+
+---
+
+### **TC_AMZ_004: Verify Product Details Display**
+
+**Priority:** HIGH | **Type:** Smoke Test | **Automation:** YES
+
+**Test Objective:**  
+Validate that product details page displays all required information
+
+**Pre-conditions:**
+- Execute TC_AMZ_001 (be on search results page)
+- At least one product result is visible
+
+**Test Data:**
+```
+Use: First product from search results
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Locate first product in results | CSS: `[data-component-type="s-search-result"]` (first) | Product card visible | `driver.findElements(...).get(0)` |
+| 2 | Store product title for validation | CSS: `.a-size-medium.a-color-base.a-text-normal` (within first result) | Title text captured | `String expectedTitle = element.getText()` |
+| 3 | Click on first product | CSS: `.s-image` or the title link | - | `element.click()` |
+| 4 | Wait for product page load | ID: `productTitle` visible | Product page loads | `wait.until(visibilityOfElementLocated(By.id("productTitle")))` |
+| 5 | Verify product title matches | ID: `productTitle` | Title contains keywords from search | Compare with stored title |
+| 6 | Verify product image displayed | ID: `landingImage` or CSS: `#imgTagWrapperId img` | Image is visible | `element.isDisplayed()` |
+| 7 | Verify product price displayed | CSS: `.a-price-whole` or ID: `priceblock_ourprice` | Price is visible | Check element exists |
+| 8 | Verify product rating | CSS: `.a-icon-star` or `[data-hook="rating-out-of-text"]` | Rating (e.g., "4.5 out of 5") shown | Extract rating value |
+| 9 | Verify reviews count | ID: `acrCustomerReviewText` | Text like "1,234 ratings" shown | Extract count |
+| 10 | Verify "Add to Cart" button | ID: `add-to-cart-button` | Button is visible and enabled | `element.isEnabled()` |
+| 11 | Verify "Buy Now" button | ID: `buy-now-button` | Button visible | Optional check |
+| 12 | Verify product description | ID: `feature-bullets` or `productDescription` | Description text present | Check text length > 50 chars |
+
+**Expected Final Result:**
+- Product page displays completely
+- All key elements present: title, image, price, rating, Add to Cart button
+- Page is interactive (not loading)
+
+**Automation Notes:**
+```java
+// Validate all key elements
+Assert.assertTrue(driver.findElement(By.id("productTitle")).isDisplayed(), "Title missing");
+Assert.assertTrue(driver.findElement(By.id("landingImage")).isDisplayed(), "Image missing");
+Assert.assertTrue(driver.findElement(By.id("add-to-cart-button")).isEnabled(), "Add to Cart not enabled");
+
+// Extract and validate rating
+String ratingText = driver.findElement(By.cssSelector(".a-icon-star")).getText();
+Assert.assertTrue(ratingText.contains("out of 5"), "Rating format incorrect");
+```
+
+---
+
+## 🛒 **MODULE 3: SHOPPING CART**
+
+---
+
+### **TC_AMZ_005: Add Single Item to Cart**
+
+**Priority:** CRITICAL | **Type:** Smoke Test | **Automation:** YES
+
+**Test Objective:**  
+Validate that clicking "Add to Cart" successfully adds item to shopping cart
+
+**Pre-conditions:**
+- Execute TC_AMZ_004 (be on product details page)
+- Cart should be empty (or note starting count)
+
+**Test Data:**
+```
+Product: Any product from search results
+Starting Cart Count: 0 (or current count)
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Verify on product details page | ID: `productTitle` exists | Product page is loaded | - |
+| 2 | Check current cart count | ID: `nav-cart-count` | Get current count (e.g., "0") | `int initialCount = Integer.parseInt(element.getText())` |
+| 3 | Store product title | ID: `productTitle` | Save for later validation | `String productTitle = element.getText()` |
+| 4 | Store product price | CSS: `.a-price-whole` | Save for cart validation | `String productPrice = element.getText()` |
+| 5 | Locate "Add to Cart" button | ID: `add-to-cart-button` | Button is visible and enabled | - |
+| 6 | Click "Add to Cart" button | Same as Step 5 | Button click registered | `element.click()` |
+| 7 | Wait for confirmation | Wait: 3 seconds or until new element appears | Page may redirect or show modal | `wait.until(...)` |
+| 8 | Check for success message | XPATH: `//*[contains(text(),'Added to Cart')]` or confirmation modal | Success message appears | Validate message exists |
+| 9 | Verify cart count updated | ID: `nav-cart-count` | Count increased by 1 | `int newCount = Integer.parseInt(element.getText()); Assert.assertEquals(initialCount + 1, newCount)` |
+| 10 | Click on cart icon | ID: `nav-cart` or `nav-cart-count` | - | Navigate to cart page |
+| 11 | Wait for cart page load | URL contains `/cart` or `/gp/cart` | Cart page loads | `wait.until(urlContains("/cart"))` |
+| 12 | Verify product in cart | CSS: `.sc-product-title` or similar | Product title matches | Compare with stored title |
+| 13 | Verify quantity is 1 | CSS: `.a-dropdown-prompt` or quantity selector | Shows "Qty: 1" | - |
+| 14 | Verify subtotal | CSS: `.sc-price` | Price matches product price | Compare values |
+
+**Expected Final Result:**
+- Item successfully added to cart
+- Cart count increases by 1
+- Product appears in cart page with correct details
+- Subtotal is correct
+
+**Post-conditions:**
+- 1 item in cart
+- Stay on cart page for next test
+
+**Automation Notes:**
+```java
+// Store initial state
+int initialCartCount = Integer.parseInt(driver.findElement(By.id("nav-cart-count")).getText());
+String productTitle = driver.findElement(By.id("productTitle")).getText();
+
+// Add to cart
+driver.findElement(By.id("add-to-cart-button")).click();
+
+// Verify cart count updated (with retry logic for dynamic update)
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.textToBe(By.id("nav-cart-count"), 
+    String.valueOf(initialCartCount + 1)));
+
+// Navigate to cart and verify
+driver.findElement(By.id("nav-cart")).click();
+String cartProductTitle = driver.findElement(By.cssSelector(".sc-product-title")).getText();
+Assert.assertTrue(cartProductTitle.contains(productTitle), "Product not found in cart");
+```
+
+**Known Issues:**
+- Cart count may update after a delay (1-2 seconds)
+- Sometimes redirects to cart page, sometimes stays on product page
+- Handle both scenarios in automation
+
+---
+
+### **TC_AMZ_006: Update Cart Quantity**
+
+**Priority:** HIGH | **Type:** Functional Test | **Automation:** YES
+
+**Test Objective:**  
+Validate that quantity can be updated in shopping cart and subtotal recalculates
+
+**Pre-conditions:**
+- Execute TC_AMZ_005 (1 item in cart)
+- Currently on cart page
+
+**Test Data:**
+```
+Current Quantity: 1
+New Quantity: 3
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Verify on cart page | URL contains `/cart` or `/gp/cart` | Cart page loaded | - |
+| 2 | Locate quantity dropdown | CSS: `.a-dropdown-container` within cart item or<br>ID pattern: `quantity_[number]` | Dropdown visible | `Select dropdown = new Select(driver.findElement(By.cssSelector("select[name='quantity']")))` |
+| 3 | Store current unit price | CSS: `.sc-price` for individual item | Price saved | `String unitPrice = element.getText()` |
+| 4 | Store current subtotal | CSS: `.sc-price` for subtotal or ID: `sc-subtotal-amount-activecart` | Subtotal saved | Calculate expected new total |
+| 5 | Click quantity dropdown | Same as Step 2 | Dropdown opens | - |
+| 6 | Select quantity "3" | Option value="3" | Option selected | `dropdown.selectByValue("3")` or `dropdown.selectByVisibleText("3")` |
+| 7 | Wait for page refresh | Wait: 3-5 seconds | Page reloads or AJAX updates | `wait.until(stalenessOf(element))` or URL refresh |
+| 8 | Verify quantity updated | Same dropdown | Shows "Qty: 3" | `dropdown.getFirstSelectedOption().getText()` |
+| 9 | Get new subtotal | Same as Step 4 | New subtotal displayed | Extract text |
+| 10 | Calculate expected subtotal | unitPrice × 3 | - | `double expected = unitPrice * 3` |
+| 11 | Verify subtotal accuracy | Compare calculated vs displayed | Subtotal = unit price × 3 | `Assert.assertEquals(expected, actual, 0.01)` |
+| 12 | Verify cart count updated | ID: `nav-cart-count` | Shows "3" | Check cart icon count |
+
+**Expected Final Result:**
+- Quantity successfully updated to 3
+- Subtotal = original price × 3
+- Cart count shows 3
+- No error messages
+
+**Automation Notes:**
+```java
+// Select quantity using Select class
+Select qtyDropdown = new Select(driver.findElement(By.name("quantity")));
+qtyDropdown.selectByValue("3");
+
+// Wait for page to update (Amazon may reload or use AJAX)
+Thread.sleep(2000); // Or better: wait for staleness
+
+// Extract and validate prices (handle $ and , symbols)
+String priceText = driver.findElement(By.cssSelector(".sc-price")).getText();
+double price = Double.parseDouble(priceText.replace("$","").replace(",",""));
+double expectedTotal = price * 3;
+
+// Verify subtotal
+String subtotalText = driver.findElement(By.id("sc-subtotal-amount-activecart")).getText();
+double actualTotal = Double.parseDouble(subtotalText.replace("$","").replace(",",""));
+Assert.assertEquals(expectedTotal, actualTotal, 0.01, "Subtotal calculation incorrect");
+```
+
+---
+
+### **TC_AMZ_007: Remove Item from Cart**
+
+**Priority:** HIGH | **Type:** Functional Test | **Automation:** YES
+
+**Test Objective:**  
+Validate that clicking "Delete" removes item from cart completely
+
+**Pre-conditions:**
+- Execute TC_AMZ_006 (3 items in cart)
+- Currently on cart page
+
+**Test Data:**
+```
+Items in Cart: 3 (from previous test)
+Action: Remove all items
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Verify cart has items | Check cart count | Shows "3" | - |
+| 2 | Locate "Delete" button | XPATH: `//input[@value='Delete']` or<br>CSS: `input[data-action='delete']` | Delete button visible | `driver.findElement(By.xpath("//input[@value='Delete']"))` |
+| 3 | Store item count before | ID: `nav-cart-count` | Count = 3 | `int beforeCount = Integer.parseInt(element.getText())` |
+| 4 | Click "Delete" button | Same as Step 2 | Button clicked | `element.click()` |
+| 5 | Wait for cart update | Wait: 2-3 seconds | Page refreshes | `wait.until(...)` |
+| 6 | Verify item removed | Check if product still exists | Product row disappears | `Assert.assertEquals(0, driver.findElements(By.cssSelector(".sc-list-item")).size())` |
+| 7 | Verify cart count updated | ID: `nav-cart-count` | Shows "0" | Compare with before count |
+| 8 | Verify empty cart message | XPATH: `//*[contains(text(),'Your Amazon Cart is empty')]` or similar | Message displays | Text validation |
+| 9 | Verify subtotal removed | Subtotal section | Shows $0.00 or not displayed | Check element |
+| 10 | Verify "Proceed to checkout" hidden | Button should not be visible | Button not displayed | `Assert.assertFalse(element.isDisplayed())` |
+
+**Expected Final Result:**
+- Item successfully removed
+- Cart shows "empty" state
+- Cart count = 0
+- No checkout button visible
+- Empty cart message displayed
+
+**Automation Notes:**
+```java
+// Click delete
+driver.findElement(By.xpath("//input[@value='Delete']")).click();
+
+// Wait for cart to update (handle AJAX or page reload)
+wait.until(ExpectedConditions.textToBe(By.id("nav-cart-count"), "0"));
+
+// Verify empty state
+boolean emptyMessageDisplayed = driver.findElements(
+    By.xpath("//*[contains(text(),'Your Amazon Cart is empty')]")
+).size() > 0;
+Assert.assertTrue(emptyMessageDisplayed, "Empty cart message not shown");
+
+// Verify no checkout button
+boolean checkoutExists = driver.findElements(By.name("proceedToCheckout")).size() > 0;
+Assert.assertFalse(checkoutExists, "Checkout button should not be visible");
+```
+
+---
+
+## 📦 **MODULE 4: CHECKOUT PROCESS**
+
+---
+
+### **TC_AMZ_008: Proceed to Checkout (Guest User)**
+
+**Priority:** CRITICAL | **Type:** Smoke Test | **Automation:** YES
+
+**Test Objective:**  
+Validate that user can proceed to checkout and reach address entry page
+
+**Pre-conditions:**
+- Add at least 1 item to cart (execute TC_AMZ_005)
+- User is NOT logged in (guest user)
+
+**Test Data:**
+```
+Email: test_automation_user@example.com
+Note: Do NOT complete checkout (stop before payment)
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Add item to cart | Execute TC_AMZ_005 | 1 item in cart | Reuse previous test |
+| 2 | Navigate to cart page | Click cart icon | Cart page loads | - |
+| 3 | Locate "Proceed to checkout" | ID: `sc-buy-box-ptc-button` or<br>Name: `proceedToCheckout` | Button visible and enabled | `driver.findElement(By.name("proceedToCheckout"))` |
+| 4 | Click "Proceed to checkout" | Same as Step 3 | Button clicked | `element.click()` |
+| 5 | Wait for sign-in page load | URL contains `/signin` or `/ap/signin` | Sign-in page displays | `wait.until(urlContains("/signin"))` |
+| 6 | Check for email input field | ID: `ap_email` or Name: `email` | Input field visible | - |
+| 7 | Enter email address | Same as Step 6 | Email appears in field | `element.sendKeys("test@example.com")` |
+| 8 | Click "Continue" button | ID: `continue` | Button clicked | `element.click()` |
+| 9 | **STOP HERE** | - | - | **DO NOT PROCEED FURTHER** |
+| 10 | Verify URL or page content | Check for password field or address form | Appropriate next step displays | Validate without proceeding |
+
+**Expected Final Result:**
+- Checkout process initiates
+- Sign-in/email page appears
+- Email can be entered
+- **Test stops before password/payment entry**
+
+**Post-conditions:**
+- Exit checkout flow
+- Clear cart if needed for next test
+
+**Automation Notes:**
+```java
+// Proceed to checkout
+driver.findElement(By.name("proceedToCheckout")).click();
+
+// Wait for sign-in page
+wait.until(urlContains("/signin"));
+
+// Verify email field exists
+boolean emailFieldExists = driver.findElements(By.id("ap_email")).size() > 0;
+Assert.assertTrue(emailFieldExists, "Email field not found");
+
+// Enter test email
+driver.findElement(By.id("ap_email")).sendKeys("test@example.com");
+
+// Click continue
+driver.findElement(By.id("continue")).click();
+
+// IMPORTANT: STOP HERE - Do not proceed to payment
+// Verify next step appears but don't complete
+
+// Clean up: Navigate back to homepage
+driver.get("https://www.amazon.com");
+```
+
+**⚠️ CRITICAL NOTES:**
+- **DO NOT complete actual checkout**
+- **DO NOT enter real payment information**
+- **DO NOT create fake accounts repeatedly**
+- This test validates checkout flow initiation only
+- For full checkout testing, use Amazon's test environment (if available)
+
+---
+
+## 🔄 **MODULE 5: CROSS-BROWSER & EDGE CASES**
+
+---
+
+### **TC_AMZ_009: Empty Search Validation (Negative Test)**
+
+**Priority:** MEDIUM | **Type:** Negative Test | **Automation:** YES
+
+**Test Objective:**  
+Validate system behavior when search is submitted without entering any keyword
+
+**Pre-conditions:**
+- Navigate to Amazon homepage
+
+**Test Data:**
+```
+Search Keyword: [empty/blank]
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Navigate to homepage | URL: amazon.com | Homepage loads | - |
+| 2 | Locate search box | ID: `twotabsearchtextbox` | Search box visible | - |
+| 3 | Ensure search box is empty | Same | No text in box | `element.clear()` |
+| 4 | Click search button directly | ID: `nav-search-submit-button` | Button clicked | `element.click()` |
+| 5 | Observe behavior | Wait: 2 seconds | Page may stay on homepage OR show all products | Either is acceptable |
+| 6 | Verify no error message | Check for error alerts | No error displayed | System handles gracefully |
+| 7 | Verify URL | Current URL | Should not navigate to `/s?k=` with empty param | Check URL pattern |
+
+**Expected Result:**
+- System handles empty search gracefully
+- No crash or error message
+- Either stays on homepage OR shows all products
+
+**Automation Notes:**
+```java
+driver.findElement(By.id("twotabsearchtextbox")).clear();
+driver.findElement(By.id("nav-search-submit-button")).click();
+Thread.sleep(2000);
+
+String currentUrl = driver.getCurrentUrl();
+// Verify system didn't crash (any response is acceptable)
+Assert.assertTrue(currentUrl.contains("amazon.com"), "Page navigated incorrectly");
+```
+
+---
+
+### **TC_AMZ_010: Cart Persistence After Page Refresh**
+
+**Priority:** MEDIUM | **Type:** Functional Test | **Automation:** YES
+
+**Test Objective:**  
+Validate that cart items persist after browser refresh
+
+**Pre-conditions:**
+- Add 1-2 items to cart
+- Currently on any Amazon page
+
+**Test Data:**
+```
+Items in Cart: 2
+```
+
+**Detailed Test Steps:**
+
+| Step | Action | Element Details | Expected Result | Automation Notes |
+|------|--------|----------------|----------------|------------------|
+| 1 | Add 2 items to cart | Execute TC_AMZ_005 twice | Cart count = 2 | - |
+| 2 | Note cart count | ID: `nav-cart-count` | Shows "2" | `int beforeRefresh = Integer.parseInt(element.getText())` |
+| 3 | Refresh the page | Browser refresh | Page reloads | `driver.navigate().refresh()` |
+| 4 | Wait for page load | Wait: 3 seconds | Page fully loaded | `wait.until(...)` |
+| 5 | Check cart count again | ID: `nav-cart-count` | Still shows "2" | `int afterRefresh = Integer.parseInt(element.getText())` |
+| 6 | Navigate to cart page | Click cart icon | Cart page loads | - |
+| 7 | Verify items still present | Product listings | Both products visible | Count items |
+| 8 | Verify quantities | Quantity selectors | Quantities unchanged | - |
+
+**Expected Result:**
+- Cart persists after refresh
+- No items lost
+- Quantities remain same
+
+**Automation Notes:**
+```java
+int beforeRefresh = Integer.parseInt(driver.findElement(By.id("nav-cart-count")).getText());
+
+driver.navigate().refresh();
+wait.until(visibilityOfElementLocated(By.id("nav-cart-count")));
+
+int afterRefresh = Integer.parseInt(driver.findElement(By.id("nav-cart-count")).getText());
+Assert.assertEquals(beforeRefresh, afterRefresh, "Cart items lost after refresh");
+```
+
+---
+
+## 📊 **TEST DATA SETS FOR DATA-DRIVEN TESTING**
+
+### **Search Keywords Test Data (search_data.xlsx)**
+
+| Test ID | Keyword | Expected Min Results | Category | Test Type |
+|---------|---------|---------------------|----------|-----------|
+| TD_001 | laptop | 50 | Electronics | Valid |
+| TD_002 | wireless mouse | 30 | Electronics | Valid |
+| TD_003 | books | 100 | Books | Valid |
+| TD_004 | headphones | 40 | Electronics | Valid |
+| TD_005 | water bottle | 20 | Home | Valid |
+| TD_006 | xyzabc123 | 0 | N/A | Invalid |
+| TD_007 | !@#$%^& |

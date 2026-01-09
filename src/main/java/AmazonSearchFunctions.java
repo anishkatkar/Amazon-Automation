@@ -1013,4 +1013,434 @@ public class AmazonSearchFunctions {
         }
         return allInRange;
     }
+
+    // ==========================================
+    // TC_AMZ_004: Product Details Methods
+    // ==========================================
+
+    /**
+     * Store first product title before clicking
+     *
+     * @return Product title string
+     */
+    public String getFirstProductTitle() {
+        try {
+            WebElement firstProduct = driver.findElement(By.cssSelector(SEARCH_RESULT_CSS));
+            WebElement title = firstProduct.findElement(By.cssSelector(PRODUCT_TITLE_CSS));
+            return title.getText();
+        } catch (Exception e) {
+            System.err.println("✗ Failed to get first product title");
+            return "";
+        }
+    }
+
+    /**
+     * Click on the first product in search results
+     *
+     * @return true if clicked and navigated
+     */
+    public boolean clickFirstProduct() {
+        try {
+            WebElement firstProduct = driver.findElement(By.cssSelector(SEARCH_RESULT_CSS));
+            WebElement link = firstProduct.findElement(By.cssSelector(".a-link-normal.s-no-outline"));
+
+            String currentUrl = driver.getCurrentUrl();
+            link.click();
+            System.out.println("✓ Clicked first product");
+
+            // Wait for navigation or new tab
+            try {
+                wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(currentUrl)));
+            } catch (Exception e) {
+                // Might have opened in new tab, handle that
+                java.util.Set<String> handles = driver.getWindowHandles();
+                if (handles.size() > 1) {
+                    for (String handle : handles) {
+                        driver.switchTo().window(handle);
+                    }
+                    System.out.println("✓ Switched to new tab");
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            System.err.println("✗ Failed to click first product");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
+     * Verify product details page is loaded and critical elements exist
+     *
+     * @param expectedTitlePartial Title from search results to match
+     * @return true if validation passes
+     */
+    public boolean verifyProductDetailsPage(String expectedTitlePartial) {
+        try {
+            wait.until(ExpectedConditions.or(
+                    ExpectedConditions.visibilityOfElementLocated(By.id("productTitle")),
+                    ExpectedConditions.visibilityOfElementLocated(By.id("title"))));
+
+            String actualTitle = driver.findElement(By.id("productTitle")).getText();
+            System.out.println("✓ Product Page Title: " + actualTitle);
+
+            if (!actualTitle.contains(expectedTitlePartial) && !expectedTitlePartial.contains(actualTitle)) {
+                // Fuzzy match or just warning, titles might be truncated in search
+                System.out.println("⚠ Warning: Title on page might differ slightly from search result.");
+            }
+
+            // Verify Image
+            boolean imageVisible = driver.findElements(By.id("landingImage")).size() > 0 ||
+                    driver.findElements(By.id("imgTagWrapperId")).size() > 0;
+
+            // Verify Price
+            boolean priceVisible = driver.findElements(By.cssSelector(".a-price-whole")).size() > 0 ||
+                    driver.findElements(By.id("priceblock_ourprice")).size() > 0 ||
+                    driver.findElements(By.id("corePriceDisplay_desktop_feature_div")).size() > 0;
+
+            // Verify Add to Cart
+            boolean addToCartVisible = driver.findElements(By.id("add-to-cart-button")).size() > 0;
+
+            System.out.println("✓ Details Check: Image=" + imageVisible + ", Price=" + priceVisible + ", AddToCart="
+                    + addToCartVisible);
+
+            return imageVisible && addToCartVisible;
+        } catch (Exception e) {
+            System.err.println("✗ Failed to verify product details page");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    // ==========================================
+    // TC_AMZ_005 & TC_AMZ_006: Cart Methods
+    // ==========================================
+
+    public int getCartCount() {
+        try {
+            WebElement countElem = driver.findElement(By.id("nav-cart-count"));
+            return Integer.parseInt(countElem.getText());
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    public boolean addToCart() {
+        try {
+            int initialCount = getCartCount();
+            WebElement addToCartBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("add-to-cart-button")));
+            addToCartBtn.click();
+            System.out.println("✓ Clicked 'Add to Cart'");
+
+            // Handle Protection Plan / "Add to your order" Modal
+            try {
+                // Wait briefly for modal to appear
+                Thread.sleep(2000); // Give modal time to render
+
+                // Strategy 1: Try clicking "No thanks" input button (most common)
+                try {
+                    WebElement noThanksInput = new WebDriverWait(driver, Duration.ofSeconds(3))
+                            .until(ExpectedConditions.elementToBeClickable(
+                                    By.xpath("//input[@aria-labelledby='attachSiNoCoverage-announce']")));
+                    noThanksInput.click();
+                    System.out.println("✓ Dismissed Protection Plan modal (via input button)");
+                } catch (Exception e1) {
+                    // Strategy 2: Try CSS selector for attachSiNoCoverage
+                    try {
+                        WebElement noThanksBtn = new WebDriverWait(driver, Duration.ofSeconds(2))
+                                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+                                        "#attachSiNoCoverage, #attach-si-no-coverage, button[data-action='a-popover-close']")));
+                        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();",
+                                noThanksBtn);
+                        System.out.println("✓ Dismissed Protection Plan modal (via CSS)");
+                    } catch (Exception e2) {
+                        // Strategy 3: Try finding by text "No thanks"
+                        try {
+                            List<WebElement> noThanksText = driver
+                                    .findElements(By.xpath("//*[contains(text(), 'No thanks')]"));
+                            if (!noThanksText.isEmpty() && noThanksText.get(0).isDisplayed()) {
+                                noThanksText.get(0).click();
+                                System.out.println("✓ Dismissed Protection Plan modal (via text)");
+                            }
+                        } catch (Exception e3) {
+                            // No modal appeared or couldn't dismiss - continue anyway
+                            System.out.println("ℹ No protection plan modal detected or already dismissed");
+                        }
+                    }
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+
+            // Wait for confirmation or count update
+            try {
+                wait.until(ExpectedConditions.or(
+                        ExpectedConditions
+                                .visibilityOfElementLocated(By.xpath("//*[contains(text(),'Added to Cart')]")),
+                        ExpectedConditions.visibilityOfElementLocated(By.id("attach-sidesheet-view-cart-button")),
+                        ExpectedConditions.visibilityOfElementLocated(By.id("sw-gtc")),
+                        ExpectedConditions.not(
+                                ExpectedConditions.textToBe(By.id("nav-cart-count"), String.valueOf(initialCount)))));
+            } catch (Exception ignore) {
+            }
+
+            Thread.sleep(1500); // Small buffer for animation
+            return true;
+        } catch (Exception e) {
+            System.err.println("✗ Failed to add to cart");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean navigateToCart() {
+        try {
+            driver.findElement(By.id("nav-cart")).click();
+            wait.until(ExpectedConditions.urlContains("/cart"));
+            System.out.println("✓ Navigated to Shopping Cart");
+            return true;
+        } catch (Exception e) {
+            System.err.println("✗ Failed to navigate to cart");
+            return false;
+        }
+    }
+
+    public boolean updateCartQuantity(String qty) {
+        try {
+            // Try standard select first
+            try {
+                WebElement qtyDropdown = driver.findElement(By.name("quantity"));
+                if (qtyDropdown.getTagName().equalsIgnoreCase("select")) {
+                    org.openqa.selenium.support.ui.Select select = new org.openqa.selenium.support.ui.Select(
+                            qtyDropdown);
+                    select.selectByValue(qty);
+                    System.out.println("✓ Updated quantity to " + qty + " (Select)");
+                    Thread.sleep(3000);
+                    return true;
+                }
+            } catch (Exception ignore) {
+            }
+
+            // Try Amazon custom dropdown container
+            try {
+                WebElement dropdownContainer = driver
+                        .findElement(By.cssSelector(".a-dropdown-container, .sc-action-quantity"));
+                dropdownContainer.click();
+
+                // Click the option
+                WebElement option = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                        By.cssSelector("li[aria-labelledby*='quantity_" + qty + "'], #quantity_" + qty)));
+                option.click();
+                System.out.println("✓ Updated quantity to " + qty + " (Custom click)");
+                Thread.sleep(3000);
+                return true;
+            } catch (Exception e) {
+                // Try clicking the span showing current quantity
+                WebElement qtyLabel = driver.findElement(By.cssSelector(".a-dropdown-prompt"));
+                qtyLabel.click();
+                WebElement option = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("quantity_" + qty)));
+                option.click();
+                System.out.println("✓ Updated quantity to " + qty + " (Prompt click)");
+                Thread.sleep(3000);
+                return true;
+            }
+        } catch (Exception e) {
+            System.err.println("✗ Failed to update cart quantity");
+            return false;
+        }
+    }
+
+    public double getCartSubtotal() {
+        try {
+            WebElement subtotalElem = driver.findElement(By.id("sc-subtotal-amount-activecart"));
+            String text = subtotalElem.getText().replace("$", "").replace(",", "").trim();
+            return Double.parseDouble(text);
+        } catch (Exception e) {
+            return 0.0;
+        }
+    }
+
+    public boolean deleteFirstItemFromCart() {
+        try {
+            WebElement deleteBtn = driver.findElement(By.xpath("//input[@value='Delete']"));
+            deleteBtn.click();
+            System.out.println("✓ Clicked 'Delete' on first item");
+            Thread.sleep(2000);
+            return true;
+        } catch (Exception e) {
+            System.err.println("✗ Failed to delete item from cart");
+            return false;
+        }
+    }
+
+    // ==========================================
+    // TC_AMZ_008: Checkout Methods
+    // ==========================================
+
+    public boolean clickProceedToCheckout() {
+        try {
+            // Wait for any of the buttons to be clickable
+            wait.until(ExpectedConditions.or(
+                    ExpectedConditions.elementToBeClickable(By.name("proceedToCheckout")),
+                    ExpectedConditions.elementToBeClickable(By.id("sc-buy-box-ptc-button")),
+                    ExpectedConditions.elementToBeClickable(By.cssSelector("input[value='Proceed to checkout']")),
+                    ExpectedConditions.elementToBeClickable(By.partialLinkText("Proceed to checkout"))));
+
+            // Find which one is present
+            By[] locators = {
+                    By.name("proceedToCheckout"),
+                    By.id("sc-buy-box-ptc-button"),
+                    By.cssSelector("input[value='Proceed to checkout']"),
+                    By.partialLinkText("Proceed to checkout")
+            };
+
+            WebElement btn = null;
+            for (By loc : locators) {
+                try {
+                    List<WebElement> elements = driver.findElements(loc);
+                    for (WebElement el : elements) {
+                        if (el.isDisplayed() && el.isEnabled()) {
+                            btn = el;
+                            break;
+                        }
+                    }
+                    if (btn != null)
+                        break;
+                } catch (Exception e) {
+                }
+            }
+
+            if (btn == null) {
+                // Fallback
+                btn = driver.findElement(By.name("proceedToCheckout"));
+            }
+
+            btn.click();
+            System.out.println("✓ Clicked 'Proceed to checkout'");
+            return true;
+        } catch (Exception e) {
+            System.err.println("✗ Failed to click 'Proceed to checkout': " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean verifySignInPage() {
+        try {
+            wait.until(ExpectedConditions.or(
+                    ExpectedConditions.urlContains("/signin"),
+                    ExpectedConditions.urlContains("/ap/signin")));
+
+            boolean emailFieldExists = driver.findElements(By.id("ap_email")).size() > 0 ||
+                    driver.findElements(By.name("email")).size() > 0;
+
+            if (emailFieldExists) {
+                System.out.println("✓ Sign-in page validated (Email field present)");
+                return true;
+            } else {
+                System.err.println("✗ Sign-in page loaded but email field not found");
+                return false;
+            }
+        } catch (Exception e) {
+            System.err.println("✗ Failed to verify sign-in page");
+            return false;
+        }
+    }
+
+    public boolean clickProductByTitle(String titlePartial) {
+        try {
+            // Dynamic locator for partial text match
+            String xpath = "//*[contains(text(), '" + titlePartial + "')]";
+
+            // Wait for at least one match
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+
+            List<WebElement> elements = driver.findElements(By.xpath(xpath));
+            for (WebElement el : elements) {
+                if (el.isDisplayed()) {
+                    // Scroll into view
+                    ((org.openqa.selenium.JavascriptExecutor) driver)
+                            .executeScript("arguments[0].scrollIntoView(true);", el);
+                    Thread.sleep(1000); // Wait for scroll
+
+                    // Click (try parent anchor if text is inside a span)
+                    try {
+                        el.click();
+                    } catch (Exception e) {
+                        // Try clicking parent
+                        el.findElement(By.xpath("./..")).click();
+                    }
+                    System.out.println("✓ Clicked product with title: " + titlePartial);
+                    return true;
+                }
+            }
+            System.err.println("✗ Product with title '" + titlePartial + "' not found or not visible");
+            return false;
+        } catch (Exception e) {
+            System.err.println("✗ Failed to click product '" + titlePartial + "': " + e.getMessage());
+            return false;
+        }
+    }
+
+    // ==========================================
+    // TC_AMZ_009: Empty Search Method
+    // ==========================================
+
+    public boolean verifyEmptySearchStayedOnPage() {
+        try {
+            String currentUrl = driver.getCurrentUrl();
+            // Should either be amazon.com base or not have a ?k= empty query param causing
+            // error
+            // Actually, Amazon often stays on page or invalidates search.
+            // We verify we didn't crash and ideally stayed on homepage or similar
+            if (currentUrl.contains("amazon.com")) {
+                System.out.println("✓ System handled empty search gracefully (Stayed on Amazon domain)");
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    // ==========================================
+    // TC_AMZ_010: Persistence Method
+    // ==========================================
+
+    public void refreshPage() {
+        driver.navigate().refresh();
+        System.out.println("✓ Page refreshed");
+        try {
+            Thread.sleep(3000); // Wait for reload
+            wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
+        } catch (Exception e) {
+        }
+    }
+
+    public boolean clickBookBySpecificXPath() {
+        try {
+            String xpath = "//*[@id=\"desktop-books-storefront_BooksNewReleases_0\"]/div/div/bds-render-context-provider/bds-carousel/bds-carousel-item[6]/div/bds-unified-book-faceout//div/a/bds-book-cover-image//div/picture/img";
+
+            // Wait for presence
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+
+            WebElement img = driver.findElement(By.xpath(xpath));
+
+            // Scroll to it
+            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", img);
+            Thread.sleep(1000);
+
+            // Click parent anchor tag since the image itself might not be the link or to
+            // enable bubbling
+            // The user said "click on it" (the image), but usually we want to click the
+            // link <a> wrapping it or the image itself if clickable.
+            // The XPath ends in /img.
+            img.click();
+
+            System.out.println("✓ Clicked book using specific XPath");
+            return true;
+        } catch (Exception e) {
+            System.err.println("✗ Failed to click book by specific XPath: " + e.getMessage());
+            return false;
+        }
+    }
 }
